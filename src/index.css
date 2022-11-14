@@ -16,3 +16,6 @@ a{
 .bgColor{
     background-color: #282C33;
 }
+NavLink:hover{
+    color: #00FF00;
+}

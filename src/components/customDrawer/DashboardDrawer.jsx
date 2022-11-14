@@ -2,12 +2,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Drawer } from '@mui/material';
 import { Box, Stack } from "@mui/system";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import discord from '../../assets/Icon/discord.svg';
 import email from '../../assets/Icon/email.svg';
 import github from '../../assets/Icon/github.svg';
 import logo from "../../assets/images/logo.png";
 import { CTypography } from "../../utility";
+
 const routes = [
     {
         id: 1,
@@ -167,7 +168,6 @@ export default function DashboardDrawer({ children }) {
                                             color: "#fff",
                                             fontFamily: "FiraCode",
                                             fontWeight: 600,
-
                                         }
                                         : {
                                             color: "#ABB2BF",
@@ -180,6 +180,7 @@ export default function DashboardDrawer({ children }) {
                                         style={{
                                             color: "#C778DD"
                                         }}
+
                                     >
                                         #
                                     </span>
@@ -261,10 +262,14 @@ export default function DashboardDrawer({ children }) {
         )
     }
     return (
-        <div>
+        <Stack>
             <AppBar />
             <SideBar />
-            <main>{children}</main>
-        </div>
+            <Box component="main" sx={{ flexGrow: 1, p: 0.5 }}>
+                <Outlet />
+                {children}
+            </Box>
+        </Stack>
+
     )
 }

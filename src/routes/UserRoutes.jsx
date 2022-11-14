@@ -8,7 +8,7 @@ export default function UserRoutes() {
         <BrowserRouter>
             <DashboardDrawer>
                 <Routes>
-                    <Route path="/test" element={<Text />} />
+                    <Route path="/about" element={<Text />} />
                     {/* <Route path="*" element={<h1>Not Found</h1>} /> */}
                 </Routes>
             </DashboardDrawer>
