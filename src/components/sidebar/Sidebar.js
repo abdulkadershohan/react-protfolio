@@ -14,12 +14,12 @@ export default function Sidebar() {
             <Stack
                 alignItems="center"
                 spacing={2}
-                width="40%"
+                width="35%"
             >
                 <Box
                     sx={{
-                        width: "1.5px",
-                        height: 200,
+                        width: "2px",
+                        height: 240,
                         backgroundColor: "#ABB2BF",
                     }}
                 />
