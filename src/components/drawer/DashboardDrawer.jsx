@@ -1,16 +1,16 @@
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import MuiAppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
 import { styled, useTheme } from "@mui/material/styles";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+import { Stack } from "@mui/system";
 import * as React from "react";
 
 import { Outlet } from "react-router-dom";
+import Navbar from "../navbar/Navbar";
+import Sidebar from "../sidebar/Sidebar";
 
-const drawerWidth = 65;
+
+const drawerWidth = 200;
 
 const openedMixin = (theme) => ({
     width: drawerWidth,
@@ -93,6 +93,8 @@ export default function DashboardDrawer({ children }) {
                     {
                         backgroundColor: "#282C33",
                         // backgroundColor: "#0c1433",
+                        pt: 2,
+                        pl: 24,
                         color: "white1",
                         boxShadow: "none",
                         // zIndex: theme.zIndex.drawer + 1,
@@ -106,11 +108,10 @@ export default function DashboardDrawer({ children }) {
                     },
                 ]}
             >
-                <Toolbar sx={[{ ml: 6 }]}>
-                    <Typography variant="h6" color={"black"} noWrap component="div">
-                        title
-                    </Typography>
-                </Toolbar>
+                <Navbar
+                    drawerWidth={drawerWidth}
+                    open={open}
+                />
                 <Box sx={{ flexGrow: 1 }} />
             </AppBar>
             <Drawer
@@ -125,9 +126,8 @@ export default function DashboardDrawer({ children }) {
                     ...(!open && { backgroundColor: "#282C33" }),
 
                     "& .MuiDrawer-paper": {
-                        // width: open ? drawerWidth : "65px",
-
-                        width: drawerWidth,
+                        width: open ? drawerWidth : 200,
+                        // width: drawerWidth,
                         boxSizing: "border-box",
                         backgroundColor: "#282C33",
                         overflow: "hidden",
@@ -136,11 +136,7 @@ export default function DashboardDrawer({ children }) {
                 variant="permanent"
                 open={open}
             >
-                <DrawerHeader sx={{ backgroundColor: "#282C33" }}>
-                    <IconButton>
-                        {theme.direction === "rtl" && <ChevronRightIcon />}
-                    </IconButton>
-                </DrawerHeader>
+              <Sidebar/>
 
             </Drawer>
 
