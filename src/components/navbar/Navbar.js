@@ -33,7 +33,8 @@ const routes = [
 export default function Navbar({ drawerWidth, open }) {
   return (
     <Toolbar sx={[{
-      display: "flex",
+      //display: "flex",
+
       width: "100%",
     }]}>
       <Stack
@@ -41,6 +42,9 @@ export default function Navbar({ drawerWidth, open }) {
         justifyContent="space-between"
         alignItems="center"
         width="80%"
+        sx={{
+          display: { xs: "none", lg: "flex" },
+        }}
       >
         <Stack
           direction="row"

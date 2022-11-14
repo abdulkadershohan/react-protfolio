@@ -2,7 +2,6 @@ import MuiAppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
 import { styled, useTheme } from "@mui/material/styles";
-import { Stack } from "@mui/system";
 import * as React from "react";
 
 import { Outlet } from "react-router-dom";
@@ -94,10 +93,11 @@ export default function DashboardDrawer({ children }) {
                         backgroundColor: "#282C33",
                         // backgroundColor: "#0c1433",
                         pt: 2,
-                        pl: 24,
+                        pl: { xs: 0, lg: 24 },
                         color: "white1",
                         boxShadow: "none",
                         // zIndex: theme.zIndex.drawer + 1,
+                        // display: { xs: "none", lg: "flex" },
                         display: "flex",
                         flexDirection: "row",
                         justifyContent: "space-between",
@@ -112,6 +112,9 @@ export default function DashboardDrawer({ children }) {
                     drawerWidth={drawerWidth}
                     open={open}
                 />
+                <p>
+                    asakdasd
+                </p>
                 <Box sx={{ flexGrow: 1 }} />
             </AppBar>
             <Drawer
@@ -119,6 +122,7 @@ export default function DashboardDrawer({ children }) {
                     width: drawerWidth,
                     flexShrink: 0,
                     zIndex: 555,
+                    display: { xs: "none", lg: "block" },
                     overflow: "hidden",
                     whiteSpace: "nowrap",
                     boxSizing: "border-box",
@@ -136,7 +140,7 @@ export default function DashboardDrawer({ children }) {
                 variant="permanent"
                 open={open}
             >
-              <Sidebar/>
+                <Sidebar />
 
             </Drawer>
 
