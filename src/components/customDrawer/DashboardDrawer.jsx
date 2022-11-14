@@ -1,4 +1,5 @@
 import MenuIcon from '@mui/icons-material/Menu';
+import { Drawer } from '@mui/material';
 import { Box, Stack } from "@mui/system";
 import React from "react";
 import { NavLink } from "react-router-dom";
@@ -34,6 +35,63 @@ const routes = [
     }
 ]
 export default function DashboardDrawer({ children }) {
+    const [toggle, setToggle] = React.useState(false);
+    const list = (anchor) => (
+        <Box
+            sx={{
+                width: 200,
+                zIndex: 9999,
+                //mt: 8,
+                p: 2,
+                position: 'relative',
+                backgroundColor: "#282C33",
+                height: "calc(100vh)",
+            }}
+            role="presentation"
+
+        >
+            < Stack
+                spacing={4}
+                px={2}
+            >
+                {
+                    routes.map((route, index) => {
+                        return (
+                            <NavLink
+                                to={route.path}
+                                key={index}
+                                style={({ isActive }) => (isActive ?
+                                    {
+                                        // borderRight: "4px solid white",
+                                        // background: "rgb(45, 51, 89)"
+                                        color: "#fff",
+                                        fontFamily: "FiraCode",
+                                        fontWeight: 600,
+
+                                    }
+                                    : {
+                                        color: "#ABB2BF",
+                                        fontFamily: "FiraCode",
+                                        fontWeight: 400,
+
+                                    })}
+                            >
+                                <span
+                                    style={{
+                                        color: "#C778DD"
+                                    }}
+                                >
+                                    #
+                                </span>
+                                {route.name}
+                            </NavLink>
+                        )
+                    })
+                }
+            </Stack>
+
+        </Box >
+    );
     const AppBar = () => {
         return (
             <Stack
@@ -81,13 +139,14 @@ export default function DashboardDrawer({ children }) {
                         <MenuIcon
                             sx={{
                                 color: "#D9D9D9",
-                                alignSelf: "flex-end"
+                                cursor: "pointer",
                             }}
-
+                            onClick={() => setToggle(!toggle)}
                         />
                     </Stack>
 
                 </Stack>
+
                 < Stack
                     direction="row"
                     spacing={4}
@@ -130,6 +189,26 @@ export default function DashboardDrawer({ children }) {
                         })
                     }
                 </Stack>
+                <Box >
+                    {["left"].map((anchor) => (
+                        <React.Fragment key={anchor}
+                            sx={{
+                                backgroundColor: "#282C33",
+                            }}
+                        >
+                            <Drawer
+                                anchor={anchor}
+                                open={toggle}
+                                onClose={() => {
+                                    setToggle(false)
+                                }}
+
+                            >
+                                {list(anchor)}
+                            </Drawer>
+                        </React.Fragment>
+                    ))}
+                </Box>
             </Stack>
         )
     }
