@@ -146,7 +146,10 @@ function DrawerAppBar(props) {
                 sx={{
                     backgroundColor: '#282C33',
                     boxShadow: 'none',
-                    pl: 8,
+                    pl: {
+                        md: 8,
+                        xs: 0,
+                    },
                 }}
             >
                 <Toolbar>
