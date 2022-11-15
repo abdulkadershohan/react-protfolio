@@ -9,7 +9,7 @@ const Frameworks = ["React", "Node", "Express", "Django", "Flask"]
 const Tools = ["Git", "Docker", "AWS", "GCP", "Kubernetes", "Terraform", "Ansible", "Jenkins", "Linux"]
 const Databases = ["PostgreSQL", "MongoDB", "Redis", "MySQL"]
 const Languages = ["Python", "JavaScript", "TypeScript", "Java", "C++", "C", "C#", "Go", "Rust", "PHP", "HTML", "CSS", "SQL"]
-
+const funFact = ["I am a huge fan of the Marvel Cinematic Universe", "I am a huge", "I am a huge fan of the Marvel Cinematic Universe", "I am a huge", 'I am a huge fan of the Marvel Cinematic', 'I am a huge fan of the Marvel Cinematic']
 export default function AboutMeFull() {
     const Header = () => {
         return (
@@ -154,6 +154,70 @@ export default function AboutMeFull() {
             </Box >
         )
     }
+    const FunHeader = () => {
+        return (
+
+            <Stack
+                direction="row"
+                spacing={2}
+                alignItems="center"
+                pt={8}
+            >
+                <CTypography
+                    text='#'
+                    color='#C778DD'
+                    fontWeight={500}
+                    fontSize={32}
+                >
+                    <span style={{ color: '#FFFFFF' }}>
+                        fun-facts
+                    </span>
+
+                </CTypography>
+                <Box
+                    sx={{
+                        width: {
+                            xs: '10px', sm: '40px',
+                            md: '60px', lg: '100px',
+                        },
+                        height: '1.5px',
+                        backgroundColor: '#C778DD',
+                    }}
+                />
+            </Stack>
+        )
+    }
+    const FunFactCard = () => {
+        return (
+            <Stack
+                direction="row"
+                flexWrap="wrap"
+                gap={1}
+            >
+                {
+                    funFact.map((fact, index) => {
+                        return (
+                            <Box
+                                sx={{
+                                    border: '1px solid #ABB2BF',
+                                    p: 1,
+                                }}
+                                key={Math.random()}
+                            >
+                                <CTypography
+                                    fontSize={16}
+                                    fontWeight={400}
+                                    color='#ABB2BF'
+                                    text={fact}
+                                />
+                            </Box >
+                        )
+                    })
+                }
+            </Stack>
+
+        )
+    }
     return (
         <Stack>
             <Header />
@@ -253,6 +317,14 @@ export default function AboutMeFull() {
 
                     </Stack>
                 </Stack>
+            </Stack>
+            <Stack
+                py={4}
+                pb={8}
+                spacing={8}
+            >
+                <FunHeader />
+                <FunFactCard />
             </Stack>
 
         </Stack>
