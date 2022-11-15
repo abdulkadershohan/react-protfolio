@@ -117,6 +117,41 @@ export default function Hero() {
                 RBS ERP
               </a>
             </Box>
+            <svg
+              style={{
+                position: "absolute",
+                top: '40%',
+                width: "12vmin",
+                left: "70%",
+                zIndex: 4,
+              }}
+              width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="2" cy="2" r="2" fill="#ABB2BF" />
+              <circle cx="22" cy="2" r="2" fill="#ABB2BF" />
+              <circle cx="42" cy="2" r="2" fill="#ABB2BF" />
+              <circle cx="62" cy="2" r="2" fill="#ABB2BF" />
+              <circle cx="82" cy="2" r="2" fill="#ABB2BF" />
+              <circle cx="2" cy="22" r="2" fill="#ABB2BF" />
+              <circle cx="22" cy="22" r="2" fill="#ABB2BF" />
+              <circle cx="42" cy="22" r="2" fill="#ABB2BF" />
+              <circle cx="62" cy="22" r="2" fill="#ABB2BF" />
+              <circle cx="82" cy="22" r="2" fill="#ABB2BF" />
+              <circle cx="2" cy="42" r="2" fill="#ABB2BF" />
+              <circle cx="22" cy="42" r="2" fill="#ABB2BF" />
+              <circle cx="42" cy="42" r="2" fill="#ABB2BF" />
+              <circle cx="62" cy="42" r="2" fill="#ABB2BF" />
+              <circle cx="82" cy="42" r="2" fill="#ABB2BF" />
+              <circle cx="2" cy="62" r="2" fill="#ABB2BF" />
+              <circle cx="22" cy="62" r="2" fill="#ABB2BF" />
+              <circle cx="42" cy="62" r="2" fill="#ABB2BF" />
+              <circle cx="62" cy="62" r="2" fill="#ABB2BF" />
+              <circle cx="82" cy="62" r="2" fill="#ABB2BF" />
+              <circle cx="2" cy="82" r="2" fill="#ABB2BF" />
+              <circle cx="22" cy="82" r="2" fill="#ABB2BF" />
+              <circle cx="42" cy="82" r="2" fill="#ABB2BF" />
+              <circle cx="62" cy="82" r="2" fill="#ABB2BF" />
+              <circle cx="82" cy="82" r="2" fill="#ABB2BF" />
+            </svg>
           </Box>
 
         </Grid>
