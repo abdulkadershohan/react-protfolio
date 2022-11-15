@@ -6,6 +6,7 @@ import hero from "../../assets/images/hero.png";
 import logoOutline from "../../assets/images/logoOutline.svg";
 import { CButton, CTypography } from "../../utility";
 import About from "../about/About";
+import Contacts from "../contacts/Contacts";
 import Protfolio from "../protfolio/Protfolio";
 import Skils from "../skils/Skils";
 import styles from "./hero.module.css";
@@ -173,6 +174,7 @@ export default function Hero() {
       <Protfolio />
       <Skils />
       <About />
+      <Contacts />
     </Stack >
   )
 }
