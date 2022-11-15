@@ -36,9 +36,31 @@ const cardData = [
         cardImage: madhost,
         figma: "",
         liveUrl: 'https://chertnodes.com/',
+    },
+    {
+        id: 4,
+        title: 'ProtectX web',
+        skils: ['HTML', 'CSS', 'JS'],
+        subtitle: 'Minecraft servers hosting',
+        description: 'Card 1 description',
+        cardImage: madhost,
+        figma: "",
+        liveUrl: 'https://chertnodes.com/',
+    },
+    {
+        id: 5,
+        title: 'ProtectX web',
+        skils: ['HTML', 'CSS', 'JS'],
+        subtitle: 'Minecraft servers hosting',
+        description: 'Card 1 description',
+        cardImage: madhost,
+        figma: "",
+        liveUrl: 'https://chertnodes.com/',
     }
 ]
-const ProjectCard = () => {
+// get 3 cardData
+
+const ProjectCard = ({ data }) => {
     return (
         <Stack direction="row"
             justifyContent="center"
@@ -47,7 +69,7 @@ const ProjectCard = () => {
             gap={2}
         >
             {
-                cardData.map((item) => {
+                data.map((item) => {
                     return (
                         <Box key={item.id}
                             sx={{
@@ -140,24 +162,48 @@ const ProjectCard = () => {
         </Stack>
     )
 }
-export default function Protfolio() {
+export default function Protfolio({ allData }) {
+    const cardNewData = cardData.slice(0, 3);
+    // React.useEffect(() => {
+    //     // scroll to top
+    //     window.scrollTo(0, 0);
+    // }, [])
     return (
-        <Stack>
+        <Stack
+        >
             <Stack
                 direction="row"
                 justifyContent="space-between"
+                alignItems="center"
                 py={4}
             >
-                <CTypography
-                    text='#'
-                    color='#C778DD'
-                    fontWeight={500}
-                    fontSize={32}
+                <Stack
+                    direction="row"
+                    spacing={2}
+                    alignItems="center"
                 >
-                    <span style={{ color: '#FFFFFF' }}>
-                        Protfolio
-                    </span>
-                </CTypography>
+                    <CTypography
+                        text='#'
+                        color='#C778DD'
+                        fontWeight={500}
+                        fontSize={32}
+                    >
+                        <span style={{ color: '#FFFFFF' }}>
+                            Protfolio
+                        </span>
+
+                    </CTypography>
+                    <Box
+                        sx={{
+                            width: {
+                                xs: '10px', sm: '40px',
+                                md: '60px', lg: '100px',
+                            },
+                            height: '1.5px',
+                            backgroundColor: '#C778DD',
+                        }}
+                    />
+                </Stack>
                 <CTypography
                     fontWeight={400}
                     fontSize={16}
@@ -176,7 +222,9 @@ export default function Protfolio() {
 
 
             </Stack>
-            <ProjectCard />
+            <ProjectCard
+                data={allData ? cardData : cardNewData}
+            />
         </Stack>
     )
 }

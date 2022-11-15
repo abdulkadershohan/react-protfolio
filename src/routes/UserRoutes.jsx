@@ -17,7 +17,7 @@ export default function UserRoutes() {
                 >
                     <Route path="/" element={<Hero />} />
                     <Route path="/" element={<Protfolio />} />
-                    <Route path="/portfolio" element={<Protfolio />} />
+                    <Route path="/protfolio" element={<Protfolio allData={true} />} />
                     <Route path="/about" element={<Text />} />
 
                     <Route path="*" element={<h1>Not Found</h1>} />
