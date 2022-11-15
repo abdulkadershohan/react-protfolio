@@ -41,8 +41,9 @@ const cardData = [
 const ProjectCard = () => {
     return (
         <Stack direction="row"
-            justifyContent="space-between"
+            justifyContent="center"
             flexWrap="wrap"
+            // alignItems="center"
             gap={2}
         >
             {
