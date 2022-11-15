@@ -193,7 +193,8 @@ export default function Skils() {
             </Box >
         )
     }
-    return <Stack>
+    return <Stack
+    >
         <Header />
         <Grid container spacing={2}
             sx={{
