@@ -44,7 +44,7 @@ const routes = [
     }
 ]
 
-function DrawerAppBar(props) {
+function DrawerAppBar(props, { children }) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -82,7 +82,7 @@ function DrawerAppBar(props) {
             <Divider />
             <List>
                 {routes.map((item) => (
-                    <ListItem key={item} disablePadding>
+                    <ListItem key={Math.random()} disablePadding>
                         <ListItemButton sx={{
                             textAlign: 'center',
                             fontSize: '1.2rem',
@@ -289,6 +289,7 @@ function DrawerAppBar(props) {
                     }}
                 >
                     <Outlet />
+                    {children}
                 </Box>
             </Box>
         </Box>
