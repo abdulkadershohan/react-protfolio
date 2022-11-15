@@ -6,13 +6,12 @@ import Text from "../components/Text";
 export default function UserRoutes() {
     return (
         <BrowserRouter>
-            <DashboardDrawer>
-                <Routes>
+            <Routes>
+                <Route path="/" element={<DashboardDrawer />} />
+                <Route element={<DashboardDrawer />}>
                     <Route path="/about" element={<Text />} />
-                    {/* <Route path="*" element={<h1>Not Found</h1>} /> */}
-                </Routes>
-            </DashboardDrawer>
-
+                </Route>
+            </Routes>
         </BrowserRouter>
     );
 }
