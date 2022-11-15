@@ -13,6 +13,7 @@ import * as React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import logo from "../../assets/images/logo.png";
 import { CTypography } from '../../utility';
+import Footer from '../footer/Footer';
 import Sidebar from '../sidebar/Sidebar';
 
 
@@ -289,7 +290,9 @@ function DrawerAppBar(props, { children }) {
                 >
                     <Outlet />
                     {children}
+
                 </Box>
+                <Footer />
             </Box>
         </Box>
     );

@@ -24,7 +24,7 @@ export default function Sidebar() {
                     }}
                 />
                 <Stack>
-                    <a href="https://discord.com/users/9548"
+                    <a href="https://discord.com/users/522431317447802900"
                         target={"_blank"} rel="noreferrer"
                     >
                         <img src={discord} alt="discord" />
