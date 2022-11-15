@@ -21,11 +21,11 @@ const drawerWidth = 240;
 const routes = [
     {
         id: 1,
-        name: "Home",
+        name: "home",
         path: "/",
     }, {
         id: 2,
-        name: "About",
+        name: "about-me",
         path: "/about",
     },
     {
@@ -35,12 +35,17 @@ const routes = [
     },
     {
         id: 4,
-        name: "Skills",
-        path: "/skills",
+        name: "experience",
+        path: "/experience",
     },
     {
         id: 5,
-        name: "Contact",
+        name: "education",
+        path: "/education",
+    },
+    {
+        id: 6,
+        name: "contact",
         path: "/contact",
     }
 ]
