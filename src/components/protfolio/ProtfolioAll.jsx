@@ -37,6 +37,26 @@ const cardData = [
         figma: "",
         liveUrl: 'https://chertnodes.com/',
     },
+    {
+        id: 4,
+        title: 'ProtectX web',
+        skils: ['HTML', 'CSS', 'JS'],
+        subtitle: 'Minecraft servers hosting',
+        description: 'Card 1 description',
+        cardImage: madhost,
+        figma: "",
+        liveUrl: 'https://chertnodes.com/',
+    },
+    {
+        id: 5,
+        title: 'ProtectX web',
+        skils: ['HTML', 'CSS', 'JS'],
+        subtitle: 'Minecraft servers hosting',
+        description: 'Card 1 description',
+        cardImage: madhost,
+        figma: "",
+        liveUrl: 'https://chertnodes.com/',
+    }
 ]
 
 
@@ -159,17 +179,17 @@ export default function Protfolio() {
                     alignItems="center"
                 >
                     <CTypography
-                        text='#'
+                        text='/'
                         color='#C778DD'
                         fontWeight={500}
                         fontSize={32}
                     >
                         <span style={{ color: '#FFFFFF' }}>
-                            Protfolio
+                            Projects
                         </span>
 
                     </CTypography>
-                    <Box
+                    {/* <Box
                         sx={{
                             width: {
                                 xs: '10px', sm: '40px',
@@ -178,14 +198,14 @@ export default function Protfolio() {
                             height: '1.5px',
                             backgroundColor: '#C778DD',
                         }}
-                    />
+                    /> */}
                 </Stack>
                 <CTypography
                     fontWeight={400}
                     fontSize={16}
 
                     component={Link}
-                    to='/protfolio'
+                    to='/'
                     sx={{
                         borderBottom: '2px solid #C778DD',
                         "&:hover": {
@@ -193,11 +213,14 @@ export default function Protfolio() {
                         }
                     }}
                 >
-                    View all ~~{'>'}
+                    {'<'}~~ Back
                 </CTypography>
 
 
             </Stack>
+            <CTypography>
+                All of my projects
+            </CTypography>
             <ProjectCard
             />
         </Stack>
