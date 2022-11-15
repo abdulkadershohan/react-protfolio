@@ -126,7 +126,7 @@ function DrawerAppBar(props, { children }) {
                                         }
                                     }}
 
-                                > {item.name}
+                                >{item.name}
                                 </Box>
                             </NavLink>
                         </ListItemButton>
@@ -222,9 +222,7 @@ function DrawerAppBar(props, { children }) {
                                             style={{
                                                 color: "#C778DD"
                                             }}
-                                        >
-                                            #
-                                        </span>
+                                        >#</span>
                                         <Box
                                             component="span"
                                             sx={{
@@ -233,7 +231,7 @@ function DrawerAppBar(props, { children }) {
                                                 }
                                             }}
 
-                                        > {route.name}
+                                        >{route.name}
                                         </Box>
                                     </NavLink>
                                 )

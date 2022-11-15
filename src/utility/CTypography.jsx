@@ -28,7 +28,7 @@ export default function CTypography({
                 //  component={component ? component : "h1"}
                 {...rest}
             >
-                {text} {children}
+                {text}{children}
             </Typography>
         </Stack>
     );

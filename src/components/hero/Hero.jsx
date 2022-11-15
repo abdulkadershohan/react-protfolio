@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import hero from "../../assets/images/hero.png";
 import logoOutline from "../../assets/images/logoOutline.svg";
 import { CButton, CTypography } from "../../utility";
+import Protfolio from "../protfolio/Protfolio";
 import styles from "./hero.module.css";
 export default function Hero() {
   return (
@@ -167,6 +168,7 @@ export default function Hero() {
           </h4>
         </div>
       </div>
+      <Protfolio />
     </Stack >
   )
 }
