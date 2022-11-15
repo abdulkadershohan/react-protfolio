@@ -3,6 +3,7 @@ body{
     padding: 0px;
     background-color: #282C33;
     font-family:'FiraCode';
+    scroll-behavior: smooth;
 }
 *{
     box-sizing: border-box;

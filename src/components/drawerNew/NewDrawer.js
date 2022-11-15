@@ -8,7 +8,6 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import { Stack } from '@mui/system';
 import * as React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
@@ -18,7 +17,6 @@ import Sidebar from '../sidebar/Sidebar';
 
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
 const routes = [
     {
         id: 1,
@@ -148,6 +146,7 @@ function DrawerAppBar(props) {
                 sx={{
                     backgroundColor: '#282C33',
                     boxShadow: 'none',
+                    pl: 8,
                 }}
             >
                 <Toolbar>
@@ -160,13 +159,36 @@ function DrawerAppBar(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography
+                    {/* <Typography
                         variant="h6"
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                     >
                         MUI
-                    </Typography>
+                    </Typography> */}
+                    <Box
+                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                        component="div"
+                    >
+                        <Stack
+                            direction="row"
+                            alignItems="center"
+                            spacing={1}
+                            sx={{
+                                cursor: "pointer",
+                            }}
+                        >
+                            <img src={logo} alt="logo"
+                                style={{ width: 15, height: 15 }}
+                            />
+                            <CTypography
+                                fontSize="1rem"
+
+                            >
+                                Abdul Kader
+                            </CTypography>
+                        </Stack>
+                    </Box>
                     <Stack sx={{ display: { xs: 'none', sm: 'block' } }}
                         spacing={2}
                         direction="row"

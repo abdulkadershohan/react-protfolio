@@ -3,7 +3,6 @@ import React from "react";
 export default function Text() {
     return <div
         style={{
-            backgroundColor: "red",
             color: "white",
             // height: "80vh",
             fontSize: "2rem",
