@@ -1,47 +1,30 @@
 /* eslint-disable react/prop-types */
-import Button from "@mui/material/Button";
+import { Box } from "@mui/material";
 import PropTypes from "prop-types";
 import * as React from "react";
 export default function ContainedButtons({
 	children,
-	variant,
-	size,
-	color,
-	disabled,
-	disableFocusRipple,
-	disableRipple,
-	endIcon,
-	fullWidth,
-	href,
-	startIcon,
-	sx,
 	btnTitle,
 	...rest
 }) {
 	return (
-		<Button
-			variant={"outlined"}
-			size={size ?? "small"}
-			disabled={disabled}
-			disableFocusRipple={disableFocusRipple ? false : true}
-			disableRipple={disableRipple ? false : true}
-			endIcon={endIcon}
-			fullWidth={fullWidth}
-			href={href}
-			startIcon={startIcon}
+		<Box
 			sx={{
 				color: "#fff",
-				borderColor: "#C778DD",
+				p: 1,
+				border: "1px solid #C778DD",
 				"&:hover": {
 					backgroundColor: "#C770DB1A",
 					opactiy: 0.8,
 					borderColor: "#C778DD",
+					cursor: "pointer",
 				},
+				fontWeight: "600",
 			}}
 			{...rest}
 		>
 			{btnTitle} {children}
-		</Button>
+		</Box>
 	);
 }
 

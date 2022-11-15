@@ -6,7 +6,6 @@ export default function CTypography({
     gutterBottom,
     noWrap,
     paragraph,
-    sx,
     variant,
     text,
     color,
