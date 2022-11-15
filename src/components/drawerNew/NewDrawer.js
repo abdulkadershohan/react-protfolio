@@ -1,0 +1,274 @@
+import MenuIcon from '@mui/icons-material/Menu';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
+import Drawer from '@mui/material/Drawer';
+import IconButton from '@mui/material/IconButton';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import { Stack } from '@mui/system';
+import * as React from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
+import logo from "../../assets/images/logo.png";
+import { CTypography } from '../../utility';
+import Sidebar from '../sidebar/Sidebar';
+
+
+const drawerWidth = 240;
+const navItems = ['Home', 'About', 'Contact'];
+const routes = [
+    {
+        id: 1,
+        name: "Home",
+        path: "/",
+    }, {
+        id: 2,
+        name: "About",
+        path: "/about",
+    },
+    {
+        id: 3,
+        name: "portfolio",
+        path: "/portfolio",
+    },
+    {
+        id: 4,
+        name: "Skills",
+        path: "/skills",
+    },
+    {
+        id: 5,
+        name: "Contact",
+        path: "/contact",
+    }
+]
+
+function DrawerAppBar(props) {
+    const { window } = props;
+    const [mobileOpen, setMobileOpen] = React.useState(false);
+
+    const handleDrawerToggle = () => {
+        setMobileOpen(!mobileOpen);
+    };
+
+    const drawer = (
+        <Box onClick={handleDrawerToggle} sx={{
+            textAlign: 'center',
+            backgroundColor: '#282C33',
+        }}>
+            <Stack
+                direction="row"
+                alignItems="center"
+                justifyContent="center"
+                spacing={1}
+                sx={{
+                    cursor: "pointer",
+                }}
+                py={2}
+            >
+                <img src={logo} alt="logo"
+                    style={{ width: 15, height: 15 }}
+                />
+                <CTypography
+                    fontSize="1rem"
+                >
+                    Abdul Kader
+                </CTypography>
+            </Stack>
+            {/* <Typography variant="h6" sx={{ my: 2 }}>
+                MUI
+            </Typography> */}
+            <Divider />
+            <List>
+                {routes.map((item) => (
+                    <ListItem key={item} disablePadding>
+                        <ListItemButton sx={{
+                            textAlign: 'center',
+                            fontSize: '1.2rem',
+                        }}>
+                            {/* <ListItemText primary={item.name}
+                                component={NavLink}
+                                to={item.path}
+
+                            /> */}
+                            <NavLink
+                                to={item.path}
+                                key={item.id}
+                                style={({ isActive }) => (isActive ?
+                                    {
+                                        // borderRight: "4px solid white",
+                                        // background: "rgb(45, 51, 89)"
+                                        color: "#fff",
+                                        fontFamily: "FiraCode",
+                                        fontWeight: 600,
+
+                                    }
+                                    : {
+                                        color: "#ABB2BF",
+                                        fontFamily: "FiraCode",
+                                        fontWeight: 400,
+
+                                    })}
+                            >
+                                <span
+                                    style={{
+                                        color: "#C778DD"
+                                    }}
+                                >
+                                    #
+                                </span>
+                                <Box
+                                    component="span"
+                                    sx={{
+                                        "&:hover": {
+                                            color: "#fff",
+                                        }
+                                    }}
+
+                                > {item.name}
+                                </Box>
+                            </NavLink>
+                        </ListItemButton>
+                    </ListItem>
+                ))}
+            </List>
+        </Box>
+    );
+
+    const container = window !== undefined ? () => window().document.body : undefined;
+
+    return (
+        <Box sx={{
+            display: 'flex',
+        }}>
+            <AppBar component="nav"
+                sx={{
+                    backgroundColor: '#282C33',
+                    boxShadow: 'none',
+                }}
+            >
+                <Toolbar>
+                    <IconButton
+                        color="inherit"
+                        aria-label="open drawer"
+                        edge="start"
+                        onClick={handleDrawerToggle}
+                        sx={{ mr: 2, display: { sm: 'none' } }}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography
+                        variant="h6"
+                        component="div"
+                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                    >
+                        MUI
+                    </Typography>
+                    <Stack sx={{ display: { xs: 'none', sm: 'block' } }}
+                        spacing={2}
+                        direction="row"
+                    >
+                        {
+                            routes.map((route, index) => {
+                                return (
+                                    <NavLink
+                                        to={route.path}
+                                        key={index}
+                                        style={({ isActive }) => (isActive ?
+                                            {
+                                                // borderRight: "4px solid white",
+                                                // background: "rgb(45, 51, 89)"
+                                                color: "#fff",
+                                                fontFamily: "FiraCode",
+                                                fontWeight: 600,
+
+                                            }
+                                            : {
+                                                color: "#ABB2BF",
+                                                fontFamily: "FiraCode",
+                                                fontWeight: 400,
+
+                                            })}
+                                    >
+                                        <span
+                                            style={{
+                                                color: "#C778DD"
+                                            }}
+                                        >
+                                            #
+                                        </span>
+                                        <Box
+                                            component="span"
+                                            sx={{
+                                                "&:hover": {
+                                                    color: "#fff",
+                                                }
+                                            }}
+
+                                        > {route.name}
+                                        </Box>
+                                    </NavLink>
+                                )
+                            })
+                        }
+                    </Stack>
+
+                </Toolbar>
+            </AppBar>
+
+            <Box component="nav" >
+                <Drawer
+                    container={container}
+                    variant="temporary"
+                    open={mobileOpen}
+                    onClose={handleDrawerToggle}
+                    ModalProps={{
+                        keepMounted: true, // Better open performance on mobile.
+                    }}
+                    PaperProps={{
+                        sx: {
+                            backgroundColor: '#282C33',
+                        }
+                    }}
+                    sx={{
+                        display: { xs: 'block', sm: 'none' },
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+
+
+                    }}
+                >
+                    {drawer}
+                </Drawer>
+            </Box>
+            <Box
+                sx={{
+                    position: "fixed",
+                    top: 50,
+                    left: 20,
+                }}
+            >
+                <Sidebar />
+            </Box>
+            <Box component="main" sx={{
+                p: 3,
+                backgroundColor: '#282C33',
+
+            }}>
+                <Toolbar />
+                <Box
+                    sx={{
+                        pl: 8
+                    }}
+                >
+                    <Outlet />
+                </Box>
+            </Box>
+        </Box>
+    );
+}
+
+
+export default DrawerAppBar;
