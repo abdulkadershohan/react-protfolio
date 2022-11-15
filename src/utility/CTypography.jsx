@@ -10,7 +10,6 @@ export default function CTypography({
     variant,
     text,
     color,
-    component,
     ...rest
 }) {
     return (

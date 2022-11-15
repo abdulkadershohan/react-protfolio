@@ -14,9 +14,8 @@ export default function UserRoutes() {
                         <DrawerAppBar />
                     }
                 >
-                    <Route path="/" element={<Text />} />
+                    <Route path="/" element={<Hero />} />
                     <Route path="/about" element={<Text />} />
-                    <Route path="/Hero" element={<Hero />} />
 
                     <Route path="*" element={<h1>Not Found</h1>} />
                 </Route>

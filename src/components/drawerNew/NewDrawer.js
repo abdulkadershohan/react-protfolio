@@ -280,12 +280,13 @@ function DrawerAppBar(props, { children }) {
             <Box component="main" sx={{
                 p: 3,
                 backgroundColor: '#282C33',
+                width: '100%',
 
             }}>
                 <Toolbar />
                 <Box
                     sx={{
-                        pl: 8
+                        pl: 8,
                     }}
                 >
                     <Outlet />
