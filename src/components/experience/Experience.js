@@ -2,30 +2,41 @@ import { Box, Stack } from "@mui/system";
 import React from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { CTypography } from "../../utility";
-
-const education = [
+const experience = [
     {
         id: 1,
-        title: "BSC in Computer Science and Engineering",
-        school: "Bangladesh University of Business and Technology (BUBT)",
-        year: "FEB 2018 - APR 2022",
-    },
-    {
+        title: "Frontend Developer",
+        company: "Taqwah Digital",
+        hireFor: "React & React Native",
+        year: "NOV 2021 - APR 2022",
+        role: [
+            "Responsible for Develop the Front-end of Web Application.",
+            "Responsible for Develop the Front-end of Mobile App",
+            "Responsible for debugging and testing Web Application & Mobile Application",
+            "Responsible for feature extraction from UI/UX design or Reference Website or Apps",
+        ],
+        address: "Mirpur-2, Dhaka 1216",
+
+
+    }, {
         id: 2,
-        title: "Higher Secondary Certificate (HSC)",
-        school: "Dhunat College, Dhunat, Bogra",
-        year: "MAR  2015 - APR  2017",
-    },
-    {
-        id: 3,
-        title: "Secondary School Certificate (SSC)",
-        school: "Dhunat Adarsha High School, Dhunat, Bogra",
-        year: "MAR  2010 - FEB  2015",
+        title: "Frontend Engineer",
+        company: "RBS Tech Limited",
+        year: "MAY 2022 - PRESENT",
+        hireFor: "React & React Native",
+        role: [
+            "Working on RBS ERP Project(React JS)- ongoing",
+            "Working on RBS OTT Platform APP(React Native).-closed",
+            "Team work",
+            "Responsible for API Integration, Project Management etc."
+        ],
+        address: "House# TA-99, 8th Floor, Gulshan Link Tower, Gulshan-Badda Link Road, Dhaka-1212",
     }
 ]
 
-export default function Education() {
+export default function Experience() {
     const navigate = useNavigate();
+
     const Header = () => {
         return (
             <Stack spacing={2}>
@@ -47,7 +58,7 @@ export default function Education() {
                             fontSize={32}
                         >
                             <span style={{ color: '#FFFFFF' }}>
-                                education
+                                experience
                             </span>
 
                         </CTypography>
@@ -57,7 +68,7 @@ export default function Education() {
                         fontSize={16}
 
                         component={Link}
-                        // to={navigate(-1)}
+                        // to='/'
                         onClick={() => navigate(-1)}
                         sx={{
                             borderBottom: '2px solid #C778DD',
@@ -73,14 +84,25 @@ export default function Education() {
 
         )
     }
-    const SkillsCard = ({ title, school, year }) => {
+    const ExperienceCard = ({ title, company, year, role, address, hireFor }) => {
         return (
             <Box
                 sx={{
                     border: '1px solid #ABB2BF',
                     display: 'inline-block',
-                    minWidth: '200px',
-                    maxWidth: '300px',
+                    // minWidth: '600px',
+                    // maxWidth: '700px',
+                    // minWidth: {
+                    //     xs: '300px',
+                    //     sm: '500px',
+                    //     md: '700px',
+                    // },
+                    // maxWidth: {
+                    //     xs: '600px',
+                    //     sm: '500px',
+                    //     md: '700px',
+
+                    // },
                     flexGrow: 1,
                     flexShrink: 1,
                     flexBasis: 0,
@@ -95,7 +117,15 @@ export default function Education() {
                         fontSize={16}
                         fontWeight={600}
                         text={title}
+
                     >
+                        <span style={{
+                            color: "#C778DD",
+                            fontWeight: 700,
+
+                        }}>
+                            {"\t"} {'('} {hireFor}{')'}
+                        </span>
                         <Stack
                             alignItems="flex-end"
                             sx={{
@@ -104,18 +134,35 @@ export default function Education() {
                                 color: '#ABB2BF',
                                 fontFamily: 'FiraCode',
                             }}
-                        // sx={{
-                        //     justifyContent: 'flex-end',
-                        //     alignItems: 'end',
-                        //     justifyItems: 'end',
-                        // }}
+
                         >
                             {year}
                         </Stack>
                     </CTypography>
                 </Box>
                 <Box
-                    component={"ul"}
+                    sx={{
+                        borderBottom: '1px solid #ABB2BF',
+                        p: 1,
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                    }}
+                >
+                    <CTypography
+                        fontSize={16}
+                        fontWeight={700}
+                        text={company}
+
+                    />
+                    <CTypography
+                        fontSize={12}
+                        fontWeight={400}
+                        text={address}
+                        color='#ABB2BF'
+                    />
+                </Box>
+                <Box
+                    // component={"ul"}
                     sx={{
                         p: 1,
                         display: 'flex',
@@ -123,16 +170,23 @@ export default function Education() {
                         gap: 1,
                         justifyContent: 'start',
                         alignItems: 'start',
+
                     }}
                 >
 
-                    <CTypography
-                        component={"li"}
-                        fontSize={14}
-                        fontWeight={500}
-                        text={school}
-                        color='#ABB2BF'
-                    />
+                    {
+                        role.map((item, index) => {
+                            return (
+                                <CTypography
+                                    component={"li"}
+                                    fontSize={14}
+                                    fontWeight={500}
+                                    text={item}
+                                    color='#ABB2BF'
+                                />
+                            )
+                        })
+                    }
 
                 </Box>
 
@@ -154,13 +208,16 @@ export default function Education() {
                     gap={1}
                 >
                     {
-                        education.map((edu, index) => {
+                        experience.map((item, index) => {
                             return (
-                                <SkillsCard
+                                <ExperienceCard
                                     key={Math.random()}
-                                    title={edu.title}
-                                    school={edu.school}
-                                    year={edu.year}
+                                    title={item.title}
+                                    company={item.company}
+                                    year={item.year}
+                                    role={item.role}
+                                    address={item.address}
+                                    hireFor={item.hireFor}
 
                                 />
                             )

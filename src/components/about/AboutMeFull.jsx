@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import photo from "../../assets/images/hero5.jpg";
 import { CButton, CTypography } from "../../utility";
 
@@ -11,6 +11,7 @@ const Databases = ["PostgreSQL", "MongoDB", "Redis", "MySQL"]
 const Languages = ["Python", "JavaScript", "TypeScript", "Java", "C++", "C", "C#", "Go", "Rust", "PHP", "HTML", "CSS", "SQL"]
 const funFact = ["I am a huge fan of the Marvel Cinematic Universe", "I am a huge", "I am a huge fan of the Marvel Cinematic Universe", "I am a huge", 'I am a huge fan of the Marvel Cinematic', 'I am a huge fan of the Marvel Cinematic']
 export default function AboutMeFull() {
+    const navigate = useNavigate();
     const Header = () => {
         return (
             <Stack spacing={2}>
@@ -42,7 +43,8 @@ export default function AboutMeFull() {
                         fontSize={16}
 
                         component={Link}
-                        to='/'
+                        //  to='/'
+                        onClick={() => navigate(-1)}
                         sx={{
                             borderBottom: '2px solid #C778DD',
                             "&:hover": {

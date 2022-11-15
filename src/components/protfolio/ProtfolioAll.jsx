@@ -1,6 +1,6 @@
 import { Box, Stack } from "@mui/system";
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import chertnodes from '../../assets/images/projects/chertnodes.jpg';
 import khanswers from '../../assets/images/projects/khanswers.jpg';
 import madhost from '../../assets/images/projects/madhost.jpg';
@@ -163,6 +163,8 @@ const ProjectCard = () => {
     )
 }
 export default function Protfolio() {
+    const navigate = useNavigate();
+
     const HeaderWeb = () => {
         return (
             <Stack
@@ -273,7 +275,9 @@ export default function Protfolio() {
                     fontSize={16}
 
                     component={Link}
-                    to='/'
+                    // to='/'
+                    onClick={() => navigate(-1)}
+
                     sx={{
                         borderBottom: '2px solid #C778DD',
                         "&:hover": {
