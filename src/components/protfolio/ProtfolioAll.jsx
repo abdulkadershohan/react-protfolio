@@ -163,15 +163,83 @@ const ProjectCard = () => {
     )
 }
 export default function Protfolio() {
+    const HeaderWeb = () => {
+        return (
+            <Stack
+                direction="row"
+                spacing={2}
+                alignItems="center"
+                py={6}
+            //  pt={8}
+            >
+                <CTypography
+                    text='#'
+                    color='#C778DD'
+                    fontWeight={500}
+                    fontSize={32}
+                >
+                    <span style={{ color: '#FFFFFF' }}>
+                        web projects
+                    </span>
 
+                </CTypography>
+                <Box
+                    sx={{
+                        width: {
+                            xs: '10px', sm: '40px',
+                            md: '60px', lg: '100px',
+                        },
+                        height: '1.5px',
+                        backgroundColor: '#C778DD',
+                    }}
+                />
+            </Stack>
+        )
+    }
+    const HeaderApp = () => {
+        return (
+            <Stack
+                direction="row"
+                spacing={2}
+                alignItems="center"
+                py={6}
+            //  pt={8}
+            >
+                <CTypography
+                    text='#'
+                    color='#C778DD'
+                    fontWeight={500}
+                    fontSize={32}
+                >
+                    <span style={{ color: '#FFFFFF' }}>
+                        mobile apps
+                    </span>
+
+                </CTypography>
+                <Box
+                    sx={{
+                        width: {
+                            xs: '10px', sm: '40px',
+                            md: '60px', lg: '100px',
+                        },
+                        height: '1.5px',
+                        backgroundColor: '#C778DD',
+                    }}
+                />
+            </Stack>
+        )
+    }
     return (
         <Stack
+            spacing={2}
+            pb={6}
         >
             <Stack
                 direction="row"
                 justifyContent="space-between"
                 alignItems="center"
-                py={4}
+                pt={4}
+
             >
                 <Stack
                     direction="row"
@@ -218,11 +286,18 @@ export default function Protfolio() {
 
 
             </Stack>
-            <CTypography>
+            <CTypography
+                fontSize={16}
+                fontWeight={400}
+                color="#ABB2BF"
+            >
                 All of my projects
             </CTypography>
+            <HeaderWeb />
             <ProjectCard
             />
+            <HeaderApp />
+            <ProjectCard />
         </Stack>
     )
 }
