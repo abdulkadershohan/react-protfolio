@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import hero from "../../assets/images/hero.png";
 import logoOutline from "../../assets/images/logoOutline.svg";
 import { CButton, CTypography } from "../../utility";
+import styles from "./hero.module.css";
 export default function Hero() {
   return (
     <Stack>
@@ -156,6 +157,16 @@ export default function Hero() {
 
         </Grid>
       </Grid >
+      <div className={styles.blockquoteWrapper}>
+        <div className={styles.blockquote}>
+          <h1>
+            Experience is  <span style={{ color: '#ffffff' }}>the name</span> everyone <span style={{ color: '#ffffff' }}>  gives to their  mistakes</span>
+          </h1>
+          <h4>—Oscar Wilde<br />
+            {/* <em>Web Site Usability: A Designer's Guide</em> */}
+          </h4>
+        </div>
+      </div>
     </Stack >
   )
 }
