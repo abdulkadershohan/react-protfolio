@@ -6,8 +6,11 @@ import covid from '../../assets/images/projects/covid-19.png';
 import food from '../../assets/images/projects/food.png';
 import food2 from '../../assets/images/projects/food2.png';
 import gym from '../../assets/images/projects/gym2.png';
+import learningapp from '../../assets/images/projects/learningapp.png';
 import LiveStatus from '../../assets/images/projects/LiveStatus.png';
+import ott from '../../assets/images/projects/ott.png';
 import rtc from '../../assets/images/projects/rtc.png';
+import SeRemo from '../../assets/images/projects/SeRemo2.png';
 import upcopo2 from '../../assets/images/projects/upocopo-2.png';
 import { CButton, CTypography } from "../../utility";
 const cardData = [
@@ -36,15 +39,38 @@ const cardData = [
     },
     {
         id: 3,
-        title: 'Covid-19 Survey',
-        skils: ["Bootstrap", "ReactJS", "EmailJS", "Styled Component",
-            "HTML", "CSS", "JavaScript", "PHP", "MYSQL"],
-        description: 'Helth Care App',
-        cardImage: covid,
-        figma: "",
-        liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
+        title: 'UIUX_Learning_App',
+        skils: ["React Native", "Redux", "Redux Toolkit", "Native Base", "expo", "formik", "yup",],
+        description: 'Learning App',
+        cardImage: learningapp,
+        figma: "https://www.figma.com/file/G8IR3mlAuzpsykfRF7g5tU/UXchips_UIUX_Learning_App?t=ccx99V0x6MlRyjjj-0",
+        // liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
         // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
-        githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM"
+        // githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM"
+    },
+    {
+        id: 4,
+        title: 'SeRemo',
+        skils: ["React Native", "Redux", "Redux Toolkit", "Native Base", "expo", "formik", "yup",],
+        description: 'Business app',
+
+        cardImage: SeRemo,
+        figma: "https://www.figma.com/file/xgeqbCe4AZMHuBE9q3ogNA/izackmbimi?node-id=440%3A614&t=yE99K0IDkJbE9StL-0",
+        // liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
+        // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
+        // githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM"
+    },
+    {
+        id: 5,
+        title: 'RBS Movie App',
+        skils: ["React Native", "Redux", "Redux Toolkit", "Native Base", "expo", "formik", "yup",],
+        description: 'OTT app',
+
+        cardImage: ott,
+        figma: "https://www.figma.com/file/xgeqbCe4AZMHuBE9q3ogNA/izackmbimi?node-id=440%3A614&t=yE99K0IDkJbE9StL-0",
+        // liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
+        // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
+        // githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM"
     },
 ]
 const webApp = [
