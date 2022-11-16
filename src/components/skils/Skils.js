@@ -96,12 +96,11 @@ const Dotted2 = () => {
         </svg>
     )
 }
-const Frameworks = ["React", "React Native", "Bootstrap", "Native Base", "Material UI", "React Bootstrap"]
-const other = ["Context API", "Git", "GitHub", "React Reducer", "RestAPI", "React Redux", "WebSocket", "Redux toolkit"]
+const Frameworks = ["React,", "React Native,", "Bootstrap,", "Native Base,", "Material UI,", "React Bootstrap"]
+const other = ["Context API,", "Git,", "GitHub,", "React Reducer,", "RestAPI,", "React Redux,", "WebSocket,", "Redux toolkit"]
 const Databases = ["MySQL"]
-const Languages = ["JavaScript", "C++", "C", "C#", "Python", "Java", "PHP"]
-const communication = ["Bengali (Native)", " English(fluent speaker)", " Hindi/Urdu (fluent speaker)"]
-
+const Languages = ["JavaScript,", "C++,", "C,", "C#,", "Python,", "Java,", "PHP"]
+const communication = ["Bengali (Native),", " English(fluent speaker),", " Hindi/Urdu (fluent speaker)"]
 export default function Skils() {
     const Header = () => {
         return (
@@ -183,7 +182,7 @@ export default function Skils() {
                                 component={"li"}
                                 fontSize={14}
                                 fontWeight={500}
-                                text={`${skill},`}
+                                text={skill}
                                 color='#ABB2BF'
                             />
                         )

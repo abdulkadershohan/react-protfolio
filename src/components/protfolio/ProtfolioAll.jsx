@@ -1,66 +1,134 @@
 import { Box, Stack } from "@mui/system";
 import React from "react";
 import { Link, useNavigate } from 'react-router-dom';
-import chertnodes from '../../assets/images/projects/chertnodes.jpg';
-import khanswers from '../../assets/images/projects/khanswers.jpg';
-import madhost from '../../assets/images/projects/madhost.jpg';
+import brdchart from '../../assets/images/projects/brdchart.png';
+import covid from '../../assets/images/projects/covid-19.png';
+import food from '../../assets/images/projects/food.png';
+import food2 from '../../assets/images/projects/food2.png';
+import gym from '../../assets/images/projects/gym2.png';
+import LiveStatus from '../../assets/images/projects/LiveStatus.png';
+import rtc from '../../assets/images/projects/rtc.png';
+import upcopo2 from '../../assets/images/projects/upocopo-2.png';
 import { CButton, CTypography } from "../../utility";
 const cardData = [
     {
         id: 1,
-        title: 'Card 1',
-        skils: ['HTML', 'CSS', 'JS'],
-        subtitle: 'Card 1 subtitle',
-        description: 'Card 1 description',
-        cardImage: chertnodes,
-        liveUrl: 'https://chertnodes.com/',
-        figma: "https://chertnodes.com/",
+        title: 'Upcopo',
+        skils: ["React Native", "Redux", "Redux Toolkit", "Native Base", "expo", "formik", "yup", "Google Map"],
+        description: `NFTs app for Buy Virtual Real Estate.`,
+        cardImage: upcopo2,
+        liveUrl: '',
+        youtubeUrl: 'https://www.youtube.com/watch?v=k7098_rTLlA&feature=youtu.be',
+        figma: "https://www.figma.com/file/xxFZjSHJXT2yrQwS68DCDm/Upcopo?node-id=412%3A712",
+        githubUrl: ''
     },
     {
         id: 2,
-        title: 'Card 1',
-        skils: ['HTML', 'CSS', 'JS', 'React', 'Node', 'MongoDB', 'Express', 'Next', 'Redux', 'Material UI', 'Tailwind CSS'],
-        subtitle: 'Card 1 subtitle',
-        description: 'Card 1 description',
-        cardImage: khanswers,
-        liveUrl: 'https://chertnodes.com/',
-        figma: "",
+        title: 'Brdcart',
+        skils: ["React Native", "Redux", "Redux Toolkit", "Native Base", "expo", "formik", "yup", "Google Map"],
+        description: 'E-commerce app',
+        cardImage: brdchart,
+        liveUrl: '',
+        figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
+        youtubeUrl: '',
+        githubUrl: ''
 
     },
     {
         id: 3,
-        title: 'ProtectX web',
-        skils: ['HTML', 'CSS', 'JS'],
-        subtitle: 'Minecraft servers hosting',
-        description: 'Card 1 description',
-        cardImage: madhost,
+        title: 'Covid-19 Survey',
+        skils: ["Bootstrap", "ReactJS", "EmailJS", "Styled Component",
+            "HTML", "CSS", "JavaScript", "PHP", "MYSQL"],
+        description: 'Helth Care App',
+        cardImage: covid,
         figma: "",
-        liveUrl: 'https://chertnodes.com/',
+        liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
+        // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
+        githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM"
+    },
+]
+const webApp = [
+    {
+        id: 1,
+        title: 'Covid-19 Survey',
+        skils: ["ReactJS", "HTML", "CSS", "JavaScript", "Bootstrap", "EmailJS", "Styled Component",
+            "PHP", "MYSQL"],
+        description: 'Helth Care App',
+        cardImage: covid,
+        figma: "",
+        liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
+        // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
+        githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM"
+    },
+    {
+        id: 2,
+        title: 'Covid-19 Live Status',
+        skils: ["ReactJS",
+            "HTML", "CSS", "Bootstrap", "JavaScript", "Axios"],
+        description: `Worldometer Api`,
+        cardImage: LiveStatus,
+        liveUrl: 'https://covit-19-live-states.netlify.app/',
+        // youtubeUrl: 'https://www.youtube.com/watch?v=k7098_rTLlA&feature=youtu.be',
+        // figma: "https://www.figma.com/file/xxFZjSHJXT2yrQwS68DCDm/Upcopo?node-id=412%3A712",
+        githubUrl: 'https://github.com/abdulkadershohan/covit-19-live-states'
+    },
+    {
+        id: 3,
+        title: 'Gym Website',
+        skils: ["ReactJS",
+            "HTML", "CSS", "JavaScript"],
+        description: 'Gym Landing Page',
+        cardImage: gym,
+        liveUrl: 'https://gym-website-9.netlify.app/',
+        // figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
+        youtubeUrl: '',
+        githubUrl: 'https://github.com/abdulkadershohan/gym-website'
+
     },
     {
         id: 4,
-        title: 'ProtectX web',
-        skils: ['HTML', 'CSS', 'JS'],
-        subtitle: 'Minecraft servers hosting',
-        description: 'Card 1 description',
-        cardImage: madhost,
-        figma: "",
-        liveUrl: 'https://chertnodes.com/',
+        title: 'Food Website',
+        skils: ["ReactJS",
+            "HTML", "CSS", "JavaScript"],
+        description: 'Restaurant Landing Page',
+        cardImage: food,
+        liveUrl: 'https://restaurant-website-9.netlify.app/',
+        // figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
+        youtubeUrl: '',
+        githubUrl: 'https://github.com/abdulkadershohan/restaurant-website'
+
     },
     {
         id: 5,
-        title: 'ProtectX web',
-        skils: ['HTML', 'CSS', 'JS'],
-        subtitle: 'Minecraft servers hosting',
-        description: 'Card 1 description',
-        cardImage: madhost,
-        figma: "",
-        liveUrl: 'https://chertnodes.com/',
-    }
+        title: 'Food Website',
+        skils: ["ReactJS",
+            "HTML", "Styled Component",
+            "JavaScript"],
+        description: 'E-commerce food app',
+        cardImage: food2,
+        liveUrl: 'https://ecommerce-restaurant.netlify.app/',
+        // figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
+        youtubeUrl: '',
+        githubUrl: 'https://github.com/abdulkadershohan/ecommerce-restaurant'
+
+    },
+    {
+        id: 6,
+        title: 'Video Chat App',
+        skils: ["ReactJS",
+            "HTML", "CSS", "Socket.io", "express", "node.js",
+            "JavaScript"],
+        description: 'WebRTC Video Chat App',
+        cardImage: rtc,
+        liveUrl: 'https://video-chat-zoom-clone.netlify.app/',
+        // figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
+        youtubeUrl: '',
+        githubUrl: 'https://github.com/abdulkadershohan/web-rtc-video-chat-zoom-clone'
+
+    },
+
 ]
-
-
-const ProjectCard = () => {
+const ProjectCard = ({ data }) => {
     return (
         <Stack direction="row"
             justifyContent="center"
@@ -69,7 +137,7 @@ const ProjectCard = () => {
             gap={2}
         >
             {
-                cardData.map((item) => {
+                data.map((item) => {
                     return (
                         <Box key={item.id}
                             sx={{
@@ -133,7 +201,7 @@ const ProjectCard = () => {
                                     {item.title}
                                 </CTypography>
                                 <CTypography
-                                    fontSize={16}
+                                    fontSize={14}
                                     fontWeight={400}
                                     color="#ABB2BF"
                                 >
@@ -143,12 +211,44 @@ const ProjectCard = () => {
                                     display="flex"
                                     gap={2}
                                 >
-                                    <CButton
-                                        btnTitle="Live =>"
-                                    />
+                                    {
+                                        item.liveUrl && <CButton
+                                            btnTitle="Live =>"
+                                            btnLink={item.liveUrl}
+                                            component={'a'}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            href={item.liveUrl}
+                                        />
+                                    }
                                     {
                                         item.figma && <CButton
                                             btnTitle="Figma =>"
+                                            btnLink={item.figma}
+                                            component={'a'}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            href={item.figma}
+                                        />
+                                    }
+                                    {
+                                        item.youtubeUrl && <CButton
+                                            btnTitle="Youtube =>"
+                                            component={'a'}
+                                            href={item.youtubeUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+
+                                        />
+                                    }
+                                    {
+                                        item.githubUrl && <CButton
+                                            btnTitle="Github repo =>"
+                                            component={'a'}
+                                            href={item.githubUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+
                                         />
                                     }
 
@@ -299,9 +399,13 @@ export default function Protfolio() {
             </CTypography>
             <HeaderWeb />
             <ProjectCard
+                data={webApp}
+
             />
             <HeaderApp />
-            <ProjectCard />
+            <ProjectCard
+                data={cardData}
+            />
         </Stack>
     )
 }
