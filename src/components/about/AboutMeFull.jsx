@@ -2,14 +2,45 @@ import { Grid } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import photo from "../../assets/images/hero5.jpg";
+import photo from "../../assets/images/sohanFormal-2.jpg";
+// import photo from "../../assets/images/hero5.jpg";
 import { CButton, CTypography } from "../../utility";
 
-const Frameworks = ["React", "Node", "Express", "Django", "Flask"]
-const Tools = ["Git", "Docker", "AWS", "GCP", "Kubernetes", "Terraform", "Ansible", "Jenkins", "Linux"]
-const Databases = ["PostgreSQL", "MongoDB", "Redis", "MySQL"]
-const Languages = ["Python", "JavaScript", "TypeScript", "Java", "C++", "C", "C#", "Go", "Rust", "PHP", "HTML", "CSS", "SQL"]
-const funFact = ["I am a huge fan of the Marvel Cinematic Universe", "I am a huge", "I am a huge fan of the Marvel Cinematic Universe", "I am a huge", 'I am a huge fan of the Marvel Cinematic', 'I am a huge fan of the Marvel Cinematic']
+const aboutData = [
+    {
+        id: 1,
+        text: `An extremely positive and individual & can stay focused and motivated. Responsible, dependable and takes great pride in all my
+        work. Can work both independently and in a team, which has been proven from past work experience and academic experiences`,
+    },
+    {
+        id: 2,
+        text: `HI! I'm MD. Abdul Kader. I'm a Frontend Engineer. I'm passionate about building scalable and maintainable web applications. Currently I'm working as a Frontend Engineer at RBS Tech LTD. I'm also a part time freelancer. I love to learn new things and share my knowledge with others.`
+
+    },
+    {
+        id: 3,
+        text: ` Mobile app development is my another passion.React and React Native are my favorite JavaScript libraries. I'm also a big fan of Node.js and Express.js. In future I want to be a Full Stack Developer.`
+    }
+]
+const Frameworks = ["React,", "React Native,", "Bootstrap,", "Native Base,", "Material UI,", "React Bootstrap"]
+const other = ["Context API,", "Git,", "GitHub,", "React Reducer,", "RestAPI,", "React Redux,", "WebSocket,", "Redux toolkit"]
+const Databases = ["MySQL"]
+const Languages = ["JavaScript,", "C++,", "C,", "C#,", "Python,", "Java,", "PHP"]
+const communication = ["Bengali (Native),", " English(fluent speaker),", " Hindi/Urdu (fluent speaker)"]
+
+const funFact = [
+    "Coding is my passion",
+    "Cricket is my favorite sport",
+    "Love to sing songs when I'm alone",
+    "I love to spend time with my family",
+    "I love to travel",
+    "Eating is my hobby!",
+    "I often bike with my friends",
+    "Winter is my favorite season",
+    "Miss my childhood days",
+    "When i depressed, i love to coding and pray to Allah",
+
+]
 export default function AboutMeFull() {
     const navigate = useNavigate();
     const Header = () => {
@@ -86,7 +117,7 @@ export default function AboutMeFull() {
                     fontSize={32}
                 >
                     <span style={{ color: '#FFFFFF' }}>
-                        Skils
+                        skils
                     </span>
 
                 </CTypography>
@@ -227,9 +258,10 @@ export default function AboutMeFull() {
                 <Grid container spacing={2}
                     sx={{
                         alignItems: 'center',
+                        py: 4,
                     }}
                 >
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} md={4}>
                         <Stack >
                             <Box
                                 component="img"
@@ -248,37 +280,29 @@ export default function AboutMeFull() {
                             />
                         </Stack>
                     </Grid>
-                    <Grid item xs={12} md={6}  >
+                    <Grid item xs={12} md={8}  >
                         <Stack
                             spacing={3}
                             py={8}
                         >
-                            <CTypography
-                                color="#ABB2BF"
-                                fontWeight={400}
-                                fontSize={16}
-                            >
-                                I’m a self-taught front-end developer based in Kyiv, Ukraine. I can develop responsive websites from scratch and raise them into modern user-friendly web experiences.
-                            </CTypography>
-                            <CTypography
-                                color="#ABB2BF"
-                                fontWeight={400}
-                                fontSize={16}
-                            >
-                                Transforming my creativity and knowledge into a websites has been my passion for over a year. I have been helping various clients to establish their presence online. I always strive to learn about the newest technologies and frameworks.
-                            </CTypography>
-                            <CTypography
-                                color="#ABB2BF"
-                                fontWeight={400}
-                                fontSize={16}
-                            >
-                                Transforming my creativity and knowledge into a websites has been my passion for over a year. I have been helping various clients to establish their presence online. I always strive to learn about the newest technologies and frameworks.
-                            </CTypography>
+                            {
+                                aboutData.map((data, index) => (
+                                    <CTypography
+                                        color="#ABB2BF"
+                                        fontWeight={400}
+                                        fontSize={16}
+                                        key={data.id}
+                                    >{data.text}</CTypography>
+                                ))
+                            }
                             <Box
                                 display="flex"
                             >
                                 <CButton
                                     btnTitle="Download CV"
+                                    component={"a"}
+                                    target="_blank"
+                                    href='https://www.overleaf.com/read/xhbzrbckykqj'
                                 />
                             </Box>
                         </Stack>
@@ -301,22 +325,25 @@ export default function AboutMeFull() {
                         gap={1}
                     >
                         <SkillsCard
-                            title="Languages"
+                            title="Programming Languages"
                             skills={Languages}
                         />
                         <SkillsCard
-                            title="Frameworks"
+                            title="Libraries & Frameworks"
                             skills={Frameworks}
                         />
                         <SkillsCard
-                            title="Tools"
-                            skills={Tools}
+                            title="Other Skills & Tools"
+                            skills={other}
                         />
                         <SkillsCard
                             title="Databases"
                             skills={Databases}
                         />
-
+                        <SkillsCard
+                            title="Communication Languages"
+                            skills={communication}
+                        />
                     </Stack>
                 </Stack>
             </Stack>
@@ -329,6 +356,6 @@ export default function AboutMeFull() {
                 <FunFactCard />
             </Stack>
 
-        </Stack>
+        </Stack >
     )
 }

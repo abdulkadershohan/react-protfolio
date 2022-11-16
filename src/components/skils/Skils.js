@@ -101,6 +101,7 @@ const other = ["Context API", "Git", "GitHub", "React Reducer", "RestAPI", "Reac
 const Databases = ["MySQL"]
 const Languages = ["JavaScript", "C++", "C", "C#", "Python", "Java", "PHP"]
 const communication = ["Bengali (Native)", " English(fluent speaker)", " Hindi/Urdu (fluent speaker)"]
+
 export default function Skils() {
     const Header = () => {
         return (
