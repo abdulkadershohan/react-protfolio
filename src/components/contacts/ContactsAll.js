@@ -4,10 +4,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import discord from "../../assets/Icon/discord.svg";
 import email from "../../assets/Icon/email.svg";
 import { CTypography } from "../../utility";
+// import ContactFrom from "./ContactFrom";
 
-export default function ContactsAll() {
+function ContactsAll() {
+
     const navigate = useNavigate();
-
     const Header = () => {
         return (
             <Stack spacing={2}>
@@ -55,6 +56,8 @@ export default function ContactsAll() {
 
         )
     }
+
+
     return (
         <Stack
             pb={8}
@@ -78,6 +81,7 @@ export default function ContactsAll() {
                             I’m interested in freelance opportunities. However, if you have other request or question, don’t hesitate to contact me.
                         </CTypography>
                     </Stack>
+                    {/* <ContactFrom /> */}
                 </Grid>
                 <Grid item xs={12} md={6}  >
                     <Stack
@@ -139,3 +143,4 @@ export default function ContactsAll() {
         </Stack >
     )
 }
+export default React.memo(ContactsAll);
