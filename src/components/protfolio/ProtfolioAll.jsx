@@ -1,8 +1,10 @@
+import { Chip } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import brdchart from '../../assets/images/projects/brdchart.png';
 import covid from '../../assets/images/projects/covid-19.png';
+import covidapp from '../../assets/images/projects/covidapp.jpg';
 import food from '../../assets/images/projects/food.png';
 import food2 from '../../assets/images/projects/food2.png';
 import gym from '../../assets/images/projects/gym2.png';
@@ -23,7 +25,8 @@ const cardData = [
         liveUrl: '',
         youtubeUrl: 'https://www.youtube.com/watch?v=k7098_rTLlA&feature=youtu.be',
         figma: "https://www.figma.com/file/xxFZjSHJXT2yrQwS68DCDm/Upcopo?node-id=412%3A712",
-        githubUrl: ''
+        githubUrl: '',
+        isPrivate: true
     },
     {
         id: 2,
@@ -34,7 +37,8 @@ const cardData = [
         liveUrl: '',
         figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
         youtubeUrl: '',
-        githubUrl: ''
+        githubUrl: '',
+        isPrivate: true
 
     },
     {
@@ -47,6 +51,7 @@ const cardData = [
         // liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
         // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
         // githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM"
+        isPrivate: true
     },
     {
         id: 4,
@@ -59,21 +64,45 @@ const cardData = [
         // liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
         // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
         // githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM"
+        isPrivate: true
     },
     {
         id: 5,
         title: 'RBS Movie App',
-        skils: ["React Native", "Redux", "Redux Toolkit", "Native Base", "expo", "formik", "yup",],
+        skils: ["React Native", "Native Base", "expo", "formik", "yup",],
         description: 'OTT app',
-
+        isPrivate: true,
         cardImage: ott,
         figma: "https://www.figma.com/file/xgeqbCe4AZMHuBE9q3ogNA/izackmbimi?node-id=440%3A614&t=yE99K0IDkJbE9StL-0",
         // liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
         // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
         // githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM"
     },
+    {
+        id: 6,
+        title: 'Covid-19 Survey App',
+        skils: ["React Native", "Native Base", "Axios", "PHP", "MYSQL"],
+        description: 'Helth Care App',
+        cardImage: covidapp,
+        figma: "",
+        // liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
+        // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
+        githubUrl: "https://github.com/abdulkadershohan/covid_19_survey_app",
+        isPrivate: false
+    },
 ]
 const webApp = [
+    {
+        id: 7,
+        title: 'RBS Dashboard',
+        skils: ["ReactJS", "RestAPi", "JavaScript", "Material UI", "React Reducer", "Micro Service", "WebSocket",],
+        description: 'Company Dashboard & Admin Panel',
+        cardImage: covid,
+        figma: "",
+        isPrivate: true,
+        liveUrl: 'http://161.97.157.117:5001/',
+        // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
+    },
     {
         id: 1,
         title: 'Covid-19 Survey',
@@ -82,6 +111,7 @@ const webApp = [
         description: 'Helth Care App',
         cardImage: covid,
         figma: "",
+        isPrivate: false,
         liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
         // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
         githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM"
@@ -96,7 +126,8 @@ const webApp = [
         liveUrl: 'https://covit-19-live-states.netlify.app/',
         // youtubeUrl: 'https://www.youtube.com/watch?v=k7098_rTLlA&feature=youtu.be',
         // figma: "https://www.figma.com/file/xxFZjSHJXT2yrQwS68DCDm/Upcopo?node-id=412%3A712",
-        githubUrl: 'https://github.com/abdulkadershohan/covit-19-live-states'
+        githubUrl: 'https://github.com/abdulkadershohan/covit-19-live-states',
+        isPrivate: false
     },
     {
         id: 3,
@@ -105,6 +136,7 @@ const webApp = [
             "HTML", "CSS", "JavaScript"],
         description: 'Gym Landing Page',
         cardImage: gym,
+        isPrivate: false,
         liveUrl: 'https://gym-website-9.netlify.app/',
         // figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
         youtubeUrl: '',
@@ -118,6 +150,7 @@ const webApp = [
             "HTML", "CSS", "JavaScript"],
         description: 'Restaurant Landing Page',
         cardImage: food,
+        isPrivate: false,
         liveUrl: 'https://restaurant-website-9.netlify.app/',
         // figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
         youtubeUrl: '',
@@ -132,6 +165,7 @@ const webApp = [
             "JavaScript"],
         description: 'E-commerce food app',
         cardImage: food2,
+        isPrivate: false,
         liveUrl: 'https://ecommerce-restaurant.netlify.app/',
         // figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
         youtubeUrl: '',
@@ -144,6 +178,7 @@ const webApp = [
         skils: ["ReactJS",
             "HTML", "CSS", "Socket.io", "express", "node.js",
             "JavaScript"],
+        isPrivate: false,
         description: 'WebRTC Video Chat App',
         cardImage: rtc,
         liveUrl: 'https://video-chat-zoom-clone.netlify.app/',
@@ -225,6 +260,26 @@ const ProjectCard = ({ data }) => {
                                     fontWeight={500}
                                 >
                                     {item.title}
+                                    {
+                                        item?.isPrivate && (
+
+                                            <Chip
+                                                sx={{
+                                                    m: 1,
+                                                    fontFamily: "FiraCode",
+                                                    fontSize: '14px',
+                                                    fontWeight: '400',
+                                                    // backgroundColor: '#C470DB',
+                                                    color: '#fff',
+                                                    borderColor: '#C470DB',
+                                                }}
+                                                label="Private"
+                                                //color='warning'
+                                                size="small"
+                                                variant="outlined"
+                                            />
+                                        )
+                                    }
                                 </CTypography>
                                 <CTypography
                                     fontSize={14}

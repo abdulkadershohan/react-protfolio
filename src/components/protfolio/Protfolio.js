@@ -1,3 +1,4 @@
+import { Chip } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React from "react";
 import { Link } from 'react-router-dom';
@@ -16,7 +17,8 @@ const cardData = [
         liveUrl: '',
         youtubeUrl: 'https://www.youtube.com/watch?v=k7098_rTLlA&feature=youtu.be',
         figma: "https://www.figma.com/file/xxFZjSHJXT2yrQwS68DCDm/Upcopo?node-id=412%3A712",
-        githubUrl: ''
+        githubUrl: '',
+        isPrivate: true
     },
     {
         id: 2,
@@ -27,7 +29,8 @@ const cardData = [
         liveUrl: '',
         figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
         youtubeUrl: '',
-        githubUrl: ''
+        githubUrl: '',
+        isPrivate: true
 
     },
     {
@@ -40,7 +43,8 @@ const cardData = [
         figma: "",
         liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
         // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
-        githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM"
+        githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM",
+        isPrivate: false
     },
 ]
 
@@ -116,6 +120,26 @@ const ProjectCard = () => {
                                     fontWeight={500}
                                 >
                                     {item.title}
+                                    {
+                                        item?.isPrivate && (
+
+                                            <Chip
+                                                sx={{
+                                                    m: 1,
+                                                    fontFamily: "FiraCode",
+                                                    fontSize: '14px',
+                                                    fontWeight: '400',
+                                                    // backgroundColor: '#C470DB',
+                                                    color: '#fff',
+                                                    borderColor: '#C470DB',
+                                                }}
+                                                label="Private"
+                                                //color='warning'
+                                                size="small"
+                                                variant="outlined"
+                                            />
+                                        )
+                                    }
                                 </CTypography>
                                 <CTypography
                                     fontSize={14}
