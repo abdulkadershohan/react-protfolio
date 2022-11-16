@@ -118,7 +118,7 @@ export default function Hero() {
                 }}
               ></span>
               Currently working on
-              <a href="https://www.thesocialcomment.com/" target="_blank" rel="noreferrer">
+              <a href="http://161.97.157.117:5001/" target="_blank" rel="noreferrer">
                 RBS ERP
               </a>
             </Box>

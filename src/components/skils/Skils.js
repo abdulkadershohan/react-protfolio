@@ -96,11 +96,11 @@ const Dotted2 = () => {
         </svg>
     )
 }
-const Frameworks = ["React", "Node", "Express", "Django", "Flask"]
-const Tools = ["Git", "Docker", "AWS", "GCP", "Kubernetes", "Terraform", "Ansible", "Jenkins", "Linux"]
-const Databases = ["PostgreSQL", "MongoDB", "Redis", "MySQL"]
-const Languages = ["Python", "JavaScript", "TypeScript", "Java", "C++", "C", "C#", "Go", "Rust", "PHP", "HTML", "CSS", "SQL"]
-
+const Frameworks = ["React", "React Native", "Bootstrap", "Native Base", "Material UI", "React Bootstrap"]
+const other = ["Context API", "Git", "GitHub", "React Reducer", "RestAPI", "React Redux", "WebSocket", "Redux toolkit"]
+const Databases = ["MySQL"]
+const Languages = ["JavaScript", "C++", "C", "C#", "Python", "Java", "PHP"]
+const communication = ["Bengali (Native)", " English(fluent speaker)", " Hindi/Urdu (fluent speaker)"]
 export default function Skils() {
     const Header = () => {
         return (
@@ -160,7 +160,7 @@ export default function Skils() {
                         borderBottom: '1px solid #ABB2BF',
                         p: 1,
                     }}
-                    fontSize={16}
+                    fontSize={15}
                     fontWeight={600}
                     text={title}
                 />
@@ -182,7 +182,7 @@ export default function Skils() {
                                 component={"li"}
                                 fontSize={14}
                                 fontWeight={500}
-                                text={skill}
+                                text={`${skill},`}
                                 color='#ABB2BF'
                             />
                         )
@@ -199,6 +199,8 @@ export default function Skils() {
         <Grid container spacing={2}
             sx={{
                 alignItems: "center",
+                py: 2,
+                pb: 8,
             }}
         >
             <Grid item xs={12} md={5}>
@@ -219,20 +221,24 @@ export default function Skils() {
                     gap={1}
                 >
                     <SkillsCard
-                        title="Languages"
+                        title="Programming Languages"
                         skills={Languages}
                     />
                     <SkillsCard
-                        title="Frameworks"
+                        title="Libraries & Frameworks"
                         skills={Frameworks}
                     />
                     <SkillsCard
-                        title="Tools"
-                        skills={Tools}
+                        title="Other Skills & Tools"
+                        skills={other}
                     />
                     <SkillsCard
                         title="Databases"
                         skills={Databases}
+                    />
+                    <SkillsCard
+                        title="Communication Languages"
+                        skills={communication}
                     />
 
                 </Stack>
