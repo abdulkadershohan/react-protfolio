@@ -66,6 +66,8 @@ export default function Footer() {
                         <Stack
                             direction="row"
                             spacing={6}
+                            component="a"
+                            href="#"
                         >
                             <Stack
                                 direction="row"

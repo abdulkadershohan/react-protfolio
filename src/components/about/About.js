@@ -2,7 +2,8 @@ import { Box, Grid, Stack } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 // import photo from "../../assets/images/about-me.png";
-import photo from "../../assets/images/hero5.jpg";
+// import photo from "../../assets/images/sohan-4.png";
+import photo from "../../assets/images/sohan-3.jpg";
 import { CButton, CTypography } from "../../utility";
 
 const aboutData = [
@@ -54,6 +55,7 @@ export default function About() {
             <Grid container spacing={2}
                 sx={{
                     alignItems: 'center',
+                    py: 4,
                 }}
             >
                 <Grid item xs={12} md={6}  >
