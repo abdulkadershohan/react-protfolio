@@ -36,6 +36,7 @@ const socials = [
         img: discord
     }
 ]
+const footerDiscription = `Frontend Engineer & React Native developer based in Bangladesh`
 export default function Footer() {
     return (
         <Stack
@@ -96,7 +97,7 @@ export default function Footer() {
                             fontSize="16px"
                             fontWeight={400}
                         >
-                            Web designer and front-end developer based in Ukraine
+                            {footerDiscription}
                         </CTypography>
                     </Stack>
                 </Grid>
