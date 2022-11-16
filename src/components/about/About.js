@@ -5,6 +5,17 @@ import { Link } from "react-router-dom";
 import photo from "../../assets/images/hero5.jpg";
 import { CButton, CTypography } from "../../utility";
 
+const aboutData = [
+    {
+        id: 1,
+        text: `HI! I'm MD. Abdul Kader. I'm a Frontend Engineer. I'm passionate about building scalable and maintainable web applications. Currently I'm working as a Frontend Engineer at RBS Tech LTD. I'm also a part time freelancer. I love to learn new things and share my knowledge with others.`
+
+    },
+    {
+        id: 2,
+        text: ` Mobile app development is my another passion.React and React Native are my favorite JavaScript libraries. I'm also a big fan of Node.js and Express.js. In future I want to be a Full Stack Developer.`
+    }
+]
 export default function About() {
     const Header = () => {
         return (
@@ -51,20 +62,17 @@ export default function About() {
                         spacing={3}
                         py={8}
                     >
-                        <CTypography
-                            color="#ABB2BF"
-                            fontWeight={400}
-                            fontSize={16}
-                        >
-                            I’m a self-taught front-end developer based in Kyiv, Ukraine. I can develop responsive websites from scratch and raise them into modern user-friendly web experiences.
-                        </CTypography>
-                        <CTypography
-                            color="#ABB2BF"
-                            fontWeight={400}
-                            fontSize={16}
-                        >
-                            Transforming my creativity and knowledge into a websites has been my passion for over a year. I have been helping various clients to establish their presence online. I always strive to learn about the newest technologies and frameworks.
-                        </CTypography>
+                        {
+                            aboutData.map((item) => (
+                                <CTypography
+                                    color="#ABB2BF"
+                                    fontWeight={400}
+                                    fontSize={16}
+                                    key={item.id}
+                                >{item.text}</CTypography>
+                            ))
+                        }
+
                         <Box
                             display="flex"
                             gap={2}
@@ -75,8 +83,18 @@ export default function About() {
                                 to="/about"
 
                             />
+                            {/* <Box
+                                component={"a"}
+                                href={item.link}
+                                target="_blank"
+                            >
+
+                            </Box> */}
                             <CButton
                                 btnTitle="Download CV"
+                                component={"a"}
+                                target="_blank"
+                                href='https://www.overleaf.com/read/xhbzrbckykqj'
                             />
                         </Box>
                     </Stack>

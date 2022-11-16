@@ -83,7 +83,7 @@ export default function Contacts() {
                                 spacing={1}
                                 alignItems="center"
                                 component={'a'}
-                                href="https://discord.com/users/9548"
+                                href="https://discord.com/users/522431317447802900"
                             >
                                 <img src={discord} alt="discord" />
                                 <CTypography
