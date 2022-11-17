@@ -1,23 +1,26 @@
 import { Box, Grid, Stack } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
-// import photo from "../../assets/images/about-me.png";
-// import photo from "../../assets/images/sohan-4.png";
 import photo from "../../assets/images/sohan-3.jpg";
 import { CButton, CTypography } from "../../utility";
 
-const aboutData = [
-    {
-        id: 1,
-        text: `HI! I'm MD. Abdul Kader. I'm a Frontend Engineer. I'm passionate about building scalable and maintainable web applications. Currently I'm working as a Frontend Engineer at RBS Tech LTD. I'm also a part time freelancer. I love to learn new things and share my knowledge with others.`
+const homeAbout = {
+    aboutData: [
+        {
+            id: 1,
+            text: `HI! I'm MD. Abdul Kader. I'm a Frontend Engineer. I'm passionate about building scalable and maintainable web applications. Currently I'm working as a Frontend Engineer at RBS Tech LTD. I'm also a part time freelancer. I love to learn new things and share my knowledge with others.`
+        },
+        {
+            id: 2,
+            text: ` Mobile app development is my another passion.React and React Native are my favorite JavaScript libraries. I'm also a big fan of Node.js and Express.js. In future I want to be a Full Stack Developer.`
+        }
+    ],
+    overleafResume: 'https://www.overleaf.com/read/xhbzrbckykqj',
+    image: photo,
+}
 
-    },
-    {
-        id: 2,
-        text: ` Mobile app development is my another passion.React and React Native are my favorite JavaScript libraries. I'm also a big fan of Node.js and Express.js. In future I want to be a Full Stack Developer.`
-    }
-]
 export default function About() {
+    const { aboutData, overleafResume, image } = homeAbout;
     const Header = () => {
         return (
             <Stack
@@ -96,7 +99,7 @@ export default function About() {
                                 btnTitle="Download CV"
                                 component={"a"}
                                 target="_blank"
-                                href='https://www.overleaf.com/read/xhbzrbckykqj'
+                                href={overleafResume}
                             />
                         </Box>
                     </Stack>
@@ -111,7 +114,7 @@ export default function About() {
                     >
                         <Box
                             component="img"
-                            src={photo}
+                            src={image}
                             alt="hero"
                             sx={{
                                 width: {

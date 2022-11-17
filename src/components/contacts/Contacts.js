@@ -1,10 +1,35 @@
 import { Box, Grid, Stack } from "@mui/material";
 import React from "react";
-import discord from "../../assets/Icon/discord.svg";
-import email from "../../assets/Icon/email.svg";
+import discordIcon from "../../assets/Icon/discord.svg";
+import emailIcon from "../../assets/Icon/email.svg";
 import { CTypography } from "../../utility";
 
+const homeContact = {
+    text: `I’m interested in freelance opportunities. However, if you have other request or question, don’t hesitate to contact me.`,
+    socailAccounts: [
+        {
+            id: 1,
+            name: 'Discord',
+            icon: discordIcon,
+            link: 'https://discord.com/users/522431317447802900',
+            text: '!Abdul Kader shohan#9548',
+            isEmail: false
+
+        },
+        {
+            id: 2,
+            name: 'Discord',
+            icon: emailIcon,
+            link: 'abdulkadirshohan@gmail.com',
+            text: 'abdulkadirshohan@gmail.com',
+            isEmail: true
+        },
+    ],
+    socailAccountsTitle: 'Message me here'
+}
+
 export default function Contacts() {
+    const { text, socailAccounts, socailAccountsTitle } = homeContact;
     const Header = () => {
         return (
             <Stack
@@ -55,7 +80,7 @@ export default function Contacts() {
                             fontWeight={400}
                             fontSize={16}
                         >
-                            I’m interested in freelance opportunities. However, if you have other request or question, don’t hesitate to contact me.
+                            {text}
                         </CTypography>
                     </Stack>
                 </Grid>
@@ -76,42 +101,34 @@ export default function Contacts() {
                             spacing={1}
                         >
                             <CTypography>
-                                Message me here:
+                                {socailAccountsTitle}:
                             </CTypography>
-                            <Stack
-                                direction="row"
-                                spacing={1}
-                                alignItems="center"
-                                component={'a'}
-                                href="https://discord.com/users/522431317447802900"
-                            >
-                                <img src={discord} alt="discord" />
-                                <CTypography
-                                    fontWeight={400}
-                                    fontSize={16}
-                                    color="#ABB2BF"
-                                    component="span"
-                                >
-                                    !Abdul Kader shohan#9548
-                                </CTypography>
-                            </Stack>
-                            <Stack
-                                direction="row"
-                                spacing={1}
-                                alignItems="center"
-                                component="a"
-                                href="mailto: abdulkadirshohan@gmail.com"
-                            >
-                                <img src={email} alt="discord" />
-                                <CTypography
-                                    fontWeight={400}
-                                    fontSize={16}
-                                    color="#ABB2BF"
-                                    component="span"
-                                >
-                                    abdulkadirshohan@gmail.com
-                                </CTypography>
-                            </Stack>
+                            {
+                                socailAccounts.map((item) => {
+                                    return (
+                                        <Stack
+                                            direction="row"
+                                            spacing={1}
+                                            alignItems="center"
+                                            component={'a'}
+                                            key={Math.random()}
+                                            {...(item?.isEmail ? { href: `mailto:` + item?.link }
+
+                                                : { href: item?.link, target: '_blank' })}
+                                        >
+                                            <img src={item?.icon} alt={item?.name} />
+                                            <CTypography
+                                                fontWeight={400}
+                                                fontSize={16}
+                                                color="#ABB2BF"
+                                                component="span"
+                                            >
+                                                {item?.text}
+                                            </CTypography>
+                                        </Stack>
+                                    )
+                                })
+                            }
                         </Stack>
                     </Stack>
                 </Grid>
