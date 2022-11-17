@@ -12,17 +12,39 @@ import Skils from "../skils/Skils";
 import styles from "./hero.module.css";
 
 const heroTopSection = {
-  title1: "I'm",
-  title2: "A React",
-  title3: "Frontend Engineer",
-  title4: "&",
-  title5: "React Native",
-  title6: "developer!",
+  title: {
+    title1: "I'm",
+    title2: "A React",
+    title3: "Frontend Engineer",
+    title4: "&",
+    title5: "React Native",
+    title6: "developer!",
+  },
+  subtitle: `I'm a Frontend Engineer with 1 years of experience in React and React Native. I'm passionate about building scalable and maintainable web applications.`,
+  image: hero,
+  doing: {
+    text: "Currently working on",
+    url: 'http://161.97.157.117:5001/',
+    urlText: 'RBS ERP'
+  },
+  blockquote: {
+    quoteText1: "Experience is",
+    quoteText2: "the name",
+    quoteText3: "everyone",
+    quoteText4: "gives to their mistakes",
+    quoteBy: "Oscar Wilde",
+  }
+
 
 }
 
 export default function Hero() {
-  const { title1, title2, title3, title4, title5, title6 } = heroTopSection;
+  const {
+    title: { title1, title2, title3, title4, title5, title6 },
+    subtitle,
+    doing: { text, url, urlText },
+    blockquote: { quoteText1, quoteText2, quoteText3, quoteText4, quoteBy },
+    image } = heroTopSection;
   return (
     <Stack>
       <Grid container spacing={2}
@@ -62,8 +84,7 @@ export default function Hero() {
               color={"#ABB2BF"}
               fontSize={'16px'}
               fontWeight={400}
-            >
-              I'm a Frontend Engineer with 1 years of experience in React and React Native. I'm passionate about building scalable and maintainable web applications.
+            >{subtitle}
             </CTypography>
             <Box>
               <CButton
@@ -94,7 +115,7 @@ export default function Hero() {
                 aspectRatio: "1/1",
               }}
             />
-            <img src={hero} alt="hero_img"
+            <img src={image} alt="hero_img"
 
               style={{
                 position: 'relative',
@@ -130,9 +151,9 @@ export default function Hero() {
                   border: "1px solid #C778DD",
                 }}
               ></span>
-              Currently working on
-              <a href="http://161.97.157.117:5001/" target="_blank" rel="noreferrer">
-                RBS ERP
+              {text}
+              <a href={url} target="_blank" rel="noreferrer">
+                {urlText}
               </a>
             </Box>
             <svg
@@ -177,9 +198,9 @@ export default function Hero() {
       <div className={styles.blockquoteWrapper}>
         <div className={styles.blockquote}>
           <h1>
-            Experience is  <span style={{ color: '#ffffff' }}>the name</span> everyone <span style={{ color: '#ffffff' }}>  gives to their  mistakes</span>
+            {quoteText1}  <span style={{ color: '#ffffff' }}>{quoteText2}</span> {quoteText3} <span style={{ color: '#ffffff' }}>  {quoteText4}</span>
           </h1>
-          <h4>—Oscar Wilde<br />
+          <h4>—{quoteBy}<br />
             {/* <em>Web Site Usability: A Designer's Guide</em> */}
           </h4>
         </div>
