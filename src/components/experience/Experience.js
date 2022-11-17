@@ -2,7 +2,7 @@ import { Box, Stack } from "@mui/system";
 import React from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { CTypography } from "../../utility";
-const experience = [
+const experienceData = [
     {
         id: 1,
         title: "Frontend Developer",
@@ -84,7 +84,9 @@ export default function Experience() {
 
         )
     }
-    const ExperienceCard = ({ title, company, year, role, address, hireFor }) => {
+    const ExperienceCard = ({ data }) => {
+        const { title, company, hireFor, year, role, address } = data;
+
         return (
             <Box
                 sx={{
@@ -211,16 +213,11 @@ export default function Experience() {
                     gap={1}
                 >
                     {
-                        experience.map((item, index) => {
+                        experienceData.map((item, index) => {
                             return (
                                 <ExperienceCard
                                     key={Math.random()}
-                                    title={item.title}
-                                    company={item.company}
-                                    year={item.year}
-                                    role={item.role}
-                                    address={item.address}
-                                    hireFor={item.hireFor}
+                                    data={item}
 
                                 />
                             )
