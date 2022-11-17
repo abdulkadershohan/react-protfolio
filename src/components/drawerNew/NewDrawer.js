@@ -10,41 +10,51 @@ import ListItemButton from '@mui/material/ListItemButton';
 import Toolbar from '@mui/material/Toolbar';
 import { Stack } from '@mui/system';
 import * as React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import logo from "../../assets/images/logo.png";
 import { CTypography } from '../../utility';
+import Footer from '../footer/Footer';
 import Sidebar from '../sidebar/Sidebar';
 
-
 const drawerWidth = 240;
-const routes = [
-    {
-        id: 1,
-        name: "Home",
-        path: "/",
-    }, {
-        id: 2,
-        name: "About",
-        path: "/about",
-    },
-    {
-        id: 3,
-        name: "portfolio",
-        path: "/portfolio",
-    },
-    {
-        id: 4,
-        name: "Skills",
-        path: "/skills",
-    },
-    {
-        id: 5,
-        name: "Contact",
-        path: "/contact",
-    }
-]
+const navbarData = {
+    routes: [
+        {
+            id: 1,
+            name: "home",
+            path: "/",
+        }, {
+            id: 2,
+            name: "about-me",
+            path: "/about",
+        },
+        {
+            id: 3,
+            name: "portfolio",
+            path: "/protfolio",
+        },
+        {
+            id: 4,
+            name: "experience",
+            path: "/experience",
+        },
+        {
+            id: 5,
+            name: "education",
+            path: "/education",
+        },
+        {
+            id: 6,
+            name: "contact",
+            path: "/contact",
+        }
+    ],
+    logo: logo,
+    logoTitle: "Abdul Kader",
+}
 
 function DrawerAppBar(props, { children }) {
+    const { routes, logo, logoTitle } = navbarData
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -60,8 +70,27 @@ function DrawerAppBar(props, { children }) {
             <Stack
                 direction="row"
                 alignItems="center"
+                spacing={1}
+                sx={{
+                    cursor: "pointer",
+                }}
+                component={Link}
+                to="/"
+            >
+                <img src={logo} alt="logo"
+                    style={{ width: 15, height: 15 }}
+                />
+                <CTypography>
+                    {logoTitle}
+                </CTypography>
+            </Stack>
+            {/* <Stack
+                direction="row"
+                alignItems="center"
                 justifyContent="center"
                 spacing={1}
+                component="a"
+                href="#"
                 sx={{
                     cursor: "pointer",
                 }}
@@ -75,7 +104,7 @@ function DrawerAppBar(props, { children }) {
                 >
                     Abdul Kader
                 </CTypography>
-            </Stack>
+            </Stack> */}
             {/* <Typography variant="h6" sx={{ my: 2 }}>
                 MUI
             </Typography> */}
@@ -180,6 +209,9 @@ function DrawerAppBar(props, { children }) {
                             sx={{
                                 cursor: "pointer",
                             }}
+                            component={Link}
+                            to="/"
+
                         >
                             <img src={logo} alt="logo"
                                 style={{ width: 15, height: 15 }}
@@ -289,9 +321,11 @@ function DrawerAppBar(props, { children }) {
                 >
                     <Outlet />
                     {children}
+
                 </Box>
+                <Footer />
             </Box>
-        </Box>
+        </Box >
     );
 }
 

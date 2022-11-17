@@ -7,6 +7,7 @@ body{
 }
 *{
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 ul{
     list-style: none;
@@ -17,4 +18,16 @@ a{
 }
 .bgColor{
     background-color: #282C33;
+}
+.a-class-with-black-text-set-as-important{
+    color:#fff !important;
+}
+/* scroll bar desigin */
+::-webkit-scrollbar{
+    width: 8px;
+    background-color: #282C33;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #C778DD;
+    border-radius: 10px;
 }
