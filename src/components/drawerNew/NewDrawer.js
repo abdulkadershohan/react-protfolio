@@ -16,7 +16,7 @@ import { CTypography } from '../../utility';
 import Footer from '../footer/Footer';
 import Sidebar from '../sidebar/Sidebar';
 
-const drawerWidth = 240;    
+const drawerWidth = 240;
 const navbarData = {
     routes: [
         {
