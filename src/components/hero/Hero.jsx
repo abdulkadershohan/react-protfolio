@@ -11,7 +11,7 @@ import Protfolio from "../protfolio/Protfolio";
 import Skils from "../skils/Skils";
 import styles from "./hero.module.css";
 
-const heroTopSection = {
+const heroTopSectionData = {
   title: {
     title1: "I'm",
     title2: "A React",
@@ -44,7 +44,7 @@ export default function Hero() {
     subtitle,
     doing: { text, url, urlText },
     blockquote: { quoteText1, quoteText2, quoteText3, quoteText4, quoteBy },
-    image } = heroTopSection;
+    image } = heroTopSectionData;
   return (
     <Stack>
       <Grid container spacing={2}

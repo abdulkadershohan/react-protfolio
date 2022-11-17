@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import photo from "../../assets/images/sohan-3.jpg";
 import { CButton, CTypography } from "../../utility";
 
-const homeAbout = {
+const homeAboutData = {
     aboutData: [
         {
             id: 1,
@@ -20,7 +20,7 @@ const homeAbout = {
 }
 
 export default function About() {
-    const { aboutData, overleafResume, image } = homeAbout;
+    const { aboutData, overleafResume, image } = homeAboutData;
     const Header = () => {
         return (
             <Stack

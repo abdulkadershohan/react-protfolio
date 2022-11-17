@@ -4,7 +4,7 @@ import discordIcon from "../../assets/Icon/discord.svg";
 import emailIcon from "../../assets/Icon/email.svg";
 import { CTypography } from "../../utility";
 
-const homeContact = {
+const homeContactData = {
     text: `I’m interested in freelance opportunities. However, if you have other request or question, don’t hesitate to contact me.`,
     socailAccounts: [
         {
@@ -29,7 +29,7 @@ const homeContact = {
 }
 
 export default function Contacts() {
-    const { text, socailAccounts, socailAccountsTitle } = homeContact;
+    const { text, socailAccounts, socailAccountsTitle } = homeContactData;
     const Header = () => {
         return (
             <Stack
