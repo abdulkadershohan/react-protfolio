@@ -443,7 +443,7 @@ export default function Protfolio() {
                         fontSize={32}
                     >
                         <span style={{ color: '#FFFFFF' }}>
-                            Projects
+                            projects
                         </span>
 
                     </CTypography>
