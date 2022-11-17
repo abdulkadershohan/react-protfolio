@@ -10,7 +10,19 @@ import Contacts from "../contacts/Contacts";
 import Protfolio from "../protfolio/Protfolio";
 import Skils from "../skils/Skils";
 import styles from "./hero.module.css";
+
+const heroTopSection = {
+  title1: "I'm",
+  title2: "A React",
+  title3: "Frontend Engineer",
+  title4: "&",
+  title5: "React Native",
+  title6: "developer!",
+
+}
+
 export default function Hero() {
+  const { title1, title2, title3, title4, title5, title6 } = heroTopSection;
   return (
     <Stack>
       <Grid container spacing={2}
@@ -18,49 +30,50 @@ export default function Hero() {
           alignItems: "center",
         }}
       >
-        <Grid item xs={12} md={6}
-          spacing={2}
-        >
-          <CTypography
-            text="I'm "
-            fontWeight={600}
-            fontSize={'32px'}
+        <Grid item xs={12} md={6} >
+          <Stack spacing={2}>
+            <CTypography
+              text={title1}
+              fontWeight={600}
+              fontSize={'32px'}
 
-          >A React
-            {<br />}
-            <span style={{
-              color: "#C778DD",
-              fontWeight: 700,
-
-            }}>
-              Frontend Engineer {"\t"}
-            </span>
-            & {<br />}
-            <span color="#C778DD"
-              style={{
+            > {title2}
+              {<br />}
+              <span style={{
                 color: "#C778DD",
                 fontWeight: 700,
 
-              }}
+              }}>
+                {title3} {"\t"}
+              </span>
+              {title4} {<br />}
+              <span color="#C778DD"
+                style={{
+                  color: "#C778DD",
+                  fontWeight: 700,
+
+                }}
+              >
+                {"\t"} {title5} {"\t"}
+              </span>
+              {title6}
+            </CTypography>
+            <CTypography
+              color={"#ABB2BF"}
+              fontSize={'16px'}
+              fontWeight={400}
             >
-              {"\t"} React Native {"\t"}
-            </span>
-            developer
-          </CTypography>
-          <CTypography
-            color={"#ABB2BF"}
-            fontSize={'16px'}
-            fontWeight={400}
-          >
-            I'm a Frontend Engineer with 1 years of experience in React and React Native. I'm passionate about building scalable and maintainable web applications.
-          </CTypography>
-          <Stack py={1} />
-          <CButton
-            component={Link}
-            to="/contact"
-          >
-            Contact Me
-          </CButton>
+              I'm a Frontend Engineer with 1 years of experience in React and React Native. I'm passionate about building scalable and maintainable web applications.
+            </CTypography>
+            <Box>
+              <CButton
+                component={Link}
+                to="/contact"
+              >
+                Contact Me ={'>'}
+              </CButton>
+            </Box>
+          </Stack>
         </Grid>
         <Grid item xs={12} md={6}>
           <Box
