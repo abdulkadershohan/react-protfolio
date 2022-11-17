@@ -3,7 +3,7 @@ import React from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { CTypography } from "../../utility";
 
-const education = [
+const educationData = [
     {
         id: 1,
         title: "BSC in Computer Science and Engineering",
@@ -73,7 +73,8 @@ export default function Education() {
 
         )
     }
-    const SkillsCard = ({ title, school, year }) => {
+    const SkillsCard = ({ data }) => {
+        const { title, school, year } = data;
         return (
             <Box
                 sx={{
@@ -149,13 +150,11 @@ export default function Education() {
                     gap={1}
                 >
                     {
-                        education.map((edu, index) => {
+                        educationData.map((item, index) => {
                             return (
                                 <SkillsCard
                                     key={Math.random()}
-                                    title={edu.title}
-                                    school={edu.school}
-                                    year={edu.year}
+                                    data={item}
 
                                 />
                             )
