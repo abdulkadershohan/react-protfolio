@@ -6,7 +6,7 @@ import emailIcon from "../../assets/Icon/email.svg";
 import { CTypography } from "../../utility";
 // import ContactFrom from "./ContactFrom";
 const contactData = {
-    text: `I’m interested in freelance opportunities. However, if you have other request or question, don’t hesitate to contact me.`,
+    text: `I’m interested in freelance opportunities. However, if you have other requests or questions, don’t hesitate to contact me.`,
     socailAccounts: [
         {
             id: 1,

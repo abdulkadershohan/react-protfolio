@@ -10,17 +10,15 @@ const aboutMeData = {
     aboutData: [
         {
             id: 1,
-            text: `An extremely positive and individual & can stay focused and motivated. Responsible, dependable and takes great pride in all my
-            work. Can work both independently and in a team, which has been proven from past work experience and academic experiences`,
+            text: `An extremely positive individual & who can stay focused and motivated. Responsible, dependable, and takes great pride in all my work. Can work both independently and in a team, which has been proven from past work experience and academic experiences.`,
         },
         {
             id: 2,
-            text: `HI! I'm MD. Abdul Kader. I'm a Frontend Engineer. I'm passionate about building scalable and maintainable web applications. Currently I'm working as a Frontend Engineer at RBS Tech LTD. I'm also a part time freelancer. I love to learn new things and share my knowledge with others.`
-
+            text: `HI! I'm MD. Abdul Kader. I'm a Frontend Engineer. I'm passionate about building scalable and maintainable web applications. Currently, I'm working as a Frontend Engineer at RBS Tech LTD. I'm also a part-time freelancer. I love to learn new things and share my knowledge with others.`
         },
         {
             id: 3,
-            text: ` Mobile app development is my another passion.React and React Native are my favorite JavaScript libraries. I'm also a big fan of Node.js and Express.js. In future I want to be a Full Stack Developer.`
+            text: ` Mobile app development is my other passion. React and React Native is my favorite JavaScript libraries. I'm also a big fan of Node.js and Express.js. In the future, I want to be a Full Stack Developer.`
         }
     ],
     mySkills: [

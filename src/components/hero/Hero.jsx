@@ -13,14 +13,14 @@ import styles from "./hero.module.css";
 
 const heroTopSectionData = {
   title: {
-    title1: "I'm",
-    title2: "A React",
+    title1: "Abdul Kader",
+    title2: "is a",
     title3: "Frontend Engineer",
     title4: "&",
     title5: "React Native",
     title6: "developer!",
   },
-  subtitle: `I'm a Frontend Engineer with 1 years of experience in React and React Native. I'm passionate about building scalable and maintainable web applications.`,
+  subtitle: `I'm a Frontend Engineer with 1 year of experience in React and React Native. I'm passionate about building scalable and maintainable web applications.`,
   image: hero,
   doing: {
     text: "Currently working on",
@@ -209,7 +209,7 @@ export default function Hero() {
       <Skils />
       <About />
       <Contacts />
-      
+
     </Stack >
   )
 }
