@@ -8,36 +8,50 @@ import telegram from "../../assets/Icon/telegram.svg";
 import twitter from "../../assets/Icon/twitter.svg";
 import logo from "../../assets/images/logo.png";
 import { CTypography } from "../../utility";
+const footerData = {
+    socials: [
+        {
+            id: 1,
+            name: 'github',
+            link: "https://github.com/abdulkadershohan",
+            img: github
+        },
+        {
+            id: 2,
+            name: 'linkedin',
+            link: "https://www.linkedin.com/in/abdulkadershohan/",
+            img: linkedin
+        },
+        {
+            id: 3,
+            name: 'telegram',
+            link: "https://t.me/Abdulkadershohan",
+            img: telegram
+        },
+        {
+            id: 4,
+            name: 'twitter',
+            link: "https://twitter.com/dev_shohan",
+            img: twitter
+        },
+        {
+            id: 5,
+            name: 'discord',
+            link: "https://discord.com/users/522431317447802900",
+            img: discord
+        }
+    ],
+    socialsTitle: "Social Media",
+    discription: `Frontend Engineer & React Native developer based in Bangladesh`,
+    link: 'https://abdulkadershohan.com',
+    copyRight: 'Abdul Kader Shohan. All rights reserved.',
+    logo: logo,
+    logoTitle: 'Abdul Kader'
 
-const socials = [
-    {
-        name: 'github',
-        link: "https://github.com/abdulkadershohan",
-        img: github
-    },
-    {
-        name: 'linkedin',
-        link: "https://www.linkedin.com/in/abdulkadershohan/",
-        img: linkedin
-    },
-    {
-        name: 'telegram',
-        link: "https://t.me/Abdulkadershohan",
-        img: telegram
-    },
-    {
-        name: 'twitter',
-        link: "https://twitter.com/dev_shohan",
-        img: twitter
-    },
-    {
-        name: 'discord',
-        link: "https://discord.com/users/522431317447802900",
-        img: discord
-    }
-]
-const footerDiscription = `Frontend Engineer & React Native developer based in Bangladesh`
+}
+
 export default function Footer() {
+    const { socials, socialsTitle, discription, link, copyRight, logo, logoTitle } = footerData
     return (
         <Stack
             sx={{
@@ -73,7 +87,7 @@ export default function Footer() {
                                     style={{ width: 15, height: 15 }}
                                 />
                                 <CTypography>
-                                    Abdul Kader
+                                    {logoTitle}
                                 </CTypography>
                             </Stack>
                             <CTypography
@@ -83,7 +97,7 @@ export default function Footer() {
                                 component={"a"}
                                 href="#"
                             >
-                                httt://abdulkader.com
+                                {link}
                             </CTypography>
                         </Stack>
 
@@ -91,7 +105,7 @@ export default function Footer() {
                             fontSize="16px"
                             fontWeight={400}
                         >
-                            {footerDiscription}
+                            {discription}
                         </CTypography>
                     </Stack>
                 </Grid>
@@ -101,7 +115,7 @@ export default function Footer() {
                         justifyContent='center'
                     >
                         <CTypography>
-                            Social Media
+                            {socialsTitle}
                         </CTypography>
                         <Stack
                             direction="row"
@@ -155,7 +169,7 @@ export default function Footer() {
                         new Date().getFullYear()
                     }
                     {' '}
-                    Abdul Kader. All rights reserved.
+                    {copyRight}
                 </CTypography>
             </Stack>
         </Stack >
