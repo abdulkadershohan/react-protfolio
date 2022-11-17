@@ -2,6 +2,7 @@ import { Grid } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React from "react";
 import discord from "../../assets/Icon/discord.svg";
+import figma from "../../assets/Icon/figma.svg";
 import github from "../../assets/Icon/github.svg";
 import linkedin from "../../assets/Icon/linkedin.svg";
 import telegram from "../../assets/Icon/telegram.svg";
@@ -46,12 +47,14 @@ const footerData = {
     link: 'https://abdulkadershohan.com',
     copyRight: 'Abdul Kader Shohan. All rights reserved.',
     logo: logo,
-    logoTitle: 'Abdul Kader'
+    logoTitle: 'Abdul Kader',
+    refText: 'Special Thanks to Elias Dev for sharing this UI/UX design with Figma Community',
 
 }
 
 export default function Footer() {
-    const { socials, socialsTitle, discription, link, copyRight, logo, logoTitle } = footerData
+    const { socials, socialsTitle, discription, link, copyRight, logo, logoTitle,
+        refText } = footerData;
     return (
         <Stack
             sx={{
@@ -107,6 +110,30 @@ export default function Footer() {
                         >
                             {discription}
                         </CTypography>
+                        <Stack>
+                            {
+                                refText && (
+                                    <>
+                                        <CTypography
+                                            fontSize="12px"
+                                            fontWeight={400}
+                                            color="#ABB2BF"
+                                        >
+                                            {refText}
+                                        </CTypography>
+                                        <Box>
+                                            <Box
+                                                component={"a"}
+                                                href={"https://www.figma.com/community/file/1164933568884615740"}
+                                                target="_blank"
+                                            >
+                                                <img src={figma} alt="figma" />
+                                            </Box>
+                                        </Box>
+                                    </>
+                                )
+                            }
+                        </Stack>
                     </Stack>
                 </Grid>
                 <Grid item xs={12} md={6}>

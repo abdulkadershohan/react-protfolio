@@ -3,7 +3,7 @@ import React from "react";
 import discord from '../../assets/Icon/discord.svg';
 import email from '../../assets/Icon/email.svg';
 import github from '../../assets/Icon/github.svg';
-const icon = [
+const sidebarData = [
     {
         name: 'discord',
         icon: discord,
@@ -46,7 +46,7 @@ export default function Sidebar() {
                 />
                 <Stack>
                     {
-                        icon.map((item) => (
+                        sidebarData.map((item) => (
                             <Box
                                 component="a"
                                 href={item.link}
