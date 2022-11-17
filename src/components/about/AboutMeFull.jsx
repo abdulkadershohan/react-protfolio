@@ -6,43 +6,71 @@ import photo from "../../assets/images/sohanFormal-2.jpg";
 // import photo from "../../assets/images/hero5.jpg";
 import { CButton, CTypography } from "../../utility";
 
-const aboutData = [
-    {
-        id: 1,
-        text: `An extremely positive and individual & can stay focused and motivated. Responsible, dependable and takes great pride in all my
-        work. Can work both independently and in a team, which has been proven from past work experience and academic experiences`,
-    },
-    {
-        id: 2,
-        text: `HI! I'm MD. Abdul Kader. I'm a Frontend Engineer. I'm passionate about building scalable and maintainable web applications. Currently I'm working as a Frontend Engineer at RBS Tech LTD. I'm also a part time freelancer. I love to learn new things and share my knowledge with others.`
+const aboutMeData = {
+    aboutData: [
+        {
+            id: 1,
+            text: `An extremely positive and individual & can stay focused and motivated. Responsible, dependable and takes great pride in all my
+            work. Can work both independently and in a team, which has been proven from past work experience and academic experiences`,
+        },
+        {
+            id: 2,
+            text: `HI! I'm MD. Abdul Kader. I'm a Frontend Engineer. I'm passionate about building scalable and maintainable web applications. Currently I'm working as a Frontend Engineer at RBS Tech LTD. I'm also a part time freelancer. I love to learn new things and share my knowledge with others.`
 
-    },
-    {
-        id: 3,
-        text: ` Mobile app development is my another passion.React and React Native are my favorite JavaScript libraries. I'm also a big fan of Node.js and Express.js. In future I want to be a Full Stack Developer.`
-    }
-]
-const Frameworks = ["React,", "React Native,", "Bootstrap,", "Native Base,", "Material UI,", "React Bootstrap"]
-const other = ["Context API,", "Git,", "GitHub,", "React Reducer,", "RestAPI,", "React Redux,", "WebSocket,", "Redux toolkit"]
-const Databases = ["MySQL"]
-const Languages = ["JavaScript,", "C++,", "C,", "C#,", "Python,", "Java,", "PHP"]
-const communication = ["Bengali (Native),", " English(fluent speaker),", " Hindi/Urdu (fluent speaker)"]
+        },
+        {
+            id: 3,
+            text: ` Mobile app development is my another passion.React and React Native are my favorite JavaScript libraries. I'm also a big fan of Node.js and Express.js. In future I want to be a Full Stack Developer.`
+        }
+    ],
+    mySkills: [
+        {
+            id: 1,
+            title: "Programming Languages",
+            items: ["JavaScript,", "C++,", "C,", "C#,", "Python,", "Java,", "PHP"]
+        },
+        {
+            id: 2,
+            title: 'Libraries & Frameworks',
+            items: ["React,", "React Native,", "Bootstrap,", "Native Base,", "Material UI,", "React Bootstrap"]
+        },
+        {
+            id: 3,
+            title: 'Other Skills & Tools',
+            items: ["Context API,", "Git,", "GitHub,", "React Reducer,", "RestAPI,", "React Redux,", "WebSocket,", "Redux toolkit"]
+        },
+        {
+            id: 4,
+            title: 'Databases',
+            items: ["MySQL"]
+        },
+        {
+            id: 5,
+            title: 'Communication Languages',
+            items: ["Bengali (Native),", " English(fluent speaker),", " Hindi/Urdu (fluent speaker)"]
+        },
 
-const funFact = [
-    "Coding is my passion",
-    "Cricket is my favorite sport",
-    "Love to sing songs when I'm alone",
-    "I love to spend time with my family",
-    "I love to travel",
-    "Eating is my hobby!",
-    "I often bike with my friends",
-    "Winter is my favorite season",
-    "Miss my childhood days",
-    "When i depressed, i love to coding and pray to Allah",
+    ],
+    funFact: [
+        "Coding is my passion",
+        "Cricket is my favorite sport",
+        "Love to sing songs when I'm alone",
+        "I love to spend time with my family",
+        "I love to travel",
+        "Eating is my hobby!",
+        "I often bike with my friends",
+        "Winter is my favorite season",
+        "Miss my childhood days",
+        "When i depressed, i love to coding and pray to Allah",
 
-]
+    ],
+    overleafResume: 'https://www.overleaf.com/read/xhbzrbckykqj',
+}
+
+
 export default function AboutMeFull() {
     const navigate = useNavigate();
+    const { aboutData, mySkills, funFact, overleafResume } = aboutMeData;
     const Header = () => {
         return (
             <Stack spacing={2}>
@@ -98,12 +126,6 @@ export default function AboutMeFull() {
     }
     const SkillHeader = () => {
         return (
-            // <Stack
-            //     direction="row"
-            //     justifyContent="space-between"
-            //     alignItems="center"
-            //     py={4}
-            // >
             <Stack
                 direction="row"
                 spacing={2}
@@ -302,7 +324,7 @@ export default function AboutMeFull() {
                                     btnTitle="Download CV"
                                     component={"a"}
                                     target="_blank"
-                                    href='https://www.overleaf.com/read/xhbzrbckykqj'
+                                    href={overleafResume}
                                 />
                             </Box>
                         </Stack>
@@ -324,26 +346,18 @@ export default function AboutMeFull() {
                         flexWrap="wrap"
                         gap={1}
                     >
-                        <SkillsCard
-                            title="Programming Languages"
-                            skills={Languages}
-                        />
-                        <SkillsCard
-                            title="Libraries & Frameworks"
-                            skills={Frameworks}
-                        />
-                        <SkillsCard
-                            title="Other Skills & Tools"
-                            skills={other}
-                        />
-                        <SkillsCard
-                            title="Databases"
-                            skills={Databases}
-                        />
-                        <SkillsCard
-                            title="Communication Languages"
-                            skills={communication}
-                        />
+                        {
+                            mySkills?.map((skill, index) => {
+                                return (
+                                    <SkillsCard
+                                        key={Math.random()}
+                                        title={skill?.title}
+                                        skills={skill?.items}
+                                    />
+                                )
+                            })
+                        }
+
                     </Stack>
                 </Stack>
             </Stack>
