@@ -11,11 +11,12 @@ import gym from '../../assets/images/projects/gym2.png';
 import learningapp from '../../assets/images/projects/learningapp.png';
 import LiveStatus from '../../assets/images/projects/LiveStatus.png';
 import ott from '../../assets/images/projects/ott.png';
+import rbs from '../../assets/images/projects/rbs.png';
 import rtc from '../../assets/images/projects/rtc.png';
 import SeRemo from '../../assets/images/projects/SeRemo2.png';
 import upcopo2 from '../../assets/images/projects/upocopo-2.png';
 import { CButton, CTypography } from "../../utility";
-const cardData = [
+const mobileApp = [
     {
         id: 1,
         title: 'Upcopo',
@@ -86,7 +87,7 @@ const cardData = [
         cardImage: covidapp,
         figma: "",
         // liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
-        // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
+        youtubeUrl: 'https://www.youtube.com/watch?v=MGYeFVJtlQc',
         githubUrl: "https://github.com/abdulkadershohan/covid_19_survey_app",
         isPrivate: false
     },
@@ -97,7 +98,7 @@ const webApp = [
         title: 'RBS Dashboard',
         skils: ["ReactJS", "RestAPi", "JavaScript", "Material UI", "React Reducer", "Micro Service", "WebSocket",],
         description: 'Company Dashboard & Admin Panel',
-        cardImage: covid,
+        cardImage: rbs,
         figma: "",
         isPrivate: true,
         liveUrl: 'http://161.97.157.117:5001/',
@@ -485,7 +486,7 @@ export default function Protfolio() {
             />
             <HeaderApp />
             <ProjectCard
-                data={cardData}
+                data={mobileApp}
             />
         </Stack>
     )
