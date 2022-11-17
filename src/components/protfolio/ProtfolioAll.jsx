@@ -346,6 +346,9 @@ const ProjectCard = ({ data }) => {
 }
 export default function Protfolio() {
     const navigate = useNavigate();
+    React.useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [navigate])
 
     const HeaderWeb = () => {
         return (
