@@ -67,6 +67,7 @@ export default function Contacts() {
             <Grid container spacing={2}
                 sx={{
                     alignItems: 'center',
+                    pb: 8,
                 }}
             >
                 <Grid item xs={12} md={6}  >

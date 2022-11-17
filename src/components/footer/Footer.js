@@ -62,7 +62,8 @@ export default function Footer() {
                 py: 8,
             }}
         >
-            <Grid container spacing={2}            >
+            <Grid container spacing={2}
+            >
                 <Grid item xs={12} md={6}
                     sx={{
                         display: 'flex',
@@ -107,10 +108,11 @@ export default function Footer() {
                         <CTypography
                             fontSize="16px"
                             fontWeight={400}
+                            align="center"
                         >
                             {discription}
                         </CTypography>
-                        <Stack>
+                        {/* <Stack>
                             {
                                 refText && (
                                     <>
@@ -133,7 +135,7 @@ export default function Footer() {
                                     </>
                                 )
                             }
-                        </Stack>
+                        </Stack> */}
                     </Stack>
                 </Grid>
                 <Grid item xs={12} md={6}>
@@ -178,9 +180,37 @@ export default function Footer() {
 
 
                         </Stack>
+                        <Stack
+                            justifyContent='center'
+                            alignItems='center'
+                        >
+                            {
+                                refText && (
+                                    <>
+                                        <CTypography
+                                            fontSize="12px"
+                                            fontWeight={400}
+                                            color="#ABB2BF"
+                                        >
+                                            {refText}
+                                        </CTypography>
+                                        <Box>
+                                            <Box
+                                                component={"a"}
+                                                href={"https://www.figma.com/community/file/1164933568884615740"}
+                                                target="_blank"
+                                            >
+                                                <img src={figma} alt="figma" />
+                                            </Box>
+                                        </Box>
+                                    </>
+                                )
+                            }
+                        </Stack>
                     </Stack>
                 </Grid>
             </Grid>
+
             <Stack
                 justifyContent="center"
                 alignItems="center"
