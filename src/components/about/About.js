@@ -125,6 +125,8 @@ export default function About() {
                                     xs: 'auto', sm: 'auto',
                                     md: 'auto', lg: 'auto',
                                 },
+                                filter: 'grayscale(100%)',
+                                // image blur
                             }}
                         />
                     </Stack>

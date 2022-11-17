@@ -63,12 +63,13 @@ const aboutMeData = {
 
     ],
     overleafResume: 'https://www.overleaf.com/read/xhbzrbckykqj',
+    image: photo,
 }
 
 
 export default function AboutMeFull() {
     const navigate = useNavigate();
-    const { aboutData, mySkills, funFact, overleafResume } = aboutMeData;
+    const { aboutData, mySkills, funFact, overleafResume, image } = aboutMeData;
     const Header = () => {
         return (
             <Stack spacing={2}>
@@ -285,7 +286,7 @@ export default function AboutMeFull() {
                         <Stack >
                             <Box
                                 component="img"
-                                src={photo}
+                                src={image}
                                 alt="hero"
                                 sx={{
                                     width: {
@@ -296,6 +297,7 @@ export default function AboutMeFull() {
                                         xs: 'auto', sm: 'auto',
                                         md: 'auto', lg: 'auto',
                                     },
+                                    filter: 'grayscale(100%)',
                                 }}
                             />
                         </Stack>
