@@ -20,21 +20,39 @@ const Ractangle = () => {
 
     )
 }
+const mySkills = [
+    {
+        id: 1,
+        title: "Programming Languages",
+        items: ["JavaScript,", "C++,", "C,", "C#,", "Python,", "Java,", "PHP"]
+    },
+    {
+        id: 2,
+        title: 'Libraries & Frameworks',
+        items: ["React,", "React Native,", "Bootstrap,", "Native Base,", "Material UI,", "React Bootstrap"]
+    },
+    {
+        id: 3,
+        title: 'Other Skills & Tools',
+        items: ["Context API,", "Git,", "GitHub,", "React Reducer,", "RestAPI,", "React Redux,", "WebSocket,", "Redux toolkit"]
+    },
+    {
+        id: 4,
+        title: 'Databases',
+        items: ["MySQL"]
+    },
+    {
+        id: 5,
+        title: 'Communication Languages',
+        items: ["Bengali (Native),", " English(fluent speaker),", " Hindi/Urdu (fluent speaker)"]
+    },
 
-const Frameworks = ["React,", "React Native,", "Bootstrap,", "Native Base,", "Material UI,", "React Bootstrap"]
-const other = ["Context API,", "Git,", "GitHub,", "React Reducer,", "RestAPI,", "React Redux,", "WebSocket,", "Redux toolkit"]
-const Databases = ["MySQL"]
-const Languages = ["JavaScript,", "C++,", "C,", "C#,", "Python,", "Java,", "PHP"]
-const communication = ["Bengali (Native),", " English(fluent speaker),", " Hindi/Urdu (fluent speaker)"]
+]
+
 export default function Skils() {
     const Header = () => {
         return (
-            // <Stack
-            //     direction="row"
-            //     justifyContent="space-between"
-            //     alignItems="center"
-            //     py={4}
-            // >
+
             <Stack
                 direction="row"
                 spacing={2}
@@ -100,7 +118,7 @@ export default function Skils() {
                         alignItems: 'start',
                     }}
                 >
-                    {skills.map((skill, index) => {
+                    {skills?.map((skill, index) => {
                         return (
                             <CTypography
                                 key={index}
@@ -145,26 +163,17 @@ export default function Skils() {
                     flexWrap="wrap"
                     gap={1}
                 >
-                    <SkillsCard
-                        title="Programming Languages"
-                        skills={Languages}
-                    />
-                    <SkillsCard
-                        title="Libraries & Frameworks"
-                        skills={Frameworks}
-                    />
-                    <SkillsCard
-                        title="Other Skills & Tools"
-                        skills={other}
-                    />
-                    <SkillsCard
-                        title="Databases"
-                        skills={Databases}
-                    />
-                    <SkillsCard
-                        title="Communication Languages"
-                        skills={communication}
-                    />
+                    {
+                        mySkills?.map((skill, index) => {
+                            return (
+                                <SkillsCard
+                                    key={Math.random()}
+                                    title={skill?.title}
+                                    skills={skill?.items}
+                                />
+                            )
+                        })
+                    }
 
                 </Stack>
             </Grid>

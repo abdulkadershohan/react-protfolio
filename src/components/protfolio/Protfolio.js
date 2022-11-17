@@ -7,7 +7,7 @@ import brdchart from '../../assets/images/projects/brdchart.png';
 import covid from '../../assets/images/projects/covid-19.png';
 import upcopo2 from '../../assets/images/projects/upocopo-2.png';
 import { CButton, CTypography } from "../../utility";
-const cardData = [
+const homeProtfolio = [
     {
         id: 1,
         title: 'Upcopo',
@@ -58,7 +58,7 @@ const ProjectCard = () => {
             gap={2}
         >
             {
-                cardData.map((item) => {
+                homeProtfolio.map((item) => {
                     return (
                         <Box key={item.id}
                             sx={{
