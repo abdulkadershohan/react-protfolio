@@ -209,6 +209,7 @@ export default function Hero() {
       <Skils />
       <About />
       <Contacts />
+      
     </Stack >
   )
 }

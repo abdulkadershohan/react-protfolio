@@ -109,10 +109,12 @@ export default function Experience() {
                 }}
             >
                 <Box>
-                    <CTypography
+                    <Box
                         sx={{
                             borderBottom: '1px solid #ABB2BF',
                             p: 1,
+                            color: '#fff',
+                            fontFamily: 'FiraCode',
                         }}
                         fontSize={16}
                         fontWeight={600}
@@ -138,7 +140,7 @@ export default function Experience() {
                         >
                             {year}
                         </Stack>
-                    </CTypography>
+                    </Box>
                 </Box>
                 <Box
                     sx={{
@@ -182,6 +184,7 @@ export default function Experience() {
                                     fontSize={14}
                                     fontWeight={500}
                                     text={item}
+                                    key={Math.random()}
                                     color='#ABB2BF'
                                 />
                             )

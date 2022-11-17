@@ -87,15 +87,15 @@ export default function Education() {
                 }}
             >
                 <Box>
-                    <CTypography
+                    <Box
                         sx={{
                             borderBottom: '1px solid #ABB2BF',
                             p: 1,
+                            color: '#FFFFFF',
                         }}
                         fontSize={16}
                         fontWeight={600}
-                        text={title}
-                    >
+                    >{title}
                         <Stack
                             alignItems="flex-end"
                             sx={{
@@ -104,15 +104,10 @@ export default function Education() {
                                 color: '#ABB2BF',
                                 fontFamily: 'FiraCode',
                             }}
-                        // sx={{
-                        //     justifyContent: 'flex-end',
-                        //     alignItems: 'end',
-                        //     justifyItems: 'end',
-                        // }}
                         >
                             {year}
                         </Stack>
-                    </CTypography>
+                    </Box>
                 </Box>
                 <Box
                     component={"ul"}

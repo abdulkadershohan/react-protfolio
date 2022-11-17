@@ -45,15 +45,7 @@ export default function Footer() {
                 py: 8,
             }}
         >
-            <Grid container spacing={2}
-                sx={{
-                    // px: {
-                    //     // xs: 3, sm: 6, md: 8, lg: 20
-                    //     al
-                    // }
-
-                }}
-            >
+            <Grid container spacing={2}            >
                 <Grid item xs={12} md={6}
                     sx={{
                         display: 'flex',
@@ -66,13 +58,13 @@ export default function Footer() {
                         <Stack
                             direction="row"
                             spacing={6}
-                            component="a"
-                            href="#"
                         >
                             <Stack
                                 direction="row"
                                 alignItems="center"
                                 spacing={1}
+                                component="a"
+                                href="#"
                                 sx={{
                                     cursor: "pointer",
                                 }}
@@ -166,6 +158,6 @@ export default function Footer() {
                     Abdul Kader. All rights reserved.
                 </CTypography>
             </Stack>
-        </Stack>
+        </Stack >
     )
 }

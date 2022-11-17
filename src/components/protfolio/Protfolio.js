@@ -115,9 +115,10 @@ const ProjectCard = () => {
                                 p={2}
                                 spacing={2}
                             >
-                                <CTypography
+                                <Box
                                     fontSize={24}
                                     fontWeight={500}
+                                    color='#fff'
                                 >
                                     {item.title}
                                     {
@@ -140,7 +141,7 @@ const ProjectCard = () => {
                                             />
                                         )
                                     }
-                                </CTypography>
+                                </Box>
                                 <CTypography
                                     fontSize={14}
                                     fontWeight={400}
@@ -155,7 +156,6 @@ const ProjectCard = () => {
                                     {
                                         item.liveUrl && <CButton
                                             btnTitle="Live =>"
-                                            btnLink={item.liveUrl}
                                             component={'a'}
                                             target="_blank"
                                             rel="noopener noreferrer"
@@ -165,7 +165,6 @@ const ProjectCard = () => {
                                     {
                                         item.figma && <CButton
                                             btnTitle="Figma =>"
-                                            btnLink={item.figma}
                                             component={'a'}
                                             target="_blank"
                                             rel="noopener noreferrer"
