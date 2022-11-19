@@ -44,7 +44,7 @@ const footerData = {
     ],
     socialsTitle: "Social Media",
     discription: `Frontend Engineer & React Native developer based in Bangladesh`,
-    link: 'https://abdulkadershohan.com',
+    link: 'https://dev-shohan.netlify.app/',
     copyRight: 'Abdul Kader Shohan. All rights reserved.',
     logo: logo,
     logoTitle: 'Abdul Kader',
