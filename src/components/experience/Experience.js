@@ -117,12 +117,10 @@ export default function Experience() {
                             p: 1,
                             color: '#fff',
                             fontFamily: 'FiraCode',
+                            fontSize: 16,
+                            fontWeight: 600,
                         }}
-                        fontSize={16}
-                        fontWeight={600}
-                        text={title}
-
-                    >
+                    >{title}
                         <span style={{
                             color: "#C778DD",
                             fontWeight: 700,

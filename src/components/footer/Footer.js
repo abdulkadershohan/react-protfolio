@@ -82,7 +82,7 @@ export default function Footer() {
                                 alignItems="center"
                                 spacing={1}
                                 component="a"
-                                href="#"
+                                href="/"
                                 sx={{
                                     cursor: "pointer",
                                 }}
@@ -99,7 +99,8 @@ export default function Footer() {
                                 fontWeight={400}
                                 color="#ABB2BF"
                                 component={"a"}
-                                href="#"
+                                href="/"
+                                target="_blank"
                             >
                                 {link}
                             </CTypography>

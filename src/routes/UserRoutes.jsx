@@ -7,10 +7,12 @@ import Education from "../components/education/Education";
 import Experience from "../components/experience/Experience";
 import Hero from "../components/hero/Hero";
 import ProtfolioAll from "../components/protfolio/ProtfolioAll";
+import ScrollToTop from "./ScrollToTop";
 
 export default function UserRoutes() {
     return (
         <BrowserRouter>
+            <ScrollToTop />
             <Routes>
                 <Route
                     path="/"
