@@ -52,7 +52,7 @@ const protfolioData = [
     {
         id: 2,
         results: {
-            title: 'web projects',
+            title: 'web 2.0 projects',
             data: [
                 {
                     id: 7,
@@ -156,7 +156,7 @@ const protfolioData = [
     {
         id: 1,
         results: {
-            title: 'mobile apps',
+            title: 'android & IOS apps',
             data: [
                 {
                     id: 1,
