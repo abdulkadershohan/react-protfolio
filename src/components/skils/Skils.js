@@ -29,12 +29,12 @@ const mySkills = [
     {
         id: 2,
         title: 'Libraries & Frameworks',
-        items: ["React,", "React Native,", "Bootstrap,", "Native Base,", "Material UI,", "React Bootstrap"]
+        items: ["React,", "React Native,", "Material UI,", "Native Base,", "Bootstrap,", "React Bootstrap"]
     },
     {
         id: 3,
         title: 'Other Skills & Tools',
-        items: ["Context API,", "Git,", "GitHub,", "React Reducer,", "RestAPI,", "React Redux,", "WebSocket,", "Redux toolkit"]
+        items: ["Context API,", "Git,", "GitHub,", "React Reducer,", "React Redux,", "WebSocket,", "Redux toolkit"]
     },
     {
         id: 4,

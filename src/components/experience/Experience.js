@@ -27,8 +27,7 @@ const experienceData = [
         role: [
             "Working on RBS ERP Project(React JS)- ongoing",
             "Working on RBS OTT Platform APP(React Native).-closed",
-            "Team work",
-            "Responsible for API Integration, Project Management etc."
+            "Responsible for API integration, project management, requirements analysis, sometimes designing the frontend architecture, designing UI/UX for development,  etc."
         ],
         address: "House# TA-99, 8th Floor, Gulshan Link Tower, Gulshan-Badda Link Road, Dhaka-1212",
     }

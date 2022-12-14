@@ -2,10 +2,6 @@ import { Chip } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React from "react";
 import { Link } from 'react-router-dom';
-
-import brdchart from '../../assets/images/projects/brdchart.png';
-import covid from '../../assets/images/projects/covid-19.png';
-import upcopo2 from '../../assets/images/projects/upocopo-2.png';
 import { CButton, CTypography } from "../../utility";
 const homeProtfolioData = [
     {
@@ -13,33 +9,44 @@ const homeProtfolioData = [
         title: 'Upcopo',
         skils: ["React Native", "Redux", "Redux Toolkit", "Native Base", "expo", "formik", "yup", "Google Map"],
         description: `NFTs app for Buy Virtual Real Estate.`,
-        cardImage: upcopo2,
+        cardImage: require('../../assets/images/projects/upocopo-2.png'),
         liveUrl: '',
         youtubeUrl: 'https://www.youtube.com/watch?v=k7098_rTLlA&feature=youtu.be',
         figma: "https://www.figma.com/file/xxFZjSHJXT2yrQwS68DCDm/Upcopo?node-id=412%3A712",
         githubUrl: '',
         isPrivate: true
     },
+    // {
+    //     id: 2,
+    //     title: 'Brdcart',
+    //     skils: ["React Native", "Redux", "Redux Toolkit", "Native Base", "expo", "formik", "yup", "Google Map"],
+    //     description: 'E-commerce app',
+    //     cardImage: require('../../assets/images/projects/brdchart.png'),
+    //     liveUrl: '',
+    //     figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
+    //     youtubeUrl: '',
+    //     githubUrl: '',
+    //     isPrivate: true
+
+    // },
     {
         id: 2,
-        title: 'Brdcart',
-        skils: ["React Native", "Redux", "Redux Toolkit", "Native Base", "expo", "formik", "yup", "Google Map"],
-        description: 'E-commerce app',
-        cardImage: brdchart,
-        liveUrl: '',
-        figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
-        youtubeUrl: '',
-        githubUrl: '',
-        isPrivate: true
-
+        title: 'Blockchain NFT website landing page',
+        skils: ["ReactJS", 'Figma to React', 'HTML', 'CSS', "JavaScript", "Material UI",],
+        description: 'Shihami is the world’s leading NFTs marketplace where you can discover, sell and bid NFTs and get rich.',
+        cardImage: require('../../assets/images/projects/blockchaineNft.png'),
+        figma: "",
+        isPrivate: true,
+        liveUrl: 'https://blockchain-nft-website-landing-page.netlify.app/',
+        youtubeUrl: 'https://www.youtube.com/watch?v=5_GNOpPsIy0',
     },
     {
         id: 3,
         title: 'Covid-19 Survey',
         skils: ["Bootstrap", "ReactJS", "EmailJS", "Styled Component",
-            "HTML", "CSS", "JavaScript", "PHP", "MYSQL"],
+            "HTML", "CSS", "JavaScript", "PHP", "MYSQL", "Axios"],
         description: 'Helth Care App',
-        cardImage: covid,
+        cardImage: require('../../assets/images/projects/covid-19.png'),
         figma: "",
         liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
         // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
@@ -119,6 +126,8 @@ const ProjectCard = () => {
                                     fontSize={24}
                                     fontWeight={500}
                                     color='#fff'
+                                    maxWidth="300px"
+
                                 >
                                     {item.title}
                                     {
@@ -146,6 +155,7 @@ const ProjectCard = () => {
                                     fontSize={14}
                                     fontWeight={400}
                                     color="#ABB2BF"
+                                    maxWidth="300px"
                                 >
                                     {item.description}
                                 </CTypography>

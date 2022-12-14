@@ -15,187 +15,228 @@ import rbs from '../../assets/images/projects/rbs.png';
 import rtc from '../../assets/images/projects/rtc.png';
 import SeRemo from '../../assets/images/projects/SeRemo2.png';
 import upcopo2 from '../../assets/images/projects/upocopo-2.png';
+
 import { CButton, CTypography } from "../../utility";
 
-const ProtfolioData = {
-    mobileAppTitle: 'mobile apps',
-    mobileApp: [
-        {
-            id: 1,
-            title: 'Upcopo',
-            skils: ["React Native", "Redux", "Redux Toolkit", "Native Base", "expo", "formik", "yup", "Google Map"],
-            description: `NFTs app for Buy Virtual Real Estate.`,
-            cardImage: upcopo2,
-            liveUrl: '',
-            youtubeUrl: 'https://www.youtube.com/watch?v=k7098_rTLlA&feature=youtu.be',
-            figma: "https://www.figma.com/file/xxFZjSHJXT2yrQwS68DCDm/Upcopo?node-id=412%3A712",
-            githubUrl: '',
-            isPrivate: true
+const protfolioData = [
+    {
+        id: 3,
+        results: {
+            title: 'web3 langing page',
+            data: [
+                {
+                    id: 1,
+                    title: 'Blockchain NFT website landing page',
+                    skils: ["ReactJS", 'Figma to React', 'HTML', 'CSS', "JavaScript", "Material UI",],
+                    description: 'Shihami is the world’s leading NFTs marketplace where you can discover, sell and bid NFTs and get rich.',
+                    cardImage: require('../../assets/images/projects/blockchaineNft.png'),
+                    figma: "",
+                    isPrivate: true,
+                    liveUrl: 'https://blockchain-nft-website-landing-page.netlify.app/',
+                    youtubeUrl: 'https://www.youtube.com/watch?v=5_GNOpPsIy0',
+                },
+                {
+                    id: 2,
+                    title: 'NFT Marketplace Landing page',
+                    skils: ["ReactJS", 'Figma to React', 'HTML', 'CSS', "JavaScript", "Material UI",],
+                    description: `The Leading NFT Marketplace On Ethereum Home To The Next Generation Of Digital Creators. Discover The Best NFT Collections.`,
+                    cardImage: require('../../assets/images/projects/nft2.png'),
+                    figma: "",
+                    isPrivate: true,
+                    liveUrl: 'https://nft-marketplace-landing-page-1.netlify.app/',
+                    youtubeUrl: 'https://youtu.be/uflKI9U8Q3Q',
+                },
+            ]
         },
-        {
-            id: 2,
-            title: 'Brdcart',
-            skils: ["React Native", "Redux", "Redux Toolkit", "Native Base", "expo", "formik", "yup", "Google Map"],
-            description: 'E-commerce app',
-            cardImage: brdchart,
-            liveUrl: '',
-            figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
-            youtubeUrl: '',
-            githubUrl: '',
-            isPrivate: true
+    },
+    {
+        id: 2,
+        results: {
+            title: 'web 2.0 projects',
+            data: [
+                {
+                    id: 7,
+                    title: 'RBS Dashboard',
+                    skils: ["ReactJS", "RestAPi", "JavaScript", "Material UI", "React Reducer", "Micro Service", "WebSocket",],
+                    description: 'Company Dashboard & Admin Panel',
+                    cardImage: rbs,
+                    figma: "",
+                    isPrivate: true,
+                    liveUrl: 'http://161.97.157.117:5001/',
+                    // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
+                },
+                {
+                    id: 1,
+                    title: 'Covid-19 Survey',
+                    skils: ["ReactJS", "HTML", "CSS", "JavaScript", "Bootstrap", "EmailJS", "Styled Component",
+                        "PHP", "MYSQL"],
+                    description: 'Helth Care App',
+                    cardImage: covid,
+                    figma: "",
+                    isPrivate: false,
+                    liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
+                    // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
+                    githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM"
+                },
+                {
+                    id: 2,
+                    title: 'Covid-19 Live Status',
+                    skils: ["ReactJS",
+                        "HTML", "CSS", "Bootstrap", "JavaScript", "Axios"],
+                    description: `Worldometer Api`,
+                    cardImage: LiveStatus,
+                    liveUrl: 'https://covit-19-live-states.netlify.app/',
+                    // youtubeUrl: 'https://www.youtube.com/watch?v=k7098_rTLlA&feature=youtu.be',
+                    // figma: "https://www.figma.com/file/xxFZjSHJXT2yrQwS68DCDm/Upcopo?node-id=412%3A712",
+                    githubUrl: 'https://github.com/abdulkadershohan/covit-19-live-states',
+                    isPrivate: false
+                },
+                {
+                    id: 3,
+                    title: 'Gym Website',
+                    skils: ["ReactJS",
+                        "HTML", "CSS", "JavaScript"],
+                    description: 'Gym Landing Page',
+                    cardImage: gym,
+                    isPrivate: false,
+                    liveUrl: 'https://gym-website-9.netlify.app/',
+                    // figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
+                    youtubeUrl: '',
+                    githubUrl: 'https://github.com/abdulkadershohan/gym-website'
 
-        },
-        {
-            id: 3,
-            title: 'UIUX_Learning_App',
-            skils: ["React Native", "Redux", "Redux Toolkit", "Native Base", "expo", "formik", "yup",],
-            description: 'Learning App',
-            cardImage: learningapp,
-            figma: "https://www.figma.com/file/G8IR3mlAuzpsykfRF7g5tU/UXchips_UIUX_Learning_App?t=ccx99V0x6MlRyjjj-0",
-            // liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
-            // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
-            // githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM"
-            isPrivate: true
-        },
-        {
-            id: 4,
-            title: 'SeRemo',
-            skils: ["React Native", "Redux", "Redux Toolkit", "Native Base", "expo", "formik", "yup",],
-            description: 'Business app',
+                },
+                {
+                    id: 4,
+                    title: 'Food Website',
+                    skils: ["ReactJS",
+                        "HTML", "CSS", "JavaScript"],
+                    description: 'Restaurant Landing Page',
+                    cardImage: food,
+                    isPrivate: false,
+                    liveUrl: 'https://restaurant-website-9.netlify.app/',
+                    // figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
+                    youtubeUrl: '',
+                    githubUrl: 'https://github.com/abdulkadershohan/restaurant-website'
 
-            cardImage: SeRemo,
-            figma: "https://www.figma.com/file/xgeqbCe4AZMHuBE9q3ogNA/izackmbimi?node-id=440%3A614&t=yE99K0IDkJbE9StL-0",
-            // liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
-            // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
-            // githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM"
-            isPrivate: true
-        },
-        {
-            id: 5,
-            title: 'RBS Movie App',
-            skils: ["React Native", "Native Base", "expo", "formik", "yup",],
-            description: 'OTT app',
-            isPrivate: true,
-            cardImage: ott,
-            figma: "https://www.figma.com/file/xgeqbCe4AZMHuBE9q3ogNA/izackmbimi?node-id=440%3A614&t=yE99K0IDkJbE9StL-0",
-            // liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
-            // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
-            // githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM"
-        },
-        {
-            id: 6,
-            title: 'Covid-19 Survey App',
-            skils: ["React Native", "Native Base", "Axios", "PHP", "MYSQL"],
-            description: 'Helth Care App',
-            cardImage: covidapp,
-            figma: "",
-            // liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
-            youtubeUrl: 'https://www.youtube.com/watch?v=MGYeFVJtlQc',
-            githubUrl: "https://github.com/abdulkadershohan/covid_19_survey_app",
-            isPrivate: false
-        },
-    ],
-    webAppTitle: 'web projects',
-    webApp: [
-        {
-            id: 7,
-            title: 'RBS Dashboard',
-            skils: ["ReactJS", "RestAPi", "JavaScript", "Material UI", "React Reducer", "Micro Service", "WebSocket",],
-            description: 'Company Dashboard & Admin Panel',
-            cardImage: rbs,
-            figma: "",
-            isPrivate: true,
-            liveUrl: 'http://161.97.157.117:5001/',
-            // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
-        },
-        {
-            id: 1,
-            title: 'Covid-19 Survey',
-            skils: ["ReactJS", "HTML", "CSS", "JavaScript", "Bootstrap", "EmailJS", "Styled Component",
-                "PHP", "MYSQL"],
-            description: 'Helth Care App',
-            cardImage: covid,
-            figma: "",
-            isPrivate: false,
-            liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
-            // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
-            githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM"
-        },
-        {
-            id: 2,
-            title: 'Covid-19 Live Status',
-            skils: ["ReactJS",
-                "HTML", "CSS", "Bootstrap", "JavaScript", "Axios"],
-            description: `Worldometer Api`,
-            cardImage: LiveStatus,
-            liveUrl: 'https://covit-19-live-states.netlify.app/',
-            // youtubeUrl: 'https://www.youtube.com/watch?v=k7098_rTLlA&feature=youtu.be',
-            // figma: "https://www.figma.com/file/xxFZjSHJXT2yrQwS68DCDm/Upcopo?node-id=412%3A712",
-            githubUrl: 'https://github.com/abdulkadershohan/covit-19-live-states',
-            isPrivate: false
-        },
-        {
-            id: 3,
-            title: 'Gym Website',
-            skils: ["ReactJS",
-                "HTML", "CSS", "JavaScript"],
-            description: 'Gym Landing Page',
-            cardImage: gym,
-            isPrivate: false,
-            liveUrl: 'https://gym-website-9.netlify.app/',
-            // figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
-            youtubeUrl: '',
-            githubUrl: 'https://github.com/abdulkadershohan/gym-website'
+                },
+                {
+                    id: 5,
+                    title: 'Food Website',
+                    skils: ["ReactJS",
+                        "HTML", "Styled Component",
+                        "JavaScript"],
+                    description: 'E-commerce food app',
+                    cardImage: food2,
+                    isPrivate: false,
+                    liveUrl: 'https://ecommerce-restaurant.netlify.app/',
+                    // figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
+                    youtubeUrl: '',
+                    githubUrl: 'https://github.com/abdulkadershohan/ecommerce-restaurant'
 
-        },
-        {
-            id: 4,
-            title: 'Food Website',
-            skils: ["ReactJS",
-                "HTML", "CSS", "JavaScript"],
-            description: 'Restaurant Landing Page',
-            cardImage: food,
-            isPrivate: false,
-            liveUrl: 'https://restaurant-website-9.netlify.app/',
-            // figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
-            youtubeUrl: '',
-            githubUrl: 'https://github.com/abdulkadershohan/restaurant-website'
+                },
+                {
+                    id: 6,
+                    title: 'Video Chat App',
+                    skils: ["ReactJS",
+                        "HTML", "CSS", "Socket.io", "express", "node.js",
+                        "JavaScript"],
+                    isPrivate: false,
+                    description: 'WebRTC Video Chat App',
+                    cardImage: rtc,
+                    liveUrl: 'https://video-chat-zoom-clone.netlify.app/',
+                    // figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
+                    youtubeUrl: '',
+                    githubUrl: 'https://github.com/abdulkadershohan/web-rtc-video-chat-zoom-clone'
 
-        },
-        {
-            id: 5,
-            title: 'Food Website',
-            skils: ["ReactJS",
-                "HTML", "Styled Component",
-                "JavaScript"],
-            description: 'E-commerce food app',
-            cardImage: food2,
-            isPrivate: false,
-            liveUrl: 'https://ecommerce-restaurant.netlify.app/',
-            // figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
-            youtubeUrl: '',
-            githubUrl: 'https://github.com/abdulkadershohan/ecommerce-restaurant'
+                },
 
-        },
-        {
-            id: 6,
-            title: 'Video Chat App',
-            skils: ["ReactJS",
-                "HTML", "CSS", "Socket.io", "express", "node.js",
-                "JavaScript"],
-            isPrivate: false,
-            description: 'WebRTC Video Chat App',
-            cardImage: rtc,
-            liveUrl: 'https://video-chat-zoom-clone.netlify.app/',
-            // figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
-            youtubeUrl: '',
-            githubUrl: 'https://github.com/abdulkadershohan/web-rtc-video-chat-zoom-clone'
+            ],
+        }
+    },
+    {
+        id: 1,
+        results: {
+            title: 'android & IOS apps',
+            data: [
+                {
+                    id: 1,
+                    title: 'Upcopo',
+                    skils: ["React Native", "Redux", "Redux Toolkit", "Native Base", "expo", "formik", "yup", "Google Map"],
+                    description: `NFTs app for Buy Virtual Real Estate.`,
+                    cardImage: upcopo2,
+                    liveUrl: '',
+                    youtubeUrl: 'https://www.youtube.com/watch?v=k7098_rTLlA&feature=youtu.be',
+                    figma: "https://www.figma.com/file/xxFZjSHJXT2yrQwS68DCDm/Upcopo?node-id=412%3A712",
+                    githubUrl: '',
+                    isPrivate: true
+                },
+                {
+                    id: 2,
+                    title: 'Brdcart',
+                    skils: ["React Native", "Redux", "Redux Toolkit", "Native Base", "expo", "formik", "yup", "Google Map"],
+                    description: 'E-commerce app',
+                    cardImage: brdchart,
+                    liveUrl: '',
+                    figma: "https://www.figma.com/file/HPX2Q9k7QC0jughEcor3Ad/Bai1234?fuid=1020350840147497557",
+                    youtubeUrl: '',
+                    githubUrl: '',
+                    isPrivate: true
 
+                },
+                {
+                    id: 3,
+                    title: 'UIUX_Learning_App',
+                    skils: ["React Native", "Redux", "Redux Toolkit", "Native Base", "expo", "formik", "yup",],
+                    description: 'Learning App',
+                    cardImage: learningapp,
+                    figma: "https://www.figma.com/file/G8IR3mlAuzpsykfRF7g5tU/UXchips_UIUX_Learning_App?t=ccx99V0x6MlRyjjj-0",
+                    // liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
+                    // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
+                    // githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM"
+                    isPrivate: true
+                },
+                {
+                    id: 4,
+                    title: 'SeRemo',
+                    skils: ["React Native", "Redux", "Redux Toolkit", "Native Base", "expo", "formik", "yup",],
+                    description: 'Business app',
+
+                    cardImage: SeRemo,
+                    figma: "https://www.figma.com/file/xgeqbCe4AZMHuBE9q3ogNA/izackmbimi?node-id=440%3A614&t=yE99K0IDkJbE9StL-0",
+                    // liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
+                    // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
+                    // githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM"
+                    isPrivate: true
+                },
+                {
+                    id: 5,
+                    title: 'RBS Movie App',
+                    skils: ["React Native", "Native Base", "expo", "formik", "yup",],
+                    description: 'OTT app',
+                    isPrivate: true,
+                    cardImage: ott,
+                    figma: "https://www.figma.com/file/xgeqbCe4AZMHuBE9q3ogNA/izackmbimi?node-id=440%3A614&t=yE99K0IDkJbE9StL-0",
+                    // liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
+                    // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
+                    // githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM"
+                },
+                {
+                    id: 6,
+                    title: 'Covid-19 Survey App',
+                    skils: ["React Native", "Native Base", "Axios", "PHP", "MYSQL"],
+                    description: 'Helth Care App',
+                    cardImage: covidapp,
+                    figma: "",
+                    // liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
+                    youtubeUrl: 'https://www.youtube.com/watch?v=MGYeFVJtlQc',
+                    githubUrl: "https://github.com/abdulkadershohan/covid_19_survey_app",
+                    isPrivate: false
+                },
+            ],
         },
 
-    ],
-
-}
+    },
+]
 
 const ProjectCard = ({ data }) => {
     return (
@@ -267,6 +308,7 @@ const ProjectCard = ({ data }) => {
                                     fontSize={24}
                                     fontWeight={500}
                                     color="#FFF"
+                                    maxWidth="300px"
                                 >
                                     {item.title}
                                     {
@@ -294,6 +336,7 @@ const ProjectCard = ({ data }) => {
                                     fontSize={14}
                                     fontWeight={400}
                                     color="#ABB2BF"
+                                    maxWidth="300px"
                                 >
                                     {item.description}
                                 </CTypography>
@@ -352,8 +395,7 @@ const ProjectCard = ({ data }) => {
 }
 export default function Protfolio() {
     const navigate = useNavigate();
-    const { mobileAppTitle, mobileApp, webAppTitle, webApp } = ProtfolioData;
-    const HeaderWeb = () => {
+    const Header = ({ title }) => {
         return (
             <Stack
                 direction="row"
@@ -369,40 +411,9 @@ export default function Protfolio() {
                     fontSize={32}
                 >
                     <span style={{ color: '#FFFFFF' }}>
-                        {webAppTitle}
-                    </span>
-
-                </CTypography>
-                <Box
-                    sx={{
-                        width: {
-                            xs: '10px', sm: '40px',
-                            md: '60px', lg: '100px',
-                        },
-                        height: '1.5px',
-                        backgroundColor: '#C778DD',
-                    }}
-                />
-            </Stack>
-        )
-    }
-    const HeaderApp = () => {
-        return (
-            <Stack
-                direction="row"
-                spacing={2}
-                alignItems="center"
-                py={6}
-            //  pt={8}
-            >
-                <CTypography
-                    text='#'
-                    color='#C778DD'
-                    fontWeight={500}
-                    fontSize={32}
-                >
-                    <span style={{ color: '#FFFFFF' }}>
-                        {mobileAppTitle}
+                        {
+                            title
+                        }
                     </span>
 
                 </CTypography>
@@ -485,15 +496,25 @@ export default function Protfolio() {
             >
                 All of my projects
             </CTypography>
-            <HeaderWeb />
-            <ProjectCard
-                data={webApp}
+            {
+                protfolioData.map((item, index) => {
+                    return (
+                        <Stack
+                            key={Math.random()}
+                        >
+                            <Header
+                                title={item?.results?.title}
 
-            />
-            <HeaderApp />
-            <ProjectCard
-                data={mobileApp}
-            />
+                            />
+                            <ProjectCard
+                                key={index}
+                                data={item.results.data}
+                            />
+                        </Stack>
+
+                    )
+                })
+            }
         </Stack>
     )
 }
