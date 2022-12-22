@@ -30,10 +30,11 @@ const protfolioData = [
                     skils: ["ReactJS", 'Figma to React', 'HTML', 'CSS', "JavaScript", "Material UI",],
                     description: 'Shihami is the world’s leading NFTs marketplace where you can discover, sell and bid NFTs and get rich.',
                     cardImage: require('../../assets/images/projects/blockchaineNft.png'),
-                    figma: "",
-                    isPrivate: true,
+                    figma: "https://www.figma.com/community/file/1148947483588050590",
+                    isPrivate: false,
                     liveUrl: 'https://blockchain-nft-website-landing-page.netlify.app/',
                     youtubeUrl: 'https://www.youtube.com/watch?v=5_GNOpPsIy0',
+                    githubUrl: 'https://github.com/abdulkadershohan/Blockchain-NFT-Website-Landing-Page'
                 },
                 {
                     id: 2,
@@ -41,10 +42,24 @@ const protfolioData = [
                     skils: ["ReactJS", 'Figma to React', 'HTML', 'CSS', "JavaScript", "Material UI",],
                     description: `The Leading NFT Marketplace On Ethereum Home To The Next Generation Of Digital Creators. Discover The Best NFT Collections.`,
                     cardImage: require('../../assets/images/projects/nft2.png'),
-                    figma: "",
-                    isPrivate: true,
+                    figma: "https://www.figma.com/community/file/1131138961524331153",
+                    isPrivate: false,
                     liveUrl: 'https://nft-marketplace-landing-page-1.netlify.app/',
                     youtubeUrl: 'https://youtu.be/uflKI9U8Q3Q',
+                    githubUrl: 'https://github.com/abdulkadershohan/NFT-Marketplace-Landing-Page',
+
+                },
+                {
+                    id: 3,
+                    title: 'NFT Alien',
+                    skils: ["ReactJS", 'Figma to React', 'HTML', 'CSS', "JavaScript", "Material UI",],
+                    description: `A collection of 2525 highly-fashionable NFTs on the ETH Blockchain. Unique, metaverse-ready, and designed to benefit their holders.`,
+                    cardImage: require('../../assets/images/projects/nftAlien.png'),
+                    isPrivate: false,
+                    liveUrl: 'https://nft-alien-v2.netlify.app/',
+                    youtubeUrl: '',
+                    githubUrl: 'https://github.com/abdulkadershohan/nft-alien',
+                    figma: 'https://www.figma.com/community/file/1177468786531815516'
                 },
             ]
         },
@@ -303,12 +318,13 @@ const ProjectCard = ({ data }) => {
                             <Stack
                                 p={2}
                                 spacing={2}
+                                maxWidth="360px"
+
                             >
                                 <Box
                                     fontSize={24}
                                     fontWeight={500}
                                     color="#FFF"
-                                    maxWidth="300px"
                                 >
                                     {item.title}
                                     {
@@ -336,17 +352,17 @@ const ProjectCard = ({ data }) => {
                                     fontSize={14}
                                     fontWeight={400}
                                     color="#ABB2BF"
-                                    maxWidth="300px"
                                 >
                                     {item.description}
                                 </CTypography>
                                 <Box
                                     display="flex"
                                     gap={2}
+                                    flexWrap="wrap"
                                 >
                                     {
                                         item.liveUrl && <CButton
-                                            btnTitle="Live =>"
+                                            btnTitle="Live => "
                                             component={'a'}
                                             target="_blank"
                                             rel="noopener noreferrer"
@@ -355,21 +371,11 @@ const ProjectCard = ({ data }) => {
                                     }
                                     {
                                         item.figma && <CButton
-                                            btnTitle="Figma =>"
+                                            btnTitle="Figma => "
                                             component={'a'}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             href={item.figma}
-                                        />
-                                    }
-                                    {
-                                        item.youtubeUrl && <CButton
-                                            btnTitle="Youtube =>"
-                                            component={'a'}
-                                            href={item.youtubeUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-
                                         />
                                     }
                                     {
@@ -382,6 +388,17 @@ const ProjectCard = ({ data }) => {
 
                                         />
                                     }
+                                    {
+                                        item.youtubeUrl && <CButton
+                                            btnTitle="Youtube =>"
+                                            component={'a'}
+                                            href={item.youtubeUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+
+                                        />
+                                    }
+
 
                                 </Box>
                             </Stack>
