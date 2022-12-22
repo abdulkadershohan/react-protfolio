@@ -10,10 +10,14 @@ const experienceData = [
         hireFor: "React & React Native",
         year: "NOV 2021 - APR 2022",
         role: [
+            "Working with NFT Marketplace apps, where people can connect their wallets and search for houses, buy, sell, and bid on houses. ",
+            "Developed an e-commerce app, where people can buy any product via payment methods and track their order.",
             "Responsible for Develop the Front-end of Web Application.",
             "Responsible for Develop the Front-end of Mobile App",
             "Responsible for debugging and testing Web Application & Mobile Application",
             "Responsible for feature extraction from UI/UX design or Reference Website or Apps",
+
+
         ],
         address: "Mirpur-2, Dhaka 1216",
 
@@ -26,7 +30,8 @@ const experienceData = [
         hireFor: "React & React Native",
         role: [
             "Working on RBS ERP Project(React JS)- ongoing",
-            "Working on RBS OTT Platform APP(React Native).-closed",
+            "Developed our program management, project management, and task management systems. Additionally, we implemented our issue tracker, requisition, expense, and invoice.",
+            'Working with real-time chat applications using WebSocket technology Implements a Kanban board with drag-and-drop functionality as well as real-time updates.',
             "Responsible for API integration, project management, requirements analysis, sometimes designing the frontend architecture, designing UI/UX for development,  etc."
         ],
         address: "House# TA-99, 8th Floor, Gulshan Link Tower, Gulshan-Badda Link Road, Dhaka-1212",
