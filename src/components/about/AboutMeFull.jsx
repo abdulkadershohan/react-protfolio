@@ -30,7 +30,7 @@ const aboutMeData = {
         {
             id: 2,
             title: 'Libraries & Frameworks',
-            items: ["React,", "React Native,", "Bootstrap,", "Native Base,", "Material UI,", "React Bootstrap"]
+            items: ["React JS,", "Next JS,", "React Native,", "Bootstrap,", "Native Base,", "Material UI,", "React Bootstrap"]
         },
         {
             id: 3,
