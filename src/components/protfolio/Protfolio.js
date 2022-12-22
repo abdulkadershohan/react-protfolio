@@ -36,9 +36,11 @@ const homeProtfolioData = [
         description: 'Shihami is the world’s leading NFTs marketplace where you can discover, sell and bid NFTs and get rich.',
         cardImage: require('../../assets/images/projects/blockchaineNft.png'),
         figma: "",
-        isPrivate: true,
+        isPrivate: false,
         liveUrl: 'https://blockchain-nft-website-landing-page.netlify.app/',
-        youtubeUrl: 'https://www.youtube.com/watch?v=5_GNOpPsIy0',
+        // youtubeUrl: 'https://www.youtube.com/watch?v=5_GNOpPsIy0',
+        githubUrl: 'https://github.com/abdulkadershohan/Blockchain-NFT-Website-Landing-Page'
+
     },
     {
         id: 3,
@@ -121,12 +123,13 @@ const ProjectCard = () => {
                             <Stack
                                 p={2}
                                 spacing={2}
+                                maxWidth="360px"
+
                             >
                                 <Box
                                     fontSize={24}
                                     fontWeight={500}
                                     color='#fff'
-                                    maxWidth="300px"
 
                                 >
                                     {item.title}
@@ -155,13 +158,13 @@ const ProjectCard = () => {
                                     fontSize={14}
                                     fontWeight={400}
                                     color="#ABB2BF"
-                                    maxWidth="300px"
                                 >
                                     {item.description}
                                 </CTypography>
                                 <Box
                                     display="flex"
                                     gap={2}
+                                    flexWrap="wrap"
                                 >
                                     {
                                         item.liveUrl && <CButton

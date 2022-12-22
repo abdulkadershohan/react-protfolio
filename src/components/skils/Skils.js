@@ -29,7 +29,7 @@ const mySkills = [
     {
         id: 2,
         title: 'Libraries & Frameworks',
-        items: ["React,", "React Native,", "Material UI,", "Native Base,", "Bootstrap,", "React Bootstrap"]
+        items: ["React JS,", "Next JS,", "React Native,", "Material UI,", "Native Base,", "Bootstrap,", "React Bootstrap"]
     },
     {
         id: 3,
