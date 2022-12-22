@@ -298,6 +298,8 @@ export default function AboutMeFull() {
                                         md: 'auto', lg: 'auto',
                                     },
                                     filter: 'grayscale(100%)',
+                                    aspectRatio: '1/1',
+
                                 }}
                             />
                         </Stack>
