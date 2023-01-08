@@ -209,7 +209,11 @@ export default function Experience() {
                 pb={8}
             >
                 <Stack
-                    direction="row"
+                    direction={{
+                        xs: 'column',
+                        sm: 'column',
+                        md: 'row',
+                    }}
                     justifyContent="space-between"
                     flexWrap="wrap"
                     gap={1}
