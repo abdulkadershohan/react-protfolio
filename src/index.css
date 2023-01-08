@@ -16,6 +16,12 @@ a{
     text-decoration: none;
     color: #fff;
 }
+.drawer-link:hover{
+    border-right: 4px solid #fff;
+    background-color: rgb(57, 58, 70);
+    padding: 0.5rem 1rem;
+    
+}
 .bgColor{
     background-color: #282C33;
 }
