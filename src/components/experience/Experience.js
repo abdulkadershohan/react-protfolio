@@ -59,7 +59,10 @@ export default function Experience() {
                             text='/'
                             color='#C778DD'
                             fontWeight={500}
-                            fontSize={32}
+                            fontSize={{
+                                xs: 24,
+                                sm: 32,
+                            }}
                         >
                             <span style={{ color: '#FFFFFF' }}>
                                 experience

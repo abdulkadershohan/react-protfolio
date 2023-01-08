@@ -80,7 +80,7 @@ const ProjectCard = () => {
                                     aspectRatio: '16/9',
                                     borderBottom: '1px solid #ABB2BF',
                                     display: 'block',
-                                    width: '360px',
+                                    width: '100%',
                                     height: '200px'
                                 }}
                             />
@@ -235,7 +235,10 @@ export default function Protfolio() {
                         text='#'
                         color='#C778DD'
                         fontWeight={500}
-                        fontSize={32}
+                        fontSize={{
+                            xs: 20,
+                            sm: 32,
+                        }}
                     >
                         <span style={{ color: '#FFFFFF' }}>
                             Protfolio
@@ -255,7 +258,10 @@ export default function Protfolio() {
                 </Stack>
                 <CTypography
                     fontWeight={400}
-                    fontSize={16}
+                    fontSize={{
+                        xs: 12,
+                        sm: 16,
+                    }}
 
                     component={Link}
                     to='/protfolio'
