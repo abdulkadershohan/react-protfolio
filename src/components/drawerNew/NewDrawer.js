@@ -150,7 +150,7 @@ function DrawerAppBar(props, { children }) {
                     backgroundColor: '#282C33',
                     boxShadow: 'none',
                     pl: {
-                        md: 8,
+                        md: 7,
                         xs: 0,
                     },
                 }}
@@ -281,6 +281,7 @@ function DrawerAppBar(props, { children }) {
             </Box>
             <Box component="main" sx={{
                 p: 2,
+                pr: 3,
                 backgroundColor: '#282C33',
                 width: '100%',
 
