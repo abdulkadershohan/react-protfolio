@@ -59,7 +59,10 @@ export default function Experience() {
                             text='/'
                             color='#C778DD'
                             fontWeight={500}
-                            fontSize={32}
+                            fontSize={{
+                                xs: 24,
+                                sm: 32,
+                            }}
                         >
                             <span style={{ color: '#FFFFFF' }}>
                                 experience
@@ -209,7 +212,11 @@ export default function Experience() {
                 pb={8}
             >
                 <Stack
-                    direction="row"
+                    direction={{
+                        xs: 'column',
+                        sm: 'column',
+                        md: 'row',
+                    }}
                     justifyContent="space-between"
                     flexWrap="wrap"
                     gap={1}

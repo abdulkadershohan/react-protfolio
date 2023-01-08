@@ -4,9 +4,6 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
 import Toolbar from '@mui/material/Toolbar';
 import { Stack } from '@mui/system';
 import * as React from 'react';
@@ -16,7 +13,7 @@ import { CTypography } from '../../utility';
 import Footer from '../footer/Footer';
 import Sidebar from '../sidebar/Sidebar';
 
-const drawerWidth = 240;
+const drawerWidth = 50;
 const navbarData = {
     routes: [
         {
@@ -63,19 +60,23 @@ function DrawerAppBar(props, { children }) {
     };
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{
-            textAlign: 'center',
-            backgroundColor: '#282C33',
-        }}>
+        <Box
+            onClick={handleDrawerToggle}
+            sx={{
+                textAlign: 'center',
+                backgroundColor: '#282C33',
+            }}>
             <Stack
                 direction="row"
                 alignItems="center"
+                justifyContent={"center"}
                 spacing={1}
                 sx={{
                     cursor: "pointer",
                 }}
                 component={Link}
                 to="/"
+                py={4}
             >
                 <img src={logo} alt="logo"
                     style={{ width: 15, height: 15 }}
@@ -84,84 +85,57 @@ function DrawerAppBar(props, { children }) {
                     {logoTitle}
                 </CTypography>
             </Stack>
-            {/* <Stack
-                direction="row"
-                alignItems="center"
-                justifyContent="center"
-                spacing={1}
-                component="a"
-                href="#"
-                sx={{
-                    cursor: "pointer",
-                }}
-                py={2}
-            >
-                <img src={logo} alt="logo"
-                    style={{ width: 15, height: 15 }}
-                />
-                <CTypography
-                    fontSize="1rem"
-                >
-                    Abdul Kader
-                </CTypography>
-            </Stack> */}
-            {/* <Typography variant="h6" sx={{ my: 2 }}>
-                MUI
-            </Typography> */}
+
             <Divider />
-            <List>
+            <Stack
+                gap={2}
+                fontSize="1.2rem"
+                textAlign={"left"}
+                py={1}
+            >
                 {routes.map((item) => (
-                    <ListItem key={Math.random()} disablePadding>
-                        <ListItemButton sx={{
-                            textAlign: 'center',
-                            fontSize: '1.2rem',
-                        }}>
-                            {/* <ListItemText primary={item.name}
-                                component={NavLink}
-                                to={item.path}
 
-                            /> */}
-                            <NavLink
-                                to={item.path}
-                                key={item.id}
-                                style={({ isActive }) => (isActive ?
-                                    {
-                                        // borderRight: "4px solid white",
-                                        // background: "rgb(45, 51, 89)"
-                                        color: "#fff",
-                                        fontFamily: "FiraCode",
-                                        fontWeight: 600,
+                    <NavLink
+                        to={item.path}
+                        key={item.id}
+                        style={({ isActive }) => (isActive ?
+                            {
+                                borderRight: "4px solid #fff",
+                                background: "rgb(45, 51, 89)",
+                                color: "#fff",
+                                fontFamily: "FiraCode",
+                                fontWeight: 600,
+                                padding: "0.5rem 1rem",
+                            }
+                            : {
+                                color: "#ABB2BF",
+                                fontFamily: "FiraCode",
+                                fontWeight: 400,
+                                padding: "0.5rem 1rem",
 
-                                    }
-                                    : {
-                                        color: "#ABB2BF",
-                                        fontFamily: "FiraCode",
-                                        fontWeight: 400,
+                            })}
+                        className='drawer-link'
+                    >
+                        <span
+                            style={{
+                                color: "#C778DD"
+                            }}
+                        >
+                            #
+                        </span>
+                        <Box
+                            component="span"
+                            sx={{
+                                "&:hover": {
+                                    color: "#fff",
+                                }
+                            }}
 
-                                    })}
-                            >
-                                <span
-                                    style={{
-                                        color: "#C778DD"
-                                    }}
-                                >
-                                    #
-                                </span>
-                                <Box
-                                    component="span"
-                                    sx={{
-                                        "&:hover": {
-                                            color: "#fff",
-                                        }
-                                    }}
-
-                                >{item.name}
-                                </Box>
-                            </NavLink>
-                        </ListItemButton>
-                    </ListItem>
+                        >{item.name}
+                        </Box>
+                    </NavLink>
                 ))}
-            </List>
+            </Stack>
         </Box>
     );
 
@@ -176,7 +150,7 @@ function DrawerAppBar(props, { children }) {
                     backgroundColor: '#282C33',
                     boxShadow: 'none',
                     pl: {
-                        md: 8,
+                        md: 7,
                         xs: 0,
                     },
                 }}
@@ -187,7 +161,7 @@ function DrawerAppBar(props, { children }) {
                         aria-label="open drawer"
                         edge="start"
                         onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { sm: 'none' } }}
+                        sx={{ mr: 2, display: { md: 'none' } }}
                     >
                         <MenuIcon />
                     </IconButton>
@@ -199,7 +173,7 @@ function DrawerAppBar(props, { children }) {
                         MUI
                     </Typography> */}
                     <Box
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                        sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' } }}
                         component="div"
                     >
                         <Stack
@@ -224,7 +198,7 @@ function DrawerAppBar(props, { children }) {
                             </CTypography>
                         </Stack>
                     </Box>
-                    <Stack sx={{ display: { xs: 'none', sm: 'block' } }}
+                    <Stack sx={{ display: { xs: 'none', md: 'block' } }}
                         spacing={2}
                         direction="row"
                     >
@@ -289,10 +263,8 @@ function DrawerAppBar(props, { children }) {
                         }
                     }}
                     sx={{
-                        display: { xs: 'block', sm: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-
-
+                        display: { xs: 'block', md: 'none' },
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: `${drawerWidth}%` },
                     }}
                 >
                     {drawer}
@@ -308,7 +280,8 @@ function DrawerAppBar(props, { children }) {
                 <Sidebar />
             </Box>
             <Box component="main" sx={{
-                p: 3,
+                p: 2,
+                pr: 3,
                 backgroundColor: '#282C33',
                 width: '100%',
 
@@ -316,7 +289,10 @@ function DrawerAppBar(props, { children }) {
                 <Toolbar />
                 <Box
                     sx={{
-                        pl: 8,
+                        pl: {
+                            xs: 4,
+                            md: 8,
+                        }
                     }}
                 >
                     <Outlet />
