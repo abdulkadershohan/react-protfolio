@@ -34,7 +34,7 @@ const experienceData = [
             'Working with real-time chat applications using WebSocket technology Implements a Kanban board with drag-and-drop functionality as well as real-time updates.',
             "Responsible for API integration, project management, requirements analysis, sometimes designing the frontend architecture, designing UI/UX for development,  etc."
         ],
-        address: "House# TA-99, 8th Floor, Gulshan Link Tower, Gulshan-Badda Link Road, Dhaka-1212",
+        address: "House No: 998, 1st Floor, Avenue:11, Road: 9/A, Mirpur DOHS",
     }
 ]
 
@@ -213,9 +213,9 @@ export default function Experience() {
             >
                 <Stack
                     direction={{
-                        xs: 'column',
-                        sm: 'column',
-                        md: 'row',
+                        xs: 'column-reverse',
+                        sm: 'column-reverse',
+                        md: 'row-reverse',
                     }}
                     justifyContent="space-between"
                     flexWrap="wrap"
