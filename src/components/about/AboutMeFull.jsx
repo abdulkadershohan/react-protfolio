@@ -18,7 +18,7 @@ const aboutMeData = {
         },
         {
             id: 3,
-            text: ` Mobile app development is my other passion. React and React Native is my favorite JavaScript libraries. I'm also a big fan of Node.js and Express.js. In the future, I want to be a Full Stack Developer.`
+            text: ` Mobile app development is my other passion. React and React Native is my favorite JavaScript libraries. I'm also a big fan of Python Django. In the future, I want to be a Full Stack Developer`,
         }
     ],
     mySkills: [
@@ -35,7 +35,8 @@ const aboutMeData = {
         {
             id: 3,
             title: 'Other Skills & Tools',
-            items: ["Context API,", "Git,", "GitHub,", "React Reducer,", "RestAPI,", "React Redux,", "WebSocket,", "Redux toolkit"]
+            items: ["Redux,", "Redux Toolkit,", "RTK Query,", "Context API,", "React Reducer,", "WebSocket,", "Git,", "GitHub"]
+
         },
         {
             id: 4,

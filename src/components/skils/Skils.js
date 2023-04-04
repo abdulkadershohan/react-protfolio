@@ -34,7 +34,7 @@ const mySkills = [
     {
         id: 3,
         title: 'Other Skills & Tools',
-        items: ["Context API,", "Git,", "GitHub,", "React Reducer,", "React Redux,", "WebSocket,", "Redux toolkit"]
+        items: ["Redux,", "Redux Toolkit,", "RTK Query,", "Context API,", "React Reducer,", "WebSocket,", "Git,", "GitHub"]
     },
     {
         id: 4,
@@ -146,7 +146,7 @@ export default function Skils() {
                 pb: 8,
             }}
         >
-            <Grid item xs={12} md={5}>
+            <Grid item xs={12} md={4}>
                 <Stack
                     sx={{
                         justifyContent: 'center',
@@ -156,7 +156,7 @@ export default function Skils() {
                     <Ractangle />
                 </Stack>
             </Grid>
-            <Grid item xs={12} md={7}>
+            <Grid item xs={12} md={8}>
                 <Stack
                     direction="row"
                     justifyContent="space-between"
