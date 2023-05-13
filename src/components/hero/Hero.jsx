@@ -10,7 +10,8 @@ import Contacts from "../contacts/Contacts";
 import Protfolio from "../protfolio/Protfolio";
 import Skils from "../skils/Skils";
 import styles from "./hero.module.css";
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 const heroTopSectionData = {
   title: {
     title1: "Abdul Kader",
@@ -115,16 +116,24 @@ export default function Hero() {
                 aspectRatio: "1/1",
               }}
             />
-            <img src={image} alt="hero_img"
-
-              style={{
+            <Box
+              sx={{
                 position: 'relative',
                 zIndex: 2,
                 borderBottom: "1px solid #C778DD",
                 display: "block",
                 maxWidth: "100%",
               }}
-            />
+            >
+              <LazyLoadImage
+                alt={"hero_img"}
+                effect="blur"
+                src={image}
+                width={"100%"}
+                height={"100%"}
+              />
+            </Box>
+
             <Box
               sx={{
                 padding: "8px",
