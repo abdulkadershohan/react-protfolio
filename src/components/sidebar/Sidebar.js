@@ -27,15 +27,13 @@ const sidebarData = [
 export default function Sidebar() {
     return (
         <Stack
-            sx={{
-                width: "100%",
-                pt: 4
-            }}
+            position={"absolute"}
+            top={80}
+            left={0}
         >
             <Stack
                 alignItems="center"
                 spacing={2}
-                width="35%"
             >
                 <Box
                     sx={{

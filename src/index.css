@@ -28,6 +28,44 @@ a{
 .a-class-with-black-text-set-as-important{
     color:#fff !important;
 }
+
+.container {
+    width:100%;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 768px;
+        padding: 0 2rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+@media screen and (min-width: 1536px) {
+    .container {
+        max-width: 1536px;
+    }
+}
+
 /* scroll bar desigin */
 ::-webkit-scrollbar{
     width: 8px;

@@ -8,26 +8,23 @@ import Experience from "../components/experience/Experience";
 import Hero from "../components/hero/Hero";
 import ProtfolioAll from "../components/protfolio/ProtfolioAll";
 import ScrollToTop from "./ScrollToTop";
+import Navbar from "../components/navbar/Navbar";
 
 export default function UserRoutes() {
     return (
         <BrowserRouter>
             <ScrollToTop />
+            <Navbar />
+
             <Routes>
-                <Route
-                    path="/"
-                    element={
-                        <DrawerAppBar />
-                    }
-                >
-                    <Route path="/" element={<Hero />} />
-                    <Route path="/protfolio" element={<ProtfolioAll />} />
-                    <Route path="/contact" element={<ContactsAll />} />
-                    <Route path="/about" element={<AboutMeFull />} />
-                    <Route path="/education" element={<Education />} />
-                    <Route path="/experience" element={<Experience />} />
-                    <Route path="*" element={<h1>Not Found</h1>} />
-                </Route>
+
+                <Route path="/" element={<Hero />} />
+                <Route path="/protfolio" element={<ProtfolioAll />} />
+                <Route path="/contact" element={<ContactsAll />} />
+                <Route path="/about" element={<AboutMeFull />} />
+                <Route path="/education" element={<Education />} />
+                <Route path="/experience" element={<Experience />} />
+                <Route path="*" element={<h1>Not Found</h1>} />
 
             </Routes>
         </BrowserRouter>
