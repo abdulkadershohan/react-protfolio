@@ -1,5 +1,6 @@
 import { Stack, Typography } from "@mui/material";
 import * as React from "react";
+import { useSelector } from "react-redux";
 export default function CTypography({
     children,
     align,
@@ -11,6 +12,8 @@ export default function CTypography({
     color,
     ...rest
 }) {
+    const { mode } = useSelector(state => state.theme)
+    const isDark = Boolean(mode === 'dark')
     return (
         <Stack spacing={1}>
             <Typography
@@ -23,7 +26,7 @@ export default function CTypography({
                 //sx={sx ? sx : { fontWeight: 700, py: 0 }}
                 //  variant={variant ? variant : "h6"}
                 text={text}
-                color={color ? color : "#fff"}
+                color={color ? color : isDark ? process.env.REACT_APP_TEXT_COLOR_DARK_MODE : process.env.REACT_APP_TEXT_COLOR_LIGHT_MODE}
                 //  component={component ? component : "h1"}
                 {...rest}
             >

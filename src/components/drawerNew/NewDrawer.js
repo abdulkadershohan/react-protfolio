@@ -7,11 +7,16 @@ import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import { Stack } from '@mui/system';
 import * as React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import logo from "../../assets/images/logo.png";
 import { CTypography } from '../../utility';
 import Footer from '../footer/Footer';
 import Sidebar from '../sidebar/Sidebar';
+import SunIcon from '../../assets/svg/SunIcon';
+import { Icon } from '@mui/material';
+import { changeTheme } from '../../features/theme/themeSlice';
+import LogoImg from '../../assets/svg/LogoImg';
 
 const drawerWidth = 50;
 const navbarData = {
@@ -51,6 +56,9 @@ const navbarData = {
 }
 
 function DrawerAppBar(props, { children }) {
+    const { mode } = useSelector(state => state.theme)
+    const isDark = Boolean(mode === 'dark')
+    const dispatch = useDispatch()
     const { routes, logo, logoTitle } = navbarData
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -64,7 +72,7 @@ function DrawerAppBar(props, { children }) {
             onClick={handleDrawerToggle}
             sx={{
                 textAlign: 'center',
-                backgroundColor: '#282C33',
+                backgroundColor: isDark ? process.env.REACT_APP_BACKGROUND_COLOR_DARK_MODE : process.env.REACT_APP_BACKGROUND_COLOR_LIGHT_MODE,
             }}>
             <Stack
                 direction="row"
@@ -78,8 +86,8 @@ function DrawerAppBar(props, { children }) {
                 to="/"
                 py={4}
             >
-                <img src={logo} alt="logo"
-                    style={{ width: 15, height: 15 }}
+                <LogoImg
+                    iconColor={isDark ? process.env.REACT_APP_TEXT_COLOR_DARK_MODE : process.env.REACT_APP_TEXT_COLOR_LIGHT_MODE}
                 />
                 <CTypography>
                     {logoTitle}
@@ -101,8 +109,8 @@ function DrawerAppBar(props, { children }) {
                         style={({ isActive }) => (isActive ?
                             {
                                 borderRight: "4px solid #fff",
-                                background: "rgb(45, 51, 89)",
-                                color: "#fff",
+                                background: isDark ? '#1E1E1E' : '#282C33',
+                                color: '#fff',
                                 fontFamily: "FiraCode",
                                 fontWeight: 600,
                                 padding: "0.5rem 1rem",
@@ -127,7 +135,7 @@ function DrawerAppBar(props, { children }) {
                             component="span"
                             sx={{
                                 "&:hover": {
-                                    color: "#fff",
+                                    color: '#fff'
                                 }
                             }}
 
@@ -147,7 +155,7 @@ function DrawerAppBar(props, { children }) {
         }}>
             <AppBar component="nav"
                 sx={{
-                    backgroundColor: '#282C33',
+                    backgroundColor: isDark ? process.env.REACT_APP_BACKGROUND_COLOR_DARK_MODE : process.env.REACT_APP_BACKGROUND_COLOR_LIGHT_MODE,
                     boxShadow: 'none',
                     pl: {
                         md: 7,
@@ -187,11 +195,15 @@ function DrawerAppBar(props, { children }) {
                             to="/"
 
                         >
-                            <img src={logo} alt="logo"
+                            {/* <img src={logo} alt="logo"
                                 style={{ width: 15, height: 15 }}
+                            /> */}
+                            <LogoImg
+                                iconColor={isDark ? process.env.REACT_APP_TEXT_COLOR_DARK_MODE : process.env.REACT_APP_TEXT_COLOR_LIGHT_MODE}
                             />
                             <CTypography
                                 fontSize="1rem"
+                                color={isDark ? process.env.REACT_APP_TEXT_COLOR_DARK_MODE : process.env.REACT_APP_TEXT_COLOR_LIGHT_MODE}
 
                             >
                                 Abdul Kader
@@ -202,6 +214,22 @@ function DrawerAppBar(props, { children }) {
                         spacing={2}
                         direction="row"
                     >
+                        <IconButton
+                            color='primary'
+                            onClick={() => {
+                                if (isDark) {
+                                    dispatch(changeTheme('light'))
+                                }
+                                else {
+                                    dispatch(changeTheme('dark'))
+                                }
+                            }}
+
+                        >
+                            <SunIcon
+                                iconColor={isDark ? process.env.REACT_APP_BACKGROUND_COLOR_LIGHT_MODE : process.env.REACT_APP_BACKGROUND_COLOR_DARK_MODE}
+                            />
+                        </IconButton>
                         {
                             routes.map((route, index) => {
                                 return (
@@ -212,7 +240,7 @@ function DrawerAppBar(props, { children }) {
                                             {
                                                 // borderRight: "4px solid white",
                                                 // background: "rgb(45, 51, 89)"
-                                                color: "#fff",
+                                                color: isDark ? process.env.REACT_APP_TEXT_COLOR_DARK_MODE : process.env.REACT_APP_TEXT_COLOR_LIGHT_MODE,
                                                 fontFamily: "FiraCode",
                                                 fontWeight: 600,
 
@@ -233,7 +261,7 @@ function DrawerAppBar(props, { children }) {
                                             component="span"
                                             sx={{
                                                 "&:hover": {
-                                                    color: "#fff",
+                                                    color: isDark ? process.env.REACT_APP_TEXT_COLOR_DARK_MODE : process.env.REACT_APP_TEXT_COLOR_LIGHT_MODE,
                                                 }
                                             }}
 
@@ -259,7 +287,7 @@ function DrawerAppBar(props, { children }) {
                     }}
                     PaperProps={{
                         sx: {
-                            backgroundColor: '#282C33',
+                            backgroundColor: isDark ? process.env.REACT_APP_BACKGROUND_COLOR_DARK_MODE : process.env.REACT_APP_BACKGROUND_COLOR_LIGHT_MODE,
                         }
                     }}
                     sx={{
@@ -282,7 +310,7 @@ function DrawerAppBar(props, { children }) {
             <Box component="main" sx={{
                 p: 2,
                 pr: 3,
-                backgroundColor: '#282C33',
+                backgroundColor: isDark ? process.env.REACT_APP_BACKGROUND_COLOR_DARK_MODE : process.env.REACT_APP_BACKGROUND_COLOR_LIGHT_MODE,
                 width: '100%',
 
             }}>
