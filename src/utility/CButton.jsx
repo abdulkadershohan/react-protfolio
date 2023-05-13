@@ -2,15 +2,18 @@
 import { Box } from "@mui/material";
 import PropTypes from "prop-types";
 import * as React from "react";
+import { useSelector } from "react-redux";
 export default function ContainedButtons({
 	children,
 	btnTitle,
 	...rest
 }) {
+	const { mode } = useSelector(state => state.theme)
+	const isDark = Boolean(mode === 'dark')
 	return (
 		<Box
 			sx={{
-				color: "#fff",
+				color: isDark ? process.env.REACT_APP_TEXT_COLOR_DARK_MODE : process.env.REACT_APP_TEXT_COLOR_LIGHT_MODE,
 				p: 1,
 				border: "1px solid #C778DD",
 				"&:hover": {

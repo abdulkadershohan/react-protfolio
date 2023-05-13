@@ -12,6 +12,7 @@ import Skils from "../skils/Skils";
 import styles from "./hero.module.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { useSelector } from "react-redux";
 const heroTopSectionData = {
   title: {
     title1: "Abdul Kader",
@@ -46,6 +47,8 @@ export default function Hero() {
     doing: { text, url, urlText },
     blockquote: { quoteText1, quoteText2, quoteText3, quoteText4, quoteBy },
     image } = heroTopSectionData;
+  const { mode } = useSelector(state => state.theme)
+  const isDark = Boolean(mode === 'dark')
   return (
     <Stack >
       <Grid container spacing={2}
@@ -161,7 +164,11 @@ export default function Hero() {
                 }}
               ></span>
               {text}
-              <a href={url} target="_blank" rel="noreferrer">
+              <a href={url} target="_blank" rel="noreferrer"
+                style={{
+                  color: "#C778DD",
+                }}
+              >
                 {urlText}
               </a>
             </Box>
@@ -207,9 +214,18 @@ export default function Hero() {
       <div className={styles.blockquoteWrapper}>
         <div className={styles.blockquote}>
           <h1>
-            {quoteText1}  <span style={{ color: '#ffffff' }}>{quoteText2}</span> {quoteText3} <span style={{ color: '#ffffff' }}>  {quoteText4}</span>
+            {quoteText1}  <span
+              style={{ color: isDark ? process.env.REACT_APP_TEXT_COLOR_DARK_MODE : process.env.REACT_APP_TEXT_COLOR_LIGHT_MODE }}
+            >{quoteText2}</span> {quoteText3} <span
+              style={{ color: isDark ? process.env.REACT_APP_TEXT_COLOR_DARK_MODE : process.env.REACT_APP_TEXT_COLOR_LIGHT_MODE }}
+
+            >  {quoteText4}</span>
           </h1>
-          <h4>—{quoteBy}<br />
+          <h4
+            style={{
+              color: isDark ? process.env.REACT_APP_TEXT_COLOR_DARK_MODE : process.env.REACT_APP_TEXT_COLOR_LIGHT_MODE
+            }}
+          >—{quoteBy}<br />
             {/* <em>Web Site Usability: A Designer's Guide</em> */}
           </h4>
         </div>
