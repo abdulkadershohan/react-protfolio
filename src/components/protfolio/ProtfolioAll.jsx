@@ -15,7 +15,8 @@ import rbs from '../../assets/images/projects/rbs.png';
 import rtc from '../../assets/images/projects/rtc.png';
 import SeRemo from '../../assets/images/projects/SeRemo2.png';
 import upcopo2 from '../../assets/images/projects/upocopo-2.png';
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import { CButton, CTypography } from "../../utility";
 
 const protfolioData = [
@@ -269,16 +270,23 @@ const ProjectCard = ({ data }) => {
                                 border: '1px solid #ABB2BF',
                             }}
                         >
-                            <Box src={item.cardImage} alt=""
-                                component="img"
+                            <Box
                                 sx={{
                                     aspectRatio: '16/9',
                                     borderBottom: '1px solid #ABB2BF',
                                     display: 'block',
                                     width: '100%',
-                                    height: '200px'
+                                    height: '200px',
                                 }}
-                            />
+                            >
+                                <LazyLoadImage
+                                    alt={item.title}
+                                    effect="blur"
+                                    src={item.cardImage}
+                                    width={"100%"}
+                                    height={"100%"}
+                                />
+                            </Box>
                             <Box
                                 component="ul"
                                 sx={{

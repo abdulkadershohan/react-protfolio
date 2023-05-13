@@ -3,6 +3,8 @@ import { Box, Stack } from "@mui/system";
 import React from "react";
 import { Link } from 'react-router-dom';
 import { CButton, CTypography } from "../../utility";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 const homeProtfolioData = [
     {
         id: 1,
@@ -74,8 +76,8 @@ const ProjectCard = () => {
                                 border: '1px solid #ABB2BF',
                             }}
                         >
-                            <Box src={item.cardImage} alt=""
-                                component="img"
+                            <Box alt=""
+                                // component="img"
                                 sx={{
                                     aspectRatio: '16/9',
                                     borderBottom: '1px solid #ABB2BF',
@@ -83,7 +85,15 @@ const ProjectCard = () => {
                                     width: '100%',
                                     height: '200px'
                                 }}
-                            />
+                            >
+                                <LazyLoadImage
+                                    alt={item.title}
+                                    effect="blur"
+                                    src={item.cardImage}
+                                    width={"100%"}
+                                    height={"100%"}
+                                />
+                            </Box>
                             <Box
                                 component="ul"
                                 sx={{

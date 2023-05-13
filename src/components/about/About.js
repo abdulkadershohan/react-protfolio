@@ -3,7 +3,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import photo from "../../assets/images/sohan-3.jpg";
 import { CButton, CTypography } from "../../utility";
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 const homeAboutData = {
     aboutData: [
         {
@@ -113,9 +114,6 @@ export default function About() {
                     // }}
                     >
                         <Box
-                            component="img"
-                            src={image}
-                            alt="hero"
                             sx={{
                                 width: {
                                     xs: '100%', sm: '100%',
@@ -127,9 +125,19 @@ export default function About() {
                                 },
                                 filter: 'grayscale(100%)',
                                 aspectRatio: '1/1',
+                                borderRadius: 2,
+                                overflow: 'hidden',
 
                             }}
-                        />
+                        >
+                            <LazyLoadImage
+                                alt='about-image'
+                                effect="blur"
+                                src={image}
+                                width={"100%"}
+                                height={"100%"}
+                            />
+                        </Box>
                     </Stack>
                 </Grid>
             </Grid>
