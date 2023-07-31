@@ -11,37 +11,44 @@ import twitter from "../../assets/Icon/twitter.svg";
 import logo from "../../assets/images/logo.png";
 import LogoImg from "../../assets/svg/LogoImg";
 import { CTypography } from "../../utility";
+import GithubIcon from "../../assets/svg/GithubIcon";
+import LinkDinIcom from "../../assets/svg/LinkDinIcon";
+import LinkDinIcon from "../../assets/svg/LinkDinIcon";
+import TelegramIcon from "../../assets/svg/TelegramIcon";
+import TwitterIcon from "../../assets/svg/TwitterIcon";
+import DiscordIcon from "../../assets/svg/DiscordIcon";
+import FigmaIcon from "../../assets/svg/FigmaIcon";
 const footerData = {
     socials: [
         {
             id: 1,
             name: 'github',
             link: "https://github.com/abdulkadershohan",
-            img: github
+            img: <GithubIcon />
         },
         {
             id: 2,
             name: 'linkedin',
             link: "https://www.linkedin.com/in/abdulkadershohan/",
-            img: linkedin
+            img: <LinkDinIcon />
         },
         {
             id: 3,
             name: 'telegram',
             link: "https://t.me/Abdulkadershohan",
-            img: telegram
+            img: <TelegramIcon />
         },
         {
             id: 4,
             name: 'twitter',
             link: "https://twitter.com/dev_shohan",
-            img: twitter
+            img: <TwitterIcon />
         },
         {
             id: 5,
             name: 'discord',
             link: "https://discord.com/users/522431317447802900",
-            img: discord
+            img: <DiscordIcon />
         }
     ],
     socialsTitle: "Social Media",
@@ -146,13 +153,7 @@ export default function Footer() {
                                                 }
                                             }}
                                         >
-                                            <Box
-                                                component='img'
-                                                src={item.img}
-                                                alt="item.name"
-                                            >
-
-                                            </Box>
+                                            {item.img}
 
                                         </Box>
                                     )
@@ -181,7 +182,7 @@ export default function Footer() {
                                                 href={"https://www.figma.com/community/file/1164933568884615740"}
                                                 target="_blank"
                                             >
-                                                <img src={figma} alt="figma" />
+                                                <FigmaIcon />
                                             </Box>
                                         </Box>
                                     </>
