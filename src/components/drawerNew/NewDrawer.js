@@ -10,13 +10,12 @@ import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import logo from "../../assets/images/logo.png";
+import LogoImg from '../../assets/svg/LogoImg';
+import SunIcon from '../../assets/svg/SunIcon';
+import { changeTheme } from '../../features/theme/themeSlice';
 import { CTypography } from '../../utility';
 import Footer from '../footer/Footer';
 import Sidebar from '../sidebar/Sidebar';
-import SunIcon from '../../assets/svg/SunIcon';
-import { Icon } from '@mui/material';
-import { changeTheme } from '../../features/theme/themeSlice';
-import LogoImg from '../../assets/svg/LogoImg';
 
 const drawerWidth = 50;
 const navbarData = {
@@ -56,7 +55,8 @@ const navbarData = {
 }
 
 function DrawerAppBar(props, { children }) {
-    const { mode } = useSelector(state => state.theme)
+    const { mode, color } = useSelector(state => state.theme)
+    console.log(mode)
     const isDark = Boolean(mode === 'dark')
     const dispatch = useDispatch()
     const { routes, logo, logoTitle } = navbarData
@@ -227,7 +227,7 @@ function DrawerAppBar(props, { children }) {
 
                         >
                             <SunIcon
-                                iconColor={isDark ? process.env.REACT_APP_BACKGROUND_COLOR_LIGHT_MODE : process.env.REACT_APP_BACKGROUND_COLOR_DARK_MODE}
+                                iconColor={isDark ? '#fff' : '#000'}
                             />
                         </IconButton>
                         {
