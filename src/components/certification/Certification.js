@@ -2,6 +2,7 @@ import { Box, Chip, Stack } from "@mui/material";
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import courseCertificate from '../../assets/images/certification/LWS-Certificate.png';
 import recommendation from '../../assets/images/certification/LWS-Recommendation-Letter.png';
@@ -19,6 +20,8 @@ const data = {
 }
 export default function Certification() {
     const navigate = useNavigate();
+    const { mode, textDark, textLight, textWhite, textGray } = useSelector(state => state.theme)
+    const isDark = Boolean(mode === 'dark')
     const Header = () => {
         return (
             <>
@@ -43,7 +46,7 @@ export default function Certification() {
                                 sm: 32,
                             }}
                         >
-                            <span style={{ color: '#FFFFFF' }}>
+                            <span style={{ color: isDark ? textWhite : textDark }}>
                                 certification
                             </span>
 
@@ -82,7 +85,7 @@ export default function Certification() {
                 <CTypography
                     fontSize={16}
                     fontWeight={400}
-                    color="#ABB2BF"
+                    color={isDark ? textLight : textGray}
                 >
                     My Certifications
                 </CTypography>
@@ -114,8 +117,7 @@ export default function Certification() {
                 p={2}
                 borderRadius={2}
                 sx={{
-                    backgroundColor: '#2E3440',
-                    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)',
+                    backgroundColor: isDark ? '#2E3440' : '#f5f5f5',
                 }}
 
             >
@@ -127,8 +129,14 @@ export default function Certification() {
                         <font color={'#C778DD'}>{data?.platform}</font>
                     </a>
                 </CTypography>
+                <Stack
+                    width={'100%'}
+                    height={'1px'}
+                    mt={2}
+                    backgroundColor={'#ABB2BF'}
+                />
                 <CTypography
-                    color="#ABB2BF"
+                    color={isDark ? textLight : textGray}
                     fontSize={16}
                     fontWeight={400}
                     mt={2}
@@ -150,8 +158,14 @@ export default function Certification() {
                         ))
                     }
                 </Stack>
+                <Stack
+                    width={'100%'}
+                    height={'1px'}
+                    mt={2}
+                    backgroundColor={'#ABB2BF'}
+                />
                 <CTypography
-                    color="#fff"
+                    color={isDark ? textWhite : textDark}
                     fontSize={16}
                     fontWeight={400}
                     mt={2}
@@ -159,7 +173,7 @@ export default function Certification() {
                     Course instructor feedback
                 </CTypography>
                 <CTypography
-                    color="#ABB2BF"
+                    color={isDark ? textLight : textGray}
                     fontSize={14}
                     fontWeight={400}
                     my={2}
@@ -174,6 +188,7 @@ export default function Certification() {
                     gap={2}
                     p={2}
                     border={'1px solid #ABB2BF'}
+                    pb={4}
 
                 >
                     <Stack
@@ -184,7 +199,7 @@ export default function Certification() {
                         }}
                     >
                         <CTypography
-                            color="#fff"
+                            color={isDark ? textWhite : textDark}
                             fontSize={16}
                             fontWeight={400}
                             pb={2}
@@ -218,7 +233,8 @@ export default function Certification() {
                         }}
                     >
                         <CTypography
-                            color="#fff"
+                            color={isDark ? textWhite : textDark}
+
                             fontSize={16}
                             fontWeight={400}
                             pb={2}
@@ -254,7 +270,7 @@ export default function Certification() {
                         }}
                     >
                         <CTypography
-                            color="#fff"
+                            color={isDark ? textWhite : textDark}
                             fontSize={16}
                             fontWeight={400}
                             pb={2}
