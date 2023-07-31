@@ -6,10 +6,12 @@ const getInitialTheme = () => {
 
 const initialState = {
     mode: getInitialTheme() ? "dark" : "light",
+    mainBgColorDark: '#282C33',
+    mainBgColorLight: '#ffffff',
     textDark: '#000000',
-    textLight: '#ffffff',
-    dark: '#000000',
-    light: '#ffffff',
+    textGray: '#212121',
+    textLight: '#ABB2BF',
+    textWhite: '#fff',
 }
 const themeSlice = createSlice({
     name: "theme",
