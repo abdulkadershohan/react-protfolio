@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React from "react";
+import { useSelector } from "react-redux";
 import discord from "../../assets/Icon/discord.svg";
 import figma from "../../assets/Icon/figma.svg";
 import github from "../../assets/Icon/github.svg";
@@ -8,6 +9,7 @@ import linkedin from "../../assets/Icon/linkedin.svg";
 import telegram from "../../assets/Icon/telegram.svg";
 import twitter from "../../assets/Icon/twitter.svg";
 import logo from "../../assets/images/logo.png";
+import LogoImg from "../../assets/svg/LogoImg";
 import { CTypography } from "../../utility";
 const footerData = {
     socials: [
@@ -53,6 +55,8 @@ const footerData = {
 }
 
 export default function Footer() {
+    const { mode, textDark, textLight, textGray } = useSelector(state => state.theme)
+    const isDark = Boolean(mode === 'dark')
     const { socials, socialsTitle, discription, link, copyRight, logo, logoTitle,
         refText } = footerData;
     return (
@@ -87,8 +91,8 @@ export default function Footer() {
                                     cursor: "pointer",
                                 }}
                             >
-                                <img src={logo} alt="logo"
-                                    style={{ width: 15, height: 15 }}
+                                <LogoImg
+                                    iconColor={isDark ? textLight : textDark}
                                 />
                                 <CTypography>
                                     {logoTitle}
@@ -97,7 +101,7 @@ export default function Footer() {
                             <CTypography
                                 fontSize="16px"
                                 fontWeight={400}
-                                color="#ABB2BF"
+                                color={isDark ? textLight : textGray}
                                 component={"a"}
                                 href="/"
                                 target="_blank"
@@ -113,30 +117,6 @@ export default function Footer() {
                         >
                             {discription}
                         </CTypography>
-                        {/* <Stack>
-                            {
-                                refText && (
-                                    <>
-                                        <CTypography
-                                            fontSize="12px"
-                                            fontWeight={400}
-                                            color="#ABB2BF"
-                                        >
-                                            {refText}
-                                        </CTypography>
-                                        <Box>
-                                            <Box
-                                                component={"a"}
-                                                href={"https://www.figma.com/community/file/1164933568884615740"}
-                                                target="_blank"
-                                            >
-                                                <img src={figma} alt="figma" />
-                                            </Box>
-                                        </Box>
-                                    </>
-                                )
-                            }
-                        </Stack> */}
                     </Stack>
                 </Grid>
                 <Grid item xs={12} md={6}>
@@ -191,7 +171,7 @@ export default function Footer() {
                                         <CTypography
                                             fontSize="12px"
                                             fontWeight={400}
-                                            color="#ABB2BF"
+                                            color={isDark ? textLight : textGray}
                                         >
                                             {refText}
                                         </CTypography>
@@ -220,7 +200,7 @@ export default function Footer() {
                 <CTypography
                     fontSize="12px"
                     fontWeight={400}
-                    color="#ABB2BF"
+                    color={isDark ? textLight : textGray}
                 >
                     ©{' '}
                     {
