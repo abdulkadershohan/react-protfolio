@@ -1,4 +1,4 @@
-import { Box, Stack } from "@mui/system";
+import { Box, Container, Stack } from "@mui/system";
 import React from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { CTypography } from "../../utility";
@@ -204,36 +204,38 @@ export default function Experience() {
         )
     }
     return (
-        <Stack>
-            <Header />
-            <Stack
-                alignItems="center"
-                py={4}
-                pb={8}
-            >
+        <Container>
+            <Stack>
+                <Header />
                 <Stack
-                    direction={{
-                        xs: 'column-reverse',
-                        sm: 'column-reverse',
-                        md: 'row-reverse',
-                    }}
-                    justifyContent="space-between"
-                    flexWrap="wrap"
-                    gap={1}
+                    alignItems="center"
+                    py={4}
+                    pb={8}
                 >
-                    {
-                        experienceData.map((item, index) => {
-                            return (
-                                <ExperienceCard
-                                    key={Math.random()}
-                                    data={item}
+                    <Stack
+                        direction={{
+                            xs: 'column-reverse',
+                            sm: 'column-reverse',
+                            md: 'row-reverse',
+                        }}
+                        justifyContent="space-between"
+                        flexWrap="wrap"
+                        gap={1}
+                    >
+                        {
+                            experienceData.map((item, index) => {
+                                return (
+                                    <ExperienceCard
+                                        key={Math.random()}
+                                        data={item}
 
-                                />
-                            )
-                        })
-                    }
+                                    />
+                                )
+                            })
+                        }
+                    </Stack>
                 </Stack>
             </Stack>
-        </Stack>
+        </Container>
     )
 }

@@ -1,6 +1,8 @@
 import { Grid, Stack } from "@mui/material";
-import { Box } from "@mui/system";
+import { Box, Container } from "@mui/system";
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link } from "react-router-dom";
 import hero from "../../assets/images/hero.png";
 import logoOutline from "../../assets/images/logoOutline.svg";
@@ -10,8 +12,6 @@ import Contacts from "../contacts/Contacts";
 import Protfolio from "../protfolio/Protfolio";
 import Skils from "../skils/Skils";
 import styles from "./hero.module.css";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 const heroTopSectionData = {
   title: {
     title1: "Abdul Kader",
@@ -47,178 +47,183 @@ export default function Hero() {
     blockquote: { quoteText1, quoteText2, quoteText3, quoteText4, quoteBy },
     image } = heroTopSectionData;
   return (
-    <Stack >
-      <Grid container spacing={2}
-        sx={{
-          alignItems: "center",
-        }}
-      >
-        <Grid item xs={12} md={6} >
-          <Stack spacing={2}>
-            <CTypography
-              text={title1}
-              fontWeight={600}
-              fontSize={'32px'}
+    <Container >
+      <Stack >
+        <Grid container spacing={2}
+          sx={{
+            alignItems: "center",
+          }}
+        >
+          <Grid item xs={12} md={6} >
+            <Stack spacing={2}>
+              <CTypography
+                text={title1}
+                fontWeight={600}
+                fontSize={'32px'}
 
-            > {title2}
-              {<br />}
-              <span style={{
-                color: "#C778DD",
-                fontWeight: 700,
-
-              }}>
-                {title3} {"\t"}
-              </span>
-              {title4} {<br />}
-              <span color="#C778DD"
-                style={{
+              > {title2}
+                {<br />}
+                <span style={{
                   color: "#C778DD",
                   fontWeight: 700,
 
-                }}
-              >
-                {"\t"} {title5} {"\t"}
-              </span>
-              {title6}
-            </CTypography>
-            <CTypography
-              color={"#ABB2BF"}
-              fontSize={'16px'}
-              fontWeight={400}
-            >{subtitle}
-            </CTypography>
-            <Box>
-              <CButton
-                component={Link}
-                to="/contact"
-              >
-                Contact Me ={'>'}
-              </CButton>
-            </Box>
-          </Stack>
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              position: "relative",
-              px: { xs: 0, md: 2, lg: 12 },
-            }}
-          >
-            <img src={logoOutline} alt=""
-              style={{
-                fontSize: "32px",
-                width: '30vmin',
-                position: "absolute",
-                top: '10%',
-                zIndex: 1,
-                aspectRatio: "1/1",
-              }}
-            />
-            <Box
-              sx={{
-                position: 'relative',
-                zIndex: 2,
-                borderBottom: "1px solid #C778DD",
-                display: "block",
-                maxWidth: "100%",
-              }}
-            >
-              <LazyLoadImage
-                alt={"hero_img"}
-                effect="blur"
-                src={image}
-                width={"100%"}
-                height={"100%"}
-              />
-            </Box>
+                }}>
+                  {title3} {"\t"}
+                </span>
+                {title4} {<br />}
+                <span color="#C778DD"
+                  style={{
+                    color: "#C778DD",
+                    fontWeight: 700,
 
+                  }}
+                >
+                  {"\t"} {title5} {"\t"}
+                </span>
+                {title6}
+              </CTypography>
+              <CTypography
+                color={"#ABB2BF"}
+                fontSize={'16px'}
+                fontWeight={400}
+              >{subtitle}
+              </CTypography>
+              <Box>
+                <CButton
+                  component={Link}
+                  to="/contact"
+                >
+                  Contact Me ={'>'}
+                </CButton>
+              </Box>
+            </Stack>
+          </Grid>
+          <Grid item xs={12} md={6}>
             <Box
               sx={{
-                padding: "8px",
-                border: " 1px solid #ABB2BF",
-                color: " #ABB2BF",
-                margin: "0px auto",
-                display: "inline-flex",
-                justifyContent: "center",
-                alignItems: "center",
+                display: "flex",
+                flexDirection: "column",
                 position: "relative",
-                top: -"1px",
-                zIndex: 3,
-                gap: "8px",
-                fontWeight: 500,
+                px: { xs: 0, md: 2, lg: 12 },
               }}
             >
-              <span
+              <Box
+                component={'img'}
+                src={logoOutline} alt=""
                 style={{
-                  content: "",
-                  display: "inline-blocl",
+                  fontSize: "32px",
+                  width: 155,
+                  height: 155,
+                  position: "absolute",
+                  top: '10%',
+                  zIndex: 1,
                   aspectRatio: "1/1",
-                  width: "16px",
-                  backgroundColor: "#C770DB1A",
-                  border: "1px solid #C778DD",
                 }}
-              ></span>
-              {text}
-              <a href={url} target="_blank" rel="noreferrer">
-                {urlText}
-              </a>
+              />
+              <Box
+                sx={{
+                  position: 'relative',
+                  zIndex: 2,
+                  borderBottom: "1px solid #C778DD",
+                  display: "block",
+                  maxWidth: "100%",
+                }}
+              >
+                <LazyLoadImage
+                  alt={"hero_img"}
+                  effect="blur"
+                  src={image}
+                  width={"100%"}
+                  height={"100%"}
+                />
+              </Box>
+
+              <Box
+                sx={{
+                  padding: "8px",
+                  border: " 1px solid #ABB2BF",
+                  color: " #ABB2BF",
+                  margin: "0px auto",
+                  display: "inline-flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  position: "relative",
+                  top: -"1px",
+                  zIndex: 3,
+                  gap: "8px",
+                  fontWeight: 500,
+                }}
+              >
+                <span
+                  style={{
+                    content: "",
+                    display: "inline-blocl",
+                    aspectRatio: "1/1",
+                    width: "16px",
+                    backgroundColor: "#C770DB1A",
+                    border: "1px solid #C778DD",
+                  }}
+                ></span>
+                {text}
+                <a href={url} target="_blank" rel="noreferrer">
+                  {urlText}
+                </a>
+              </Box>
+              <svg
+                style={{
+                  position: "absolute",
+                  top: '40%',
+                  width: "12vmin",
+                  left: "70%",
+                  zIndex: 4,
+                }}
+                width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="2" cy="2" r="2" fill="#ABB2BF" />
+                <circle cx="22" cy="2" r="2" fill="#ABB2BF" />
+                <circle cx="42" cy="2" r="2" fill="#ABB2BF" />
+                <circle cx="62" cy="2" r="2" fill="#ABB2BF" />
+                <circle cx="82" cy="2" r="2" fill="#ABB2BF" />
+                <circle cx="2" cy="22" r="2" fill="#ABB2BF" />
+                <circle cx="22" cy="22" r="2" fill="#ABB2BF" />
+                <circle cx="42" cy="22" r="2" fill="#ABB2BF" />
+                <circle cx="62" cy="22" r="2" fill="#ABB2BF" />
+                <circle cx="82" cy="22" r="2" fill="#ABB2BF" />
+                <circle cx="2" cy="42" r="2" fill="#ABB2BF" />
+                <circle cx="22" cy="42" r="2" fill="#ABB2BF" />
+                <circle cx="42" cy="42" r="2" fill="#ABB2BF" />
+                <circle cx="62" cy="42" r="2" fill="#ABB2BF" />
+                <circle cx="82" cy="42" r="2" fill="#ABB2BF" />
+                <circle cx="2" cy="62" r="2" fill="#ABB2BF" />
+                <circle cx="22" cy="62" r="2" fill="#ABB2BF" />
+                <circle cx="42" cy="62" r="2" fill="#ABB2BF" />
+                <circle cx="62" cy="62" r="2" fill="#ABB2BF" />
+                <circle cx="82" cy="62" r="2" fill="#ABB2BF" />
+                <circle cx="2" cy="82" r="2" fill="#ABB2BF" />
+                <circle cx="22" cy="82" r="2" fill="#ABB2BF" />
+                <circle cx="42" cy="82" r="2" fill="#ABB2BF" />
+                <circle cx="62" cy="82" r="2" fill="#ABB2BF" />
+                <circle cx="82" cy="82" r="2" fill="#ABB2BF" />
+              </svg>
             </Box>
-            <svg
-              style={{
-                position: "absolute",
-                top: '40%',
-                width: "12vmin",
-                left: "70%",
-                zIndex: 4,
-              }}
-              width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="2" cy="2" r="2" fill="#ABB2BF" />
-              <circle cx="22" cy="2" r="2" fill="#ABB2BF" />
-              <circle cx="42" cy="2" r="2" fill="#ABB2BF" />
-              <circle cx="62" cy="2" r="2" fill="#ABB2BF" />
-              <circle cx="82" cy="2" r="2" fill="#ABB2BF" />
-              <circle cx="2" cy="22" r="2" fill="#ABB2BF" />
-              <circle cx="22" cy="22" r="2" fill="#ABB2BF" />
-              <circle cx="42" cy="22" r="2" fill="#ABB2BF" />
-              <circle cx="62" cy="22" r="2" fill="#ABB2BF" />
-              <circle cx="82" cy="22" r="2" fill="#ABB2BF" />
-              <circle cx="2" cy="42" r="2" fill="#ABB2BF" />
-              <circle cx="22" cy="42" r="2" fill="#ABB2BF" />
-              <circle cx="42" cy="42" r="2" fill="#ABB2BF" />
-              <circle cx="62" cy="42" r="2" fill="#ABB2BF" />
-              <circle cx="82" cy="42" r="2" fill="#ABB2BF" />
-              <circle cx="2" cy="62" r="2" fill="#ABB2BF" />
-              <circle cx="22" cy="62" r="2" fill="#ABB2BF" />
-              <circle cx="42" cy="62" r="2" fill="#ABB2BF" />
-              <circle cx="62" cy="62" r="2" fill="#ABB2BF" />
-              <circle cx="82" cy="62" r="2" fill="#ABB2BF" />
-              <circle cx="2" cy="82" r="2" fill="#ABB2BF" />
-              <circle cx="22" cy="82" r="2" fill="#ABB2BF" />
-              <circle cx="42" cy="82" r="2" fill="#ABB2BF" />
-              <circle cx="62" cy="82" r="2" fill="#ABB2BF" />
-              <circle cx="82" cy="82" r="2" fill="#ABB2BF" />
-            </svg>
-          </Box>
 
-        </Grid>
-      </Grid >
-      <div className={styles.blockquoteWrapper}>
-        <div className={styles.blockquote}>
-          <h1>
-            {quoteText1}  <span style={{ color: '#ffffff' }}>{quoteText2}</span> {quoteText3} <span style={{ color: '#ffffff' }}>  {quoteText4}</span>
-          </h1>
-          <h4>—{quoteBy}<br />
-            {/* <em>Web Site Usability: A Designer's Guide</em> */}
-          </h4>
+          </Grid>
+        </Grid >
+        <div className={styles.blockquoteWrapper}>
+          <div className={styles.blockquote}>
+            <h1>
+              {quoteText1}  <span style={{ color: '#ffffff' }}>{quoteText2}</span> {quoteText3} <span style={{ color: '#ffffff' }}>  {quoteText4}</span>
+            </h1>
+            <h4>—{quoteBy}<br />
+              {/* <em>Web Site Usability: A Designer's Guide</em> */}
+            </h4>
+          </div>
         </div>
-      </div>
-      <Protfolio />
-      <Skils />
-      <About />
-      <Contacts />
+        <Protfolio />
+        <Skils />
+        <About />
+        <Contacts />
 
-    </Stack >
+      </Stack >
+    </Container>
   )
 }

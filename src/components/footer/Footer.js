@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import { Box, Stack } from "@mui/system";
+import { Box, Container, Stack } from "@mui/system";
 import React from "react";
 import discord from "../../assets/Icon/discord.svg";
 import figma from "../../assets/Icon/figma.svg";
@@ -56,64 +56,65 @@ export default function Footer() {
     const { socials, socialsTitle, discription, link, copyRight, logo, logoTitle,
         refText } = footerData;
     return (
-        <Stack
-            sx={{
-                borderTop: '1px solid #ABB2BF',
-                py: 8,
-            }}
-        >
-            <Grid container spacing={2}
+        <Container>
+            <Stack
+                sx={{
+                    borderTop: '1px solid #ABB2BF',
+                    py: 8,
+                }}
             >
-                <Grid item xs={12} md={6}
-                    sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                    }}
+                <Grid container spacing={2}
                 >
-                    <Stack
-                        spacing={4}
+                    <Grid item xs={12} md={6}
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                        }}
                     >
                         <Stack
-                            direction="row"
-                            spacing={6}
+                            spacing={4}
                         >
                             <Stack
                                 direction="row"
-                                alignItems="center"
-                                spacing={1}
-                                component="a"
-                                href="/"
-                                sx={{
-                                    cursor: "pointer",
-                                }}
+                                spacing={6}
                             >
-                                <img src={logo} alt="logo"
-                                    style={{ width: 15, height: 15 }}
-                                />
-                                <CTypography>
-                                    {logoTitle}
+                                <Stack
+                                    direction="row"
+                                    alignItems="center"
+                                    spacing={1}
+                                    component="a"
+                                    href="/"
+                                    sx={{
+                                        cursor: "pointer",
+                                    }}
+                                >
+                                    <img src={logo} alt="logo"
+                                        style={{ width: 15, height: 15 }}
+                                    />
+                                    <CTypography>
+                                        {logoTitle}
+                                    </CTypography>
+                                </Stack>
+                                <CTypography
+                                    fontSize="16px"
+                                    fontWeight={400}
+                                    color="#ABB2BF"
+                                    component={"a"}
+                                    href="/"
+                                    target="_blank"
+                                >
+                                    {link}
                                 </CTypography>
                             </Stack>
+
                             <CTypography
                                 fontSize="16px"
                                 fontWeight={400}
-                                color="#ABB2BF"
-                                component={"a"}
-                                href="/"
-                                target="_blank"
+                                align="center"
                             >
-                                {link}
+                                {discription}
                             </CTypography>
-                        </Stack>
-
-                        <CTypography
-                            fontSize="16px"
-                            fontWeight={400}
-                            align="center"
-                        >
-                            {discription}
-                        </CTypography>
-                        {/* <Stack>
+                            {/* <Stack>
                             {
                                 refText && (
                                     <>
@@ -137,99 +138,100 @@ export default function Footer() {
                                 )
                             }
                         </Stack> */}
-                    </Stack>
-                </Grid>
-                <Grid item xs={12} md={6}>
-                    <Stack
-                        alignItems="center"
-                        justifyContent='center'
-                    >
-                        <CTypography>
-                            {socialsTitle}
-                        </CTypography>
-                        <Stack
-                            direction="row"
-                            py={1}
-                            gap={1}
-                        >
-                            {
-                                socials.map((item, index) => {
-                                    return (
-                                        <Box
-                                            component={"a"}
-                                            href={item.link}
-                                            target="_blank"
-                                            key={Math.random()}
-                                            sx={{
-                                                '&:hover': {
-                                                    transform: 'scale(1.1)',
-                                                }
-                                            }}
-                                        >
-                                            <Box
-                                                component='img'
-                                                src={item.img}
-                                                alt="item.name"
-                                            >
-
-                                            </Box>
-
-                                        </Box>
-                                    )
-                                })
-                            }
-
-
                         </Stack>
+                    </Grid>
+                    <Grid item xs={12} md={6}>
                         <Stack
+                            alignItems="center"
                             justifyContent='center'
-                            alignItems='center'
                         >
-                            {
-                                refText && (
-                                    <>
-                                        <CTypography
-                                            fontSize="12px"
-                                            fontWeight={400}
-                                            color="#ABB2BF"
-                                        >
-                                            {refText}
-                                        </CTypography>
-                                        <Box>
+                            <CTypography>
+                                {socialsTitle}
+                            </CTypography>
+                            <Stack
+                                direction="row"
+                                py={1}
+                                gap={1}
+                            >
+                                {
+                                    socials.map((item, index) => {
+                                        return (
                                             <Box
                                                 component={"a"}
-                                                href={"https://www.figma.com/community/file/1164933568884615740"}
+                                                href={item.link}
                                                 target="_blank"
+                                                key={Math.random()}
+                                                sx={{
+                                                    '&:hover': {
+                                                        transform: 'scale(1.1)',
+                                                    }
+                                                }}
                                             >
-                                                <img src={figma} alt="figma" />
-                                            </Box>
-                                        </Box>
-                                    </>
-                                )
-                            }
-                        </Stack>
-                    </Stack>
-                </Grid>
-            </Grid>
+                                                <Box
+                                                    component='img'
+                                                    src={item.img}
+                                                    alt="item.name"
+                                                >
 
-            <Stack
-                justifyContent="center"
-                alignItems="center"
-                py={6}
-            >
-                <CTypography
-                    fontSize="12px"
-                    fontWeight={400}
-                    color="#ABB2BF"
+                                                </Box>
+
+                                            </Box>
+                                        )
+                                    })
+                                }
+
+
+                            </Stack>
+                            <Stack
+                                justifyContent='center'
+                                alignItems='center'
+                            >
+                                {
+                                    refText && (
+                                        <>
+                                            <CTypography
+                                                fontSize="12px"
+                                                fontWeight={400}
+                                                color="#ABB2BF"
+                                            >
+                                                {refText}
+                                            </CTypography>
+                                            <Box>
+                                                <Box
+                                                    component={"a"}
+                                                    href={"https://www.figma.com/community/file/1164933568884615740"}
+                                                    target="_blank"
+                                                >
+                                                    <img src={figma} alt="figma" />
+                                                </Box>
+                                            </Box>
+                                        </>
+                                    )
+                                }
+                            </Stack>
+                        </Stack>
+                    </Grid>
+                </Grid>
+
+                <Stack
+                    justifyContent="center"
+                    alignItems="center"
+                    py={6}
                 >
-                    ©{' '}
-                    {
-                        new Date().getFullYear()
-                    }
-                    {' '}
-                    {copyRight}
-                </CTypography>
-            </Stack>
-        </Stack >
+                    <CTypography
+                        fontSize="12px"
+                        fontWeight={400}
+                        color="#ABB2BF"
+                    >
+                        ©{' '}
+                        {
+                            new Date().getFullYear()
+                        }
+                        {' '}
+                        {copyRight}
+                    </CTypography>
+                </Stack>
+            </Stack >
+        </Container>
     )
 }
