@@ -1,10 +1,11 @@
 import { Box, Grid, Stack } from "@mui/material";
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import photo from "../../assets/images/sohan-3.jpg";
 import { CButton, CTypography } from "../../utility";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 const homeAboutData = {
     aboutData: [
         {
@@ -21,6 +22,8 @@ const homeAboutData = {
 }
 
 export default function About() {
+    const { mode, textDark, textLight, textWhite, textGray } = useSelector(state => state.theme)
+    const isDark = Boolean(mode === 'dark')
     const { aboutData, overleafResume, image } = homeAboutData;
     const Header = () => {
         return (
@@ -36,7 +39,8 @@ export default function About() {
                     fontWeight={500}
                     fontSize={32}
                 >
-                    <span style={{ color: '#FFFFFF' }}>
+                    <span style={{ color: isDark ? textWhite : textDark }}>
+
                         About
                     </span>
 
@@ -71,7 +75,7 @@ export default function About() {
                         {
                             aboutData.map((item) => (
                                 <CTypography
-                                    color="#ABB2BF"
+                                    color={isDark ? textLight : textGray}
                                     fontWeight={400}
                                     fontSize={16}
                                     key={item.id}
@@ -123,7 +127,7 @@ export default function About() {
                                     xs: 'auto', sm: 'auto',
                                     md: 'auto', lg: 'auto',
                                 },
-                                filter: 'grayscale(100%)',
+                                filter: isDark && 'grayscale(100%)',
                                 aspectRatio: '1/1',
                                 borderRadius: 2,
                                 overflow: 'hidden',
