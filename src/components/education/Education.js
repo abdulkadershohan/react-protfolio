@@ -27,7 +27,7 @@ const educationData = [
 
 export default function Education() {
     const navigate = useNavigate();
-    const { mode, mainBgColorDark, mainBgColorLight, textDark, textLight, textWhite, textGray } = useSelector(state => state.theme)
+    const { mode, textDark, textLight, textWhite, textGray } = useSelector(state => state.theme)
     const isDark = Boolean(mode === 'dark')
     const Header = () => {
         return (

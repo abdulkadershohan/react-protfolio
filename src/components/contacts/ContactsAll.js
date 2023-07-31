@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import discordIcon from "../../assets/Icon/discord.svg";
 import emailIcon from "../../assets/Icon/email.svg";
 import { CTypography } from "../../utility";
+import { useSelector } from "react-redux";
 // import ContactFrom from "./ContactFrom";
 const contactData = {
     text: `I’m interested in freelance opportunities. However, if you have other requests or questions, don’t hesitate to contact me.`,
@@ -31,6 +32,8 @@ const contactData = {
 function ContactsAll() {
     const { text, socailAccounts, socailAccountsTitle } = contactData;
     const navigate = useNavigate();
+    const { mode, mainBgColorDark, mainBgColorLight, textDark, textLight, textWhite, textGray } = useSelector(state => state.theme)
+    const isDark = Boolean(mode === 'dark')
     const Header = () => {
         return (
             <Stack spacing={2}>
@@ -54,7 +57,7 @@ function ContactsAll() {
                                 sm: 32,
                             }}
                         >
-                            <span style={{ color: '#FFFFFF' }}>
+                            <span style={{ color: isDark ? textWhite : textDark }}>
                                 contacts
                             </span>
 
@@ -97,7 +100,7 @@ function ContactsAll() {
                         py={8}
                     >
                         <CTypography
-                            color="#ABB2BF"
+                            color={isDark ? textLight : textGray}
                             fontWeight={400}
                             fontSize={16}
                         >
@@ -142,7 +145,7 @@ function ContactsAll() {
                                             <CTypography
                                                 fontWeight={400}
                                                 fontSize={16}
-                                                color="#ABB2BF"
+                                                color={isDark ? textLight : textGray}
                                                 component="span"
                                             >
                                                 {item?.text}
