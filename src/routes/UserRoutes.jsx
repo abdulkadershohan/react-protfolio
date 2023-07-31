@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AboutMeFull from "../components/about/AboutMeFull";
+import Certification from "../components/certification/Certification";
 import ContactsAll from "../components/contacts/ContactsAll";
 import DrawerAppBar from "../components/drawerNew/NewDrawer";
 import Education from "../components/education/Education";
@@ -26,6 +27,7 @@ export default function UserRoutes() {
                     <Route path="/about" element={<AboutMeFull />} />
                     <Route path="/education" element={<Education />} />
                     <Route path="/experience" element={<Experience />} />
+                    <Route path="/certification" element={<Certification />} />
                     <Route path="*" element={<h1>Not Found</h1>} />
                 </Route>
 
