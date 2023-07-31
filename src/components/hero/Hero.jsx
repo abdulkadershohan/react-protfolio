@@ -5,6 +5,8 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import dotLight from "../../assets/images/dot.svg";
+import dotDark from "../../assets/images/dotDark.svg";
 import hero from "../../assets/images/hero.png";
 import logoOutline from "../../assets/images/logoOutline.svg";
 import { CButton, CTypography } from "../../utility";
@@ -173,41 +175,26 @@ export default function Hero() {
                 {urlText}
               </a>
             </Box>
-            <svg
-              style={{
-                position: "absolute",
-                top: '40%',
-                width: "12vmin",
-                left: "70%",
-                zIndex: 4,
+            <Box
+              sx={{
+                ":after": {
+                  content: '""',
+                  // display: 'block',
+                  backgroundImage: `url(${isDark ? dotLight : dotDark})`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  position: "absolute",
+                  top: '40%',
+                  left: '70%',
+                  bottom: 30,
+                  width: 100,
+                  height: 100,
+                  zIndex: 0
+
+                },
               }}
-              width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="2" cy="2" r="2" fill="#ABB2BF" />
-              <circle cx="22" cy="2" r="2" fill="#ABB2BF" />
-              <circle cx="42" cy="2" r="2" fill="#ABB2BF" />
-              <circle cx="62" cy="2" r="2" fill="#ABB2BF" />
-              <circle cx="82" cy="2" r="2" fill="#ABB2BF" />
-              <circle cx="2" cy="22" r="2" fill="#ABB2BF" />
-              <circle cx="22" cy="22" r="2" fill="#ABB2BF" />
-              <circle cx="42" cy="22" r="2" fill="#ABB2BF" />
-              <circle cx="62" cy="22" r="2" fill="#ABB2BF" />
-              <circle cx="82" cy="22" r="2" fill="#ABB2BF" />
-              <circle cx="2" cy="42" r="2" fill="#ABB2BF" />
-              <circle cx="22" cy="42" r="2" fill="#ABB2BF" />
-              <circle cx="42" cy="42" r="2" fill="#ABB2BF" />
-              <circle cx="62" cy="42" r="2" fill="#ABB2BF" />
-              <circle cx="82" cy="42" r="2" fill="#ABB2BF" />
-              <circle cx="2" cy="62" r="2" fill="#ABB2BF" />
-              <circle cx="22" cy="62" r="2" fill="#ABB2BF" />
-              <circle cx="42" cy="62" r="2" fill="#ABB2BF" />
-              <circle cx="62" cy="62" r="2" fill="#ABB2BF" />
-              <circle cx="82" cy="62" r="2" fill="#ABB2BF" />
-              <circle cx="2" cy="82" r="2" fill="#ABB2BF" />
-              <circle cx="22" cy="82" r="2" fill="#ABB2BF" />
-              <circle cx="42" cy="82" r="2" fill="#ABB2BF" />
-              <circle cx="62" cy="82" r="2" fill="#ABB2BF" />
-              <circle cx="82" cy="82" r="2" fill="#ABB2BF" />
-            </svg>
+            />
           </Box>
 
         </Grid>
