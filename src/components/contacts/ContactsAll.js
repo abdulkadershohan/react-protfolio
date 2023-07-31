@@ -1,10 +1,10 @@
 import { Grid, Stack } from "@mui/material";
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link, useNavigate } from 'react-router-dom';
 import discordIcon from "../../assets/Icon/discord.svg";
 import emailIcon from "../../assets/Icon/email.svg";
 import { CTypography } from "../../utility";
-import { useSelector } from "react-redux";
 // import ContactFrom from "./ContactFrom";
 const contactData = {
     text: `I’m interested in freelance opportunities. However, if you have other requests or questions, don’t hesitate to contact me.`,
@@ -32,7 +32,7 @@ const contactData = {
 function ContactsAll() {
     const { text, socailAccounts, socailAccountsTitle } = contactData;
     const navigate = useNavigate();
-    const { mode, mainBgColorDark, mainBgColorLight, textDark, textLight, textWhite, textGray } = useSelector(state => state.theme)
+    const { mode, textDark, textLight, textWhite, textGray } = useSelector(state => state.theme)
     const isDark = Boolean(mode === 'dark')
     const Header = () => {
         return (
