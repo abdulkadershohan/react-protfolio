@@ -144,6 +144,7 @@ export default function Certification() {
                     {
                         data?.tag?.map((item, index) => (
                             <Chip key={index} label={item}
+                                size="small"
                                 color={getColor(index)}
                             />
                         ))
