@@ -5,7 +5,7 @@ import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
-import { Stack } from '@mui/system';
+import { Container, Stack } from '@mui/system';
 import * as React from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import logo from "../../assets/images/logo.png";
@@ -161,97 +161,99 @@ function DrawerAppBar(props, { children }) {
                     },
                 }}
             >
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
-                        onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { md: 'none' } }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    {/* <Typography
+                <Container maxWidth="xl">
+                    <Toolbar>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            edge="start"
+                            onClick={handleDrawerToggle}
+                            sx={{ mr: 2, display: { md: 'none' } }}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        {/* <Typography
                         variant="h6"
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                     >
                         MUI
                     </Typography> */}
-                    <Box
-                        sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' } }}
-                        component="div"
-                    >
-                        <Stack
-                            direction="row"
-                            alignItems="center"
-                            spacing={1}
-                            sx={{
-                                cursor: "pointer",
-                            }}
-                            component={Link}
-                            to="/"
-
+                        <Box
+                            sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' } }}
+                            component="div"
                         >
-                            <img src={logo} alt="logo"
-                                style={{ width: 15, height: 15 }}
-                            />
-                            <CTypography
-                                fontSize="1rem"
+                            <Stack
+                                direction="row"
+                                alignItems="center"
+                                spacing={1}
+                                sx={{
+                                    cursor: "pointer",
+                                }}
+                                component={Link}
+                                to="/"
 
                             >
-                                Abdul Kader
-                            </CTypography>
-                        </Stack>
-                    </Box>
-                    <Stack sx={{ display: { xs: 'none', md: 'block' } }}
-                        spacing={2}
-                        direction="row"
-                    >
-                        {
-                            routes.map((route, index) => {
-                                return (
-                                    <NavLink
-                                        to={route.path}
-                                        key={index}
-                                        style={({ isActive }) => (isActive ?
-                                            {
-                                                // borderRight: "4px solid white",
-                                                // background: "rgb(45, 51, 89)"
-                                                color: "#fff",
-                                                fontFamily: "FiraCode",
-                                                fontWeight: 600,
+                                <img src={logo} alt="logo"
+                                    style={{ width: 15, height: 15 }}
+                                />
+                                <CTypography
+                                    fontSize="1rem"
 
-                                            }
-                                            : {
-                                                color: "#ABB2BF",
-                                                fontFamily: "FiraCode",
-                                                fontWeight: 400,
-
-                                            })}
-                                    >
-                                        <span
-                                            style={{
-                                                color: "#C778DD"
-                                            }}
-                                        >#</span>
-                                        <Box
-                                            component="span"
-                                            sx={{
-                                                "&:hover": {
+                                >
+                                    Abdul Kader
+                                </CTypography>
+                            </Stack>
+                        </Box>
+                        <Stack sx={{ display: { xs: 'none', md: 'block' } }}
+                            spacing={2}
+                            direction="row"
+                        >
+                            {
+                                routes.map((route, index) => {
+                                    return (
+                                        <NavLink
+                                            to={route.path}
+                                            key={index}
+                                            style={({ isActive }) => (isActive ?
+                                                {
+                                                    // borderRight: "4px solid white",
+                                                    // background: "rgb(45, 51, 89)"
                                                     color: "#fff",
+                                                    fontFamily: "FiraCode",
+                                                    fontWeight: 600,
+
                                                 }
-                                            }}
+                                                : {
+                                                    color: "#ABB2BF",
+                                                    fontFamily: "FiraCode",
+                                                    fontWeight: 400,
 
-                                        >{route.name}
-                                        </Box>
-                                    </NavLink>
-                                )
-                            })
-                        }
-                    </Stack>
+                                                })}
+                                        >
+                                            <span
+                                                style={{
+                                                    color: "#C778DD"
+                                                }}
+                                            >#</span>
+                                            <Box
+                                                component="span"
+                                                sx={{
+                                                    "&:hover": {
+                                                        color: "#fff",
+                                                    }
+                                                }}
 
-                </Toolbar>
+                                            >{route.name}
+                                            </Box>
+                                        </NavLink>
+                                    )
+                                })
+                            }
+                        </Stack>
+
+                    </Toolbar>
+                </Container>
             </AppBar>
 
             <Box component="nav" >
@@ -305,7 +307,16 @@ function DrawerAppBar(props, { children }) {
                     {children}
 
                 </Box>
-                <Footer />
+                <Stack
+                    sx={{
+                        pl: {
+                            xs: 4,
+                            md: 8,
+                        }
+                    }}
+                >
+                    <Footer />
+                </Stack>
             </Box>
         </Box >
     );
