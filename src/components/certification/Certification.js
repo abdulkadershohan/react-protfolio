@@ -1,4 +1,5 @@
 import { Box, Chip, Stack } from "@mui/material";
+import { Container } from "@mui/system";
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -110,199 +111,201 @@ export default function Certification() {
 
     }
     return (
-        <Stack pb={8}>
-            <Header />
-            <Stack
-                mt={4}
-                p={2}
-                borderRadius={2}
-                sx={{
-                    backgroundColor: isDark ? '#2E3440' : '#f5f5f5',
-                }}
-
-            >
-                <CTypography>
-                    {data?.title} by {' '}
-                    <a href="https://learnwithsumit.com/certificates/verify/LWSCTXN-SNT7PO6I" target="_blank" rel="noreferrer"
-                        title="Click to verify the certificate"
-                    >
-                        <font color={'#C778DD'}>{data?.platform}</font>
-                    </a>
-                </CTypography>
+        <Container maxWidth='xl'>
+            <Stack pb={8}>
+                <Header />
                 <Stack
-                    width={'100%'}
-                    height={'1px'}
-                    mt={2}
-                    backgroundColor={'#ABB2BF'}
-                />
-                <CTypography
-                    color={isDark ? textLight : textGray}
-                    fontSize={16}
-                    fontWeight={400}
-                    mt={2}
-                >
-                    Topics i learned from this course
-                </CTypography>
-                <Stack
-                    direction="row"
-                    flexWrap="wrap"
-                    gap={2}
-                    py={2}
-                >
-                    {
-                        data?.tag?.map((item, index) => (
-                            <Chip key={index} label={item}
-                                size="small"
-                                color={getColor(index)}
-                            />
-                        ))
-                    }
-                </Stack>
-                <Stack
-                    width={'100%'}
-                    height={'1px'}
-                    mt={2}
-                    backgroundColor={'#ABB2BF'}
-                />
-                <CTypography
-                    color={isDark ? textWhite : textDark}
-                    fontSize={16}
-                    fontWeight={400}
-                    mt={2}
-                >
-                    Course instructor feedback
-                </CTypography>
-                <CTypography
-                    color={isDark ? textLight : textGray}
-                    fontSize={14}
-                    fontWeight={400}
-                    my={2}
-                >
-                    {data?.feedback}
-                </CTypography>
-
-                <Stack direction="row"
-                    justifyContent="center"
-                    flexWrap="wrap"
-                    // alignItems="center"
-                    gap={2}
+                    mt={4}
                     p={2}
-                    border={'1px solid #ABB2BF'}
-                    pb={4}
+                    borderRadius={2}
+                    sx={{
+                        backgroundColor: isDark ? '#2E3440' : '#f5f5f5',
+                    }}
 
                 >
+                    <CTypography>
+                        {data?.title} by {' '}
+                        <a href="https://learnwithsumit.com/certificates/verify/LWSCTXN-SNT7PO6I" target="_blank" rel="noreferrer"
+                            title="Click to verify the certificate"
+                        >
+                            <font color={'#C778DD'}>{data?.platform}</font>
+                        </a>
+                    </CTypography>
                     <Stack
-                        width={{
-                            xs: '100%',
-                            sm: '100%',
-                            md: '30%'
-                        }}
+                        width={'100%'}
+                        height={'1px'}
+                        mt={2}
+                        backgroundColor={'#ABB2BF'}
+                    />
+                    <CTypography
+                        color={isDark ? textLight : textGray}
+                        fontSize={16}
+                        fontWeight={400}
+                        mt={2}
                     >
-                        <CTypography
-                            color={isDark ? textWhite : textDark}
-                            fontSize={16}
-                            fontWeight={400}
-                            pb={2}
-                        >
-                            Course Certificate
-                        </CTypography>
-                        <Box
-                            sx={{
-                                aspectRatio: '16/9',
-                                borderBottom: '1px solid #ABB2BF',
-                                display: 'block',
-                                width: '100%',
-                                height: '400px',
-                                borderRadius: '10px',
-                                overflow: 'hidden'
-                            }}
-                        >
-                            <LazyLoadImage
-                                alt="certificate"
-                                effect="blur"
-                                src={data?.courseCertificate}
-                                width={"100%"}
-                                height={"100%"}
-                            />
-                        </Box>
+                        Topics i learned from this course
+                    </CTypography>
+                    <Stack
+                        direction="row"
+                        flexWrap="wrap"
+                        gap={2}
+                        py={2}
+                    >
+                        {
+                            data?.tag?.map((item, index) => (
+                                <Chip key={index} label={item}
+                                    size="small"
+                                    color={getColor(index)}
+                                />
+                            ))
+                        }
                     </Stack>
                     <Stack
-                        width={{
-                            xs: '100%',
-                            md: '30%'
-                        }}
+                        width={'100%'}
+                        height={'1px'}
+                        mt={2}
+                        backgroundColor={'#ABB2BF'}
+                    />
+                    <CTypography
+                        color={isDark ? textWhite : textDark}
+                        fontSize={16}
+                        fontWeight={400}
+                        mt={2}
                     >
-                        <CTypography
-                            color={isDark ? textWhite : textDark}
+                        Course instructor feedback
+                    </CTypography>
+                    <CTypography
+                        color={isDark ? textLight : textGray}
+                        fontSize={14}
+                        fontWeight={400}
+                        my={2}
+                    >
+                        {data?.feedback}
+                    </CTypography>
 
-                            fontSize={16}
-                            fontWeight={400}
-                            pb={2}
-                        >
-                            Course Report
-                        </CTypography>
-                        <Box
-                            sx={{
-                                aspectRatio: '16/9',
-                                borderBottom: '1px solid #ABB2BF',
-                                display: 'block',
-                                width: '100%',
-                                height: '400px',
-                                borderRadius: '10px',
-                                overflow: 'hidden'
-                            }}
-                        >
-                            <LazyLoadImage
-                                alt="certificate"
-                                effect="blur"
-                                src={data?.courseReport}
-                                width={"100%"}
-                                height={"100%"}
+                    <Stack direction="row"
+                        justifyContent="center"
+                        flexWrap="wrap"
+                        // alignItems="center"
+                        gap={2}
+                        p={2}
+                        border={'1px solid #ABB2BF'}
+                        pb={4}
 
-                            />
-                        </Box>
-                    </Stack>
-                    <Stack
-                        width={{
-                            xs: '100%',
-                            sm: '100%',
-                            md: '30%'
-                        }}
                     >
-                        <CTypography
-                            color={isDark ? textWhite : textDark}
-                            fontSize={16}
-                            fontWeight={400}
-                            pb={2}
-                        >
-                            Recommendation Letter
-                        </CTypography>
-                        <Box
-                            sx={{
-                                aspectRatio: '16/9',
-                                borderBottom: '1px solid #ABB2BF',
-                                display: 'block',
-                                width: '100%',
-                                height: '400px',
-                                borderRadius: '10px',
-                                overflow: 'hidden'
+                        <Stack
+                            width={{
+                                xs: '100%',
+                                sm: '100%',
+                                md: '30%'
                             }}
                         >
-                            <LazyLoadImage
-                                alt="certificate"
-                                effect="blur"
-                                src={data?.recommendation}
-                                width={"100%"}
-                                height={"100%"}
-                            />
-                        </Box>
+                            <CTypography
+                                color={isDark ? textWhite : textDark}
+                                fontSize={16}
+                                fontWeight={400}
+                                pb={2}
+                            >
+                                Course Certificate
+                            </CTypography>
+                            <Box
+                                sx={{
+                                    aspectRatio: '16/9',
+                                    borderBottom: '1px solid #ABB2BF',
+                                    display: 'block',
+                                    width: '100%',
+                                    height: '400px',
+                                    borderRadius: '10px',
+                                    overflow: 'hidden'
+                                }}
+                            >
+                                <LazyLoadImage
+                                    alt="certificate"
+                                    effect="blur"
+                                    src={data?.courseCertificate}
+                                    width={"100%"}
+                                    height={"100%"}
+                                />
+                            </Box>
+                        </Stack>
+                        <Stack
+                            width={{
+                                xs: '100%',
+                                md: '30%'
+                            }}
+                        >
+                            <CTypography
+                                color={isDark ? textWhite : textDark}
+
+                                fontSize={16}
+                                fontWeight={400}
+                                pb={2}
+                            >
+                                Course Report
+                            </CTypography>
+                            <Box
+                                sx={{
+                                    aspectRatio: '16/9',
+                                    borderBottom: '1px solid #ABB2BF',
+                                    display: 'block',
+                                    width: '100%',
+                                    height: '400px',
+                                    borderRadius: '10px',
+                                    overflow: 'hidden'
+                                }}
+                            >
+                                <LazyLoadImage
+                                    alt="certificate"
+                                    effect="blur"
+                                    src={data?.courseReport}
+                                    width={"100%"}
+                                    height={"100%"}
+
+                                />
+                            </Box>
+                        </Stack>
+                        <Stack
+                            width={{
+                                xs: '100%',
+                                sm: '100%',
+                                md: '30%'
+                            }}
+                        >
+                            <CTypography
+                                color={isDark ? textWhite : textDark}
+                                fontSize={16}
+                                fontWeight={400}
+                                pb={2}
+                            >
+                                Recommendation Letter
+                            </CTypography>
+                            <Box
+                                sx={{
+                                    aspectRatio: '16/9',
+                                    borderBottom: '1px solid #ABB2BF',
+                                    display: 'block',
+                                    width: '100%',
+                                    height: '400px',
+                                    borderRadius: '10px',
+                                    overflow: 'hidden'
+                                }}
+                            >
+                                <LazyLoadImage
+                                    alt="certificate"
+                                    effect="blur"
+                                    src={data?.recommendation}
+                                    width={"100%"}
+                                    height={"100%"}
+                                />
+                            </Box>
+                        </Stack>
                     </Stack>
-                </Stack>
+
+
+                </Stack >
 
 
             </Stack >
-
-
-        </Stack >
+        </Container>
     )
 }

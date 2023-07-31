@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import { Box, Stack } from "@mui/system";
+import { Box, Container, Stack } from "@mui/system";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import photo from "../../assets/images/sohanFormal-2.jpg";
@@ -282,112 +282,114 @@ export default function AboutMeFull() {
         )
     }
     return (
-        <Stack>
-            <Header />
+        <Container maxWidth="xl">
             <Stack>
-                <Grid container spacing={2}
-                    sx={{
-                        alignItems: 'center',
-                        py: 4,
-                    }}
-                >
-                    <Grid item xs={12} md={4}>
-                        <Stack >
-                            <Box
-                                sx={{
-                                    width: {
-                                        xs: '100%', sm: '100%',
-                                        md: '100%', lg: '80%',
-                                    },
-                                    height: {
-                                        xs: 'auto', sm: 'auto',
-                                        md: 'auto', lg: 'auto',
-                                    },
-                                    filter: isDark && 'grayscale(100%)',
-                                    aspectRatio: '1/1',
-                                    borderRadius: 2,
-                                    overflow: 'hidden',
+                <Header />
+                <Stack>
+                    <Grid container spacing={2}
+                        sx={{
+                            alignItems: 'center',
+                            py: 4,
+                        }}
+                    >
+                        <Grid item xs={12} md={4}>
+                            <Stack >
+                                <Box
+                                    sx={{
+                                        width: {
+                                            xs: '100%', sm: '100%',
+                                            md: '100%', lg: '80%',
+                                        },
+                                        height: {
+                                            xs: 'auto', sm: 'auto',
+                                            md: 'auto', lg: 'auto',
+                                        },
+                                        filter: isDark && 'grayscale(100%)',
+                                        aspectRatio: '1/1',
+                                        borderRadius: 2,
+                                        overflow: 'hidden',
 
-                                }}
+                                    }}
+                                >
+                                    <LazyLoadImage
+                                        alt='about-image'
+                                        effect="blur"
+                                        src={image}
+                                        width={"100%"}
+                                        height={"100%"}
+                                    />
+                                </Box>
+                            </Stack>
+                        </Grid>
+                        <Grid item xs={12} md={8}  >
+                            <Stack
+                                spacing={3}
+                                py={8}
                             >
-                                <LazyLoadImage
-                                    alt='about-image'
-                                    effect="blur"
-                                    src={image}
-                                    width={"100%"}
-                                    height={"100%"}
-                                />
-                            </Box>
-                        </Stack>
+                                {
+                                    aboutData.map((data, index) => (
+                                        <CTypography
+                                            color={isDark ? textLight : textGray}
+                                            fontWeight={400}
+                                            fontSize={16}
+                                            key={data.id}
+                                        >{data.text}</CTypography>
+                                    ))
+                                }
+                                <Box
+                                    display="flex"
+                                >
+                                    <CButton
+                                        btnTitle="Download CV"
+                                        component={"a"}
+                                        target="_blank"
+                                        href={overleafResume}
+                                    />
+                                </Box>
+                            </Stack>
+                        </Grid>
+
                     </Grid>
-                    <Grid item xs={12} md={8}  >
+                </Stack >
+                <Stack
+                    py={4}
+                    spacing={8}
+                >
+                    <SkillHeader />
+                    <Stack
+                        alignItems="center"
+                    >
                         <Stack
-                            spacing={3}
-                            py={8}
+                            direction="row"
+                            justifyContent="space-between"
+                            flexWrap="wrap"
+                            gap={1}
                         >
                             {
-                                aboutData.map((data, index) => (
-                                    <CTypography
-                                        color={isDark ? textLight : textGray}
-                                        fontWeight={400}
-                                        fontSize={16}
-                                        key={data.id}
-                                    >{data.text}</CTypography>
-                                ))
+                                mySkills?.map((skill, index) => {
+                                    return (
+                                        <SkillsCard
+                                            key={Math.random()}
+                                            title={skill?.title}
+                                            skills={skill?.items}
+                                        />
+                                    )
+                                })
                             }
-                            <Box
-                                display="flex"
-                            >
-                                <CButton
-                                    btnTitle="Download CV"
-                                    component={"a"}
-                                    target="_blank"
-                                    href={overleafResume}
-                                />
-                            </Box>
+
                         </Stack>
-                    </Grid>
-
-                </Grid>
-            </Stack >
-            <Stack
-                py={4}
-                spacing={8}
-            >
-                <SkillHeader />
-                <Stack
-                    alignItems="center"
-                >
-                    <Stack
-                        direction="row"
-                        justifyContent="space-between"
-                        flexWrap="wrap"
-                        gap={1}
-                    >
-                        {
-                            mySkills?.map((skill, index) => {
-                                return (
-                                    <SkillsCard
-                                        key={Math.random()}
-                                        title={skill?.title}
-                                        skills={skill?.items}
-                                    />
-                                )
-                            })
-                        }
-
                     </Stack>
                 </Stack>
-            </Stack>
-            <Stack
-                py={4}
-                pb={8}
-                spacing={8}
-            >
-                <FunHeader />
-                <FunFactCard />
-            </Stack>
+                <Stack
+                    py={4}
+                    pb={8}
+                    spacing={8}
+                >
+                    <FunHeader />
+                    <FunFactCard />
+                </Stack>
 
-        </Stack >
+            </Stack >
+        </Container>
     )
 }

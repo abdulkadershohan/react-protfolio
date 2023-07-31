@@ -1,4 +1,4 @@
-import { Chip } from "@mui/material";
+import { Chip, Container } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -463,37 +463,38 @@ export default function Protfolio() {
         )
     }
     return (
-        <Stack
-            spacing={2}
-            pb={6}
-        >
+        <Container maxWidth="xl">
             <Stack
-                direction="row"
-                justifyContent="space-between"
-                alignItems="center"
-                pt={4}
-
+                spacing={2}
+                pb={6}
             >
                 <Stack
                     direction="row"
-                    spacing={2}
+                    justifyContent="space-between"
                     alignItems="center"
-                >
-                    <CTypography
-                        text='/'
-                        color='#C778DD'
-                        fontWeight={500}
-                        fontSize={{
-                            xs: 24,
-                            sm: 32,
-                        }}
-                    >
-                        <span style={{ color: isDark ? textWhite : textDark }}>
-                            projects
-                        </span>
+                    pt={4}
 
-                    </CTypography>
-                    {/* <Box
+                >
+                    <Stack
+                        direction="row"
+                        spacing={2}
+                        alignItems="center"
+                    >
+                        <CTypography
+                            text='/'
+                            color='#C778DD'
+                            fontWeight={500}
+                            fontSize={{
+                                xs: 24,
+                                sm: 32,
+                            }}
+                        >
+                            <span style={{ color: isDark ? textWhite : textDark }}>
+                                projects
+                            </span>
+
+                        </CTypography>
+                        {/* <Box
                         sx={{
                             width: {
                                 xs: '10px', sm: '40px',
@@ -503,53 +504,54 @@ export default function Protfolio() {
                             backgroundColor: '#C778DD',
                         }}
                     /> */}
+                    </Stack>
+                    <CTypography
+                        fontWeight={400}
+                        fontSize={16}
+
+                        component={Link}
+                        // to='/'
+                        onClick={() => navigate(-1)}
+
+                        sx={{
+                            borderBottom: '2px solid #C778DD',
+                            "&:hover": {
+                                color: '#C778DD'
+                            }
+                        }}
+                    >
+                        {'<'}~~ Back
+                    </CTypography>
+
+
                 </Stack>
                 <CTypography
-                    fontWeight={400}
                     fontSize={16}
-
-                    component={Link}
-                    // to='/'
-                    onClick={() => navigate(-1)}
-
-                    sx={{
-                        borderBottom: '2px solid #C778DD',
-                        "&:hover": {
-                            color: '#C778DD'
-                        }
-                    }}
+                    fontWeight={400}
+                    color={isDark ? textLight : textGray}
                 >
-                    {'<'}~~ Back
+                    All of my projects
                 </CTypography>
+                {
+                    protfolioData.map((item, index) => {
+                        return (
+                            <Stack
+                                key={Math.random()}
+                            >
+                                <Header
+                                    title={item?.results?.title}
 
+                                />
+                                <ProjectCard
+                                    key={index}
+                                    data={item.results.data}
+                                />
+                            </Stack>
 
+                        )
+                    })
+                }
             </Stack>
-            <CTypography
-                fontSize={16}
-                fontWeight={400}
-                color={isDark ? textLight : textGray}
-            >
-                All of my projects
-            </CTypography>
-            {
-                protfolioData.map((item, index) => {
-                    return (
-                        <Stack
-                            key={Math.random()}
-                        >
-                            <Header
-                                title={item?.results?.title}
-
-                            />
-                            <ProjectCard
-                                key={index}
-                                data={item.results.data}
-                            />
-                        </Stack>
-
-                    )
-                })
-            }
-        </Stack>
+        </Container>
     )
 }

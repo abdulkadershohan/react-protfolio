@@ -1,4 +1,5 @@
 import { Grid, Stack } from "@mui/material";
+import { Container } from "@mui/system";
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from 'react-router-dom';
@@ -85,80 +86,82 @@ function ContactsAll() {
         )
     }
     return (
-        <Stack
-            pb={8}
-        >
-            <Header />
-            <Grid container spacing={2}
-                sx={{
-                    alignItems: 'center',
-                }}
+        <Container maxWidth="xl">
+            <Stack
+                pb={8}
             >
-                <Grid item xs={12} md={6}  >
-                    <Stack
-                        spacing={3}
-                        py={8}
-                    >
-                        <CTypography
-                            color={isDark ? textLight : textGray}
-                            fontWeight={400}
-                            fontSize={16}
-                        >
-                            {text}
-                        </CTypography>
-                    </Stack>
-                    {/* <ContactFrom /> */}
-                </Grid>
-                <Grid item xs={12} md={6}  >
-                    <Stack
-                        justifyContent="center"
-                        sx={{
-                            alignItems: {
-                                xs: 'start', sm: 'center',
-                            },
-                        }}
-                    >
+                <Header />
+                <Grid container spacing={2}
+                    sx={{
+                        alignItems: 'center',
+                    }}
+                >
+                    <Grid item xs={12} md={6}  >
                         <Stack
-                            sx={{
-                                border: '1px solid #ABB2BF',
-                                p: 1,
-                            }}
-                            spacing={1}
+                            spacing={3}
+                            py={8}
                         >
-                            <CTypography>
-                                {socailAccountsTitle}:
+                            <CTypography
+                                color={isDark ? textLight : textGray}
+                                fontWeight={400}
+                                fontSize={16}
+                            >
+                                {text}
                             </CTypography>
-                            {
-                                socailAccounts.map((item) => {
-                                    return (
-                                        <Stack
-                                            direction="row"
-                                            spacing={1}
-                                            alignItems="center"
-                                            component={'a'}
-                                            key={Math.random()}
-                                            {...(item?.isEmail ? { href: `mailto:` + item?.link }
-
-                                                : { href: item?.link, target: '_blank' })}
-                                        >
-                                            <img src={item?.icon} alt={item?.name} />
-                                            <CTypography
-                                                fontWeight={400}
-                                                fontSize={16}
-                                                color={isDark ? textLight : textGray}
-                                                component="span"
-                                            >
-                                                {item?.text}
-                                            </CTypography>
-                                        </Stack>
-                                    )
-                                })
-                            }
                         </Stack>
-                    </Stack>
-                </Grid>
-            </Grid >
-        </Stack >
+                        {/* <ContactFrom /> */}
+                    </Grid>
+                    <Grid item xs={12} md={6}  >
+                        <Stack
+                            justifyContent="center"
+                            sx={{
+                                alignItems: {
+                                    xs: 'start', sm: 'center',
+                                },
+                            }}
+                        >
+                            <Stack
+                                sx={{
+                                    border: '1px solid #ABB2BF',
+                                    p: 1,
+                                }}
+                                spacing={1}
+                            >
+                                <CTypography>
+                                    {socailAccountsTitle}:
+                                </CTypography>
+                                {
+                                    socailAccounts.map((item) => {
+                                        return (
+                                            <Stack
+                                                direction="row"
+                                                spacing={1}
+                                                alignItems="center"
+                                                component={'a'}
+                                                key={Math.random()}
+                                                {...(item?.isEmail ? { href: `mailto:` + item?.link }
+
+                                                    : { href: item?.link, target: '_blank' })}
+                                            >
+                                                <img src={item?.icon} alt={item?.name} />
+                                                <CTypography
+                                                    fontWeight={400}
+                                                    fontSize={16}
+                                                    color={isDark ? textLight : textGray}
+                                                    component="span"
+                                                >
+                                                    {item?.text}
+                                                </CTypography>
+                                            </Stack>
+                                        )
+                                    })
+                                }
+                            </Stack>
+                        </Stack>
+                    </Grid>
+                </Grid >
+            </Stack >
+        </Container>
     )
 }
 export default React.memo(ContactsAll);
