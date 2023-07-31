@@ -92,12 +92,29 @@ function DrawerAppBar(props, { children }) {
                 py={4}
             >
                 <LogoImg
-                    iconColor={isDark ? process.env.REACT_APP_TEXT_COLOR_DARK_MODE : process.env.REACT_APP_TEXT_COLOR_LIGHT_MODE}
+                    iconColor={isDark ? textLight : textDark}
                 />
                 <CTypography>
                     {logoTitle}
                 </CTypography>
+                <IconButton
+                    color='primary'
+                    onClick={() => {
+                        if (isDark) {
+                            dispatch(changeTheme('light'))
+                        }
+                        else {
+                            dispatch(changeTheme('dark'))
+                        }
+                    }}
+
+                >
+                    <SunIcon
+                        iconColor={isDark ? textLight : textDark}
+                    />
+                </IconButton>
             </Stack>
+
 
             <Divider />
             <Stack
@@ -105,6 +122,7 @@ function DrawerAppBar(props, { children }) {
                 fontSize="1.2rem"
                 textAlign={"left"}
                 py={1}
+                mt={2}
             >
                 {routes.map((item) => (
 
@@ -195,9 +213,6 @@ function DrawerAppBar(props, { children }) {
                             to="/"
 
                         >
-                            {/* <img src={logo} alt="logo"
-                                style={{ width: 15, height: 15 }}
-                            /> */}
                             <LogoImg
                                 iconColor={isDark ? textLight : textDark}
                             />
