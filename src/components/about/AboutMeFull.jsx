@@ -73,7 +73,7 @@ const aboutMeData = {
 
 export default function AboutMeFull() {
     const navigate = useNavigate();
-    const { mode, mainBgColorDark, mainBgColorLight, textDark, textLight, textWhite, textGray } = useSelector(state => state.theme)
+    const { mode, textDark, textLight, textWhite, textGray } = useSelector(state => state.theme)
     const isDark = Boolean(mode === 'dark')
     const { aboutData, mySkills, funFact, overleafResume, image } = aboutMeData;
     const Header = () => {
