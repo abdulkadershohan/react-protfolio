@@ -29,8 +29,8 @@ export default function UserRoutes() {
                     <Route path="/protfolio" element={<ProtfolioAll />} />
                     <Route path="/experience" element={<Experience />} />
                     <Route path="/certification" element={<Certification />} />
-                    <Route path="/contact" element={<ContactsAll />} />
                     <Route path="/education" element={<Education />} />
+                    <Route path="/contact" element={<ContactsAll />} />
                     <Route path="*" element={<h1>Not Found</h1>} />
                 </Route>
 
