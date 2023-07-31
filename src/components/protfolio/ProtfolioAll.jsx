@@ -1,7 +1,11 @@
 import { Chip } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link, useNavigate } from 'react-router-dom';
+import LiveStatus from '../../assets/images/projects/LiveStatus.png';
+import SeRemo from '../../assets/images/projects/SeRemo2.png';
 import brdchart from '../../assets/images/projects/brdchart.png';
 import covid from '../../assets/images/projects/covid-19.png';
 import covidapp from '../../assets/images/projects/covidapp.jpg';
@@ -9,21 +13,17 @@ import food from '../../assets/images/projects/food.png';
 import food2 from '../../assets/images/projects/food2.png';
 import gym from '../../assets/images/projects/gym2.png';
 import learningapp from '../../assets/images/projects/learningapp.png';
-import LiveStatus from '../../assets/images/projects/LiveStatus.png';
 import ott from '../../assets/images/projects/ott.png';
 import rbs from '../../assets/images/projects/rbs.png';
 import rtc from '../../assets/images/projects/rtc.png';
-import SeRemo from '../../assets/images/projects/SeRemo2.png';
 import upcopo2 from '../../assets/images/projects/upocopo-2.png';
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 import { CButton, CTypography } from "../../utility";
 
 const protfolioData = [
     {
         id: 3,
         results: {
-            title: 'web3 langing page',
+            title: 'web3 landing page',
             data: [
                 {
                     id: 1,
