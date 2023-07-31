@@ -25,9 +25,9 @@ export default function UserRoutes() {
                     }
                 >
                     <Route path="/" element={<Hero />} />
+                    <Route path="/about" element={<AboutMeFull />} />
                     <Route path="/protfolio" element={<ProtfolioAll />} />
                     <Route path="/contact" element={<ContactsAll />} />
-                    <Route path="/about" element={<AboutMeFull />} />
                     <Route path="/education" element={<Education />} />
                     <Route path="/experience" element={<Experience />} />
                     <Route path="/certification" element={<Certification />} />
