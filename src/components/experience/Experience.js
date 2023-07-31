@@ -204,7 +204,8 @@ export default function Experience() {
         )
     }
     return (
-        <Container>
+        <Container maxWidth={'xl'} >
+
             <Stack>
                 <Header />
                 <Stack

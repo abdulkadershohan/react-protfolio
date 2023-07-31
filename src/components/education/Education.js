@@ -139,7 +139,7 @@ export default function Education() {
         )
     }
     return (
-        <Container>
+        <Container maxWidth="xl">
             <Stack>
                 <Header />
                 <Stack

@@ -56,7 +56,8 @@ export default function Footer() {
     const { socials, socialsTitle, discription, link, copyRight, logo, logoTitle,
         refText } = footerData;
     return (
-        <Container>
+        <Container maxWidth={'xl'} >
+
             <Stack
                 sx={{
                     borderTop: '1px solid #ABB2BF',

@@ -83,7 +83,7 @@ function ContactsAll() {
         )
     }
     return (
-        <Container>
+        <Container maxWidth={'xl'} >
             <Stack
                 pb={8}
             >

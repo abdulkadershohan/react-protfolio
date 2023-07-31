@@ -459,7 +459,8 @@ export default function Protfolio() {
         )
     }
     return (
-        <Container>
+        <Container maxWidth={'xl'} >
+
             <Stack
                 spacing={2}
                 pb={6}

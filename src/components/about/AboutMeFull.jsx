@@ -279,7 +279,8 @@ export default function AboutMeFull() {
         )
     }
     return (
-        <Container>
+        <Container maxWidth={'xl'} >
+
             <Stack>
                 <Header />
                 <Stack>

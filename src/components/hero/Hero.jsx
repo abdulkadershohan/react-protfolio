@@ -47,7 +47,7 @@ export default function Hero() {
     blockquote: { quoteText1, quoteText2, quoteText3, quoteText4, quoteBy },
     image } = heroTopSectionData;
   return (
-    <Container >
+    <Container maxWidth={'xl'} >
       <Stack >
         <Grid container spacing={2}
           sx={{

@@ -108,7 +108,7 @@ export default function Certification() {
 
     }
     return (
-        <Container>
+        <Container maxWidth={'xl'} >
             <Stack pb={8}>
                 <Header />
                 <Stack
