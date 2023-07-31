@@ -61,7 +61,7 @@ const homeProtfolioData = [
 ]
 
 export default function Protfolio() {
-    const { mode, mainBgColorDark, mainBgColorLight, textDark, textLight, textWhite, textGray } = useSelector(state => state.theme)
+    const { mode, textDark, textLight, textWhite, textGray } = useSelector(state => state.theme)
     const isDark = Boolean(mode === 'dark')
     const ProjectCard = () => {
         return (
