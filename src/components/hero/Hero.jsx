@@ -216,15 +216,15 @@ export default function Hero() {
         <div className={styles.blockquote}>
           <h1>
             {quoteText1}  <span
-              style={{ color: isDark ? process.env.REACT_APP_TEXT_COLOR_DARK_MODE : process.env.REACT_APP_TEXT_COLOR_LIGHT_MODE }}
+              style={{ color: isDark ? textWhite : textDark }}
             >{quoteText2}</span> {quoteText3} <span
-              style={{ color: isDark ? process.env.REACT_APP_TEXT_COLOR_DARK_MODE : process.env.REACT_APP_TEXT_COLOR_LIGHT_MODE }}
+              style={{ color: isDark ? textWhite : textDark }}
 
             >  {quoteText4}</span>
           </h1>
           <h4
             style={{
-              color: isDark ? process.env.REACT_APP_TEXT_COLOR_DARK_MODE : process.env.REACT_APP_TEXT_COLOR_LIGHT_MODE
+              color: isDark ? textWhite : textDark
             }}
           >—{quoteBy}<br />
             {/* <em>Web Site Usability: A Designer's Guide</em> */}
