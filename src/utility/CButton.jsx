@@ -8,12 +8,12 @@ export default function ContainedButtons({
 	btnTitle,
 	...rest
 }) {
-	const { mode } = useSelector(state => state.theme)
+	const { mode, textDark, textWhite } = useSelector(state => state.theme)
 	const isDark = Boolean(mode === 'dark')
 	return (
 		<Box
 			sx={{
-				color: isDark ? process.env.REACT_APP_TEXT_COLOR_DARK_MODE : process.env.REACT_APP_TEXT_COLOR_LIGHT_MODE,
+				color: isDark ? textWhite : textDark,
 				p: 1,
 				border: "1px solid #C778DD",
 				"&:hover": {

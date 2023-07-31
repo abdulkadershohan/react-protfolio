@@ -1,6 +1,9 @@
 import { Grid, Stack } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import hero from "../../assets/images/hero.png";
 import logoOutline from "../../assets/images/logoOutline.svg";
@@ -10,9 +13,6 @@ import Contacts from "../contacts/Contacts";
 import Protfolio from "../protfolio/Protfolio";
 import Skils from "../skils/Skils";
 import styles from "./hero.module.css";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
-import { useSelector } from "react-redux";
 const heroTopSectionData = {
   title: {
     title1: "Abdul Kader",
@@ -47,7 +47,7 @@ export default function Hero() {
     doing: { text, url, urlText },
     blockquote: { quoteText1, quoteText2, quoteText3, quoteText4, quoteBy },
     image } = heroTopSectionData;
-  const { mode } = useSelector(state => state.theme)
+  const { mode, mainBgColorDark, mainBgColorLight, textDark, textLight, textWhite, textGray } = useSelector(state => state.theme)
   const isDark = Boolean(mode === 'dark')
   return (
     <Stack >
@@ -85,7 +85,7 @@ export default function Hero() {
               {title6}
             </CTypography>
             <CTypography
-              color={"#ABB2BF"}
+              color={isDark ? textLight : textDark}
               fontSize={'16px'}
               fontWeight={400}
             >{subtitle}
@@ -141,7 +141,8 @@ export default function Hero() {
               sx={{
                 padding: "8px",
                 border: " 1px solid #ABB2BF",
-                color: " #ABB2BF",
+                color: isDark ? textLight : textDark,
+
                 margin: "0px auto",
                 display: "inline-flex",
                 justifyContent: "center",

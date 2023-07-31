@@ -12,7 +12,8 @@ export default function CTypography({
     color,
     ...rest
 }) {
-    const { mode } = useSelector(state => state.theme)
+    const { mode, textDark, textWhite } = useSelector(state => state.theme)
+
     const isDark = Boolean(mode === 'dark')
     return (
         <Stack spacing={1}>
@@ -26,7 +27,7 @@ export default function CTypography({
                 //sx={sx ? sx : { fontWeight: 700, py: 0 }}
                 //  variant={variant ? variant : "h6"}
                 text={text}
-                color={color ? color : isDark ? process.env.REACT_APP_TEXT_COLOR_DARK_MODE : process.env.REACT_APP_TEXT_COLOR_LIGHT_MODE}
+                color={color ? color : isDark ? textWhite : textDark}
                 //  component={component ? component : "h1"}
                 {...rest}
             >
