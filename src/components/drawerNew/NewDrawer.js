@@ -5,10 +5,14 @@ import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
-import { Stack } from '@mui/system';
+import { Container, Stack } from '@mui/system';
 import * as React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import logo from "../../assets/images/logo.png";
+import LogoImg from '../../assets/svg/LogoImg';
+import SunIcon from '../../assets/svg/SunIcon';
+import { changeTheme } from '../../features/theme/themeSlice';
 import { CTypography } from '../../utility';
 import Footer from '../footer/Footer';
 import Sidebar from '../sidebar/Sidebar';
@@ -57,6 +61,9 @@ const navbarData = {
 }
 
 function DrawerAppBar(props, { children }) {
+    const { mode, mainBgColorDark, mainBgColorLight, textDark, textLight, textWhite, textGray } = useSelector(state => state.theme)
+    const isDark = Boolean(mode === 'dark')
+    const dispatch = useDispatch()
     const { routes, logo, logoTitle } = navbarData
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -70,7 +77,7 @@ function DrawerAppBar(props, { children }) {
             onClick={handleDrawerToggle}
             sx={{
                 textAlign: 'center',
-                backgroundColor: '#282C33',
+                backgroundColor: isDark ? process.env.REACT_APP_BACKGROUND_COLOR_DARK_MODE : process.env.REACT_APP_BACKGROUND_COLOR_LIGHT_MODE,
             }}>
             <Stack
                 direction="row"
@@ -84,13 +91,30 @@ function DrawerAppBar(props, { children }) {
                 to="/"
                 py={4}
             >
-                <img src={logo} alt="logo"
-                    style={{ width: 15, height: 15 }}
+                <LogoImg
+                    iconColor={isDark ? textLight : textDark}
                 />
                 <CTypography>
                     {logoTitle}
                 </CTypography>
+                <IconButton
+                    color='primary'
+                    onClick={() => {
+                        if (isDark) {
+                            dispatch(changeTheme('light'))
+                        }
+                        else {
+                            dispatch(changeTheme('dark'))
+                        }
+                    }}
+
+                >
+                    <SunIcon
+                        iconColor={isDark ? textLight : textDark}
+                    />
+                </IconButton>
             </Stack>
+
 
             <Divider />
             <Stack
@@ -98,6 +122,7 @@ function DrawerAppBar(props, { children }) {
                 fontSize="1.2rem"
                 textAlign={"left"}
                 py={1}
+                mt={2}
             >
                 {routes.map((item) => (
 
@@ -107,8 +132,8 @@ function DrawerAppBar(props, { children }) {
                         style={({ isActive }) => (isActive ?
                             {
                                 borderRight: "4px solid #fff",
-                                background: "rgb(45, 51, 89)",
-                                color: "#fff",
+                                background: isDark ? '#1E1E1E' : '#282C33',
+                                color: '#fff',
                                 fontFamily: "FiraCode",
                                 fontWeight: 600,
                                 padding: "0.5rem 1rem",
@@ -133,7 +158,7 @@ function DrawerAppBar(props, { children }) {
                             component="span"
                             sx={{
                                 "&:hover": {
-                                    color: "#fff",
+                                    color: '#fff'
                                 }
                             }}
 
@@ -153,7 +178,7 @@ function DrawerAppBar(props, { children }) {
         }}>
             <AppBar component="nav"
                 sx={{
-                    backgroundColor: '#282C33',
+                    backgroundColor: isDark ? mainBgColorDark : mainBgColorLight,
                     boxShadow: 'none',
                     pl: {
                         md: 7,
@@ -161,97 +186,112 @@ function DrawerAppBar(props, { children }) {
                     },
                 }}
             >
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
-                        onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { md: 'none' } }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    {/* <Typography
-                        variant="h6"
-                        component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-                    >
-                        MUI
-                    </Typography> */}
-                    <Box
-                        sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' } }}
-                        component="div"
-                    >
-                        <Stack
-                            direction="row"
-                            alignItems="center"
-                            spacing={1}
-                            sx={{
-                                cursor: "pointer",
-                            }}
-                            component={Link}
-                            to="/"
+                <Container maxWidth="xl">
 
+                    <Toolbar>
+                        <IconButton
+                            aria-label="open drawer"
+                            edge="start"
+                            onClick={handleDrawerToggle}
+                            sx={{
+                                mr: 2, display: { md: 'none' },
+                                color: isDark ? textLight : textDark,
+                            }}
                         >
-                            <img src={logo} alt="logo"
-                                style={{ width: 15, height: 15 }}
-                            />
-                            <CTypography
-                                fontSize="1rem"
+                            <MenuIcon />
+                        </IconButton>
+                        <Box
+                            sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' } }}
+                            component="div"
+                        >
+                            <Stack
+                                direction="row"
+                                alignItems="center"
+                                spacing={1}
+                                sx={{
+                                    cursor: "pointer",
+                                }}
+                                component={Link}
+                                to="/"
 
                             >
-                                Abdul Kader
-                            </CTypography>
-                        </Stack>
-                    </Box>
-                    <Stack sx={{ display: { xs: 'none', md: 'block' } }}
-                        spacing={2}
-                        direction="row"
-                    >
-                        {
-                            routes.map((route, index) => {
-                                return (
-                                    <NavLink
-                                        to={route.path}
-                                        key={index}
-                                        style={({ isActive }) => (isActive ?
-                                            {
-                                                // borderRight: "4px solid white",
-                                                // background: "rgb(45, 51, 89)"
-                                                color: "#fff",
-                                                fontFamily: "FiraCode",
-                                                fontWeight: 600,
+                                <LogoImg
+                                    iconColor={isDark ? textLight : textDark}
+                                />
+                                <CTypography
+                                    fontSize="1rem"
+                                    color={isDark ? textLight : textDark}
 
-                                            }
-                                            : {
-                                                color: "#ABB2BF",
-                                                fontFamily: "FiraCode",
-                                                fontWeight: 400,
+                                >
+                                    Abdul Kader
+                                </CTypography>
+                            </Stack>
+                        </Box>
+                        <Stack sx={{ display: { xs: 'none', md: 'block' } }}
+                            spacing={2}
+                            direction="row"
+                        >
+                            <IconButton
+                                color='primary'
+                                onClick={() => {
+                                    if (isDark) {
+                                        dispatch(changeTheme('light'))
+                                    }
+                                    else {
+                                        dispatch(changeTheme('dark'))
+                                    }
+                                }}
 
-                                            })}
-                                    >
-                                        <span
-                                            style={{
-                                                color: "#C778DD"
-                                            }}
-                                        >#</span>
-                                        <Box
-                                            component="span"
-                                            sx={{
-                                                "&:hover": {
-                                                    color: "#fff",
+                            >
+                                <SunIcon
+                                    iconColor={isDark ? textLight : textDark}
+                                />
+                            </IconButton>
+                            {
+                                routes.map((route, index) => {
+                                    return (
+                                        <NavLink
+                                            to={route.path}
+                                            key={index}
+                                            style={({ isActive }) => (isActive ?
+                                                {
+                                                    // borderRight: "4px solid white",
+                                                    // background: "rgb(45, 51, 89)"
+                                                    color: isDark ? textWhite : textDark,
+                                                    fontFamily: "FiraCode",
+                                                    fontWeight: 600,
+
                                                 }
-                                            }}
+                                                : {
+                                                    color: isDark ? textLight : textGray,
+                                                    fontFamily: "FiraCode",
+                                                    fontWeight: 400,
 
-                                        >{route.name}
-                                        </Box>
-                                    </NavLink>
-                                )
-                            })
-                        }
-                    </Stack>
+                                                })}
+                                        >
+                                            <span
+                                                style={{
+                                                    color: "#C778DD"
+                                                }}
+                                            >#</span>
+                                            <Box
+                                                component="span"
+                                                sx={{
+                                                    "&:hover": {
+                                                        color: isDark ? textWhite : textDark,
+                                                    }
+                                                }}
 
-                </Toolbar>
+                                            >{route.name}
+                                            </Box>
+                                        </NavLink>
+                                    )
+                                })
+                            }
+                        </Stack>
+
+                    </Toolbar>
+                </Container>
             </AppBar>
 
             <Box component="nav" >
@@ -265,7 +305,7 @@ function DrawerAppBar(props, { children }) {
                     }}
                     PaperProps={{
                         sx: {
-                            backgroundColor: '#282C33',
+                            backgroundColor: isDark ? mainBgColorDark : mainBgColorLight,
                         }
                     }}
                     sx={{
@@ -288,7 +328,7 @@ function DrawerAppBar(props, { children }) {
             <Box component="main" sx={{
                 p: 2,
                 pr: 3,
-                backgroundColor: '#282C33',
+                backgroundColor: isDark ? mainBgColorDark : mainBgColorLight,
                 width: '100%',
 
             }}>

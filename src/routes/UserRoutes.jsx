@@ -9,8 +9,11 @@ import Experience from "../components/experience/Experience";
 import Hero from "../components/hero/Hero";
 import ProtfolioAll from "../components/protfolio/ProtfolioAll";
 import ScrollToTop from "./ScrollToTop";
+import { useSelector } from "react-redux";
 
 export default function UserRoutes() {
+
+
     return (
         <BrowserRouter>
             <ScrollToTop />
@@ -22,12 +25,12 @@ export default function UserRoutes() {
                     }
                 >
                     <Route path="/" element={<Hero />} />
-                    <Route path="/protfolio" element={<ProtfolioAll />} />
-                    <Route path="/contact" element={<ContactsAll />} />
                     <Route path="/about" element={<AboutMeFull />} />
-                    <Route path="/education" element={<Education />} />
+                    <Route path="/protfolio" element={<ProtfolioAll />} />
                     <Route path="/experience" element={<Experience />} />
                     <Route path="/certification" element={<Certification />} />
+                    <Route path="/education" element={<Education />} />
+                    <Route path="/contact" element={<ContactsAll />} />
                     <Route path="*" element={<h1>Not Found</h1>} />
                 </Route>
 

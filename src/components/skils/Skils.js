@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React from "react";
+import { useSelector } from "react-redux";
 import { CTypography } from "../../utility";
 
 const Ractangle = () => {
@@ -50,6 +51,8 @@ const mySkills = [
 ]
 
 export default function Skils() {
+    const { mode, textDark, textLight, textWhite, textGray } = useSelector(state => state.theme)
+    const isDark = Boolean(mode === 'dark')
     const Header = () => {
         return (
 
@@ -65,7 +68,8 @@ export default function Skils() {
                     fontWeight={500}
                     fontSize={32}
                 >
-                    <span style={{ color: '#FFFFFF' }}>
+                    <span style={{ color: isDark ? textWhite : textDark }}>
+
                         Skils
                     </span>
 
@@ -126,7 +130,7 @@ export default function Skils() {
                                 fontSize={14}
                                 fontWeight={500}
                                 text={skill}
-                                color='#ABB2BF'
+                                color={isDark ? textLight : textGray}
                             />
                         )
                     })}

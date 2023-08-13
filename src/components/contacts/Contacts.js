@@ -1,5 +1,6 @@
 import { Box, Grid, Stack } from "@mui/material";
 import React from "react";
+import { useSelector } from "react-redux";
 import discordIcon from "../../assets/Icon/discord.svg";
 import emailIcon from "../../assets/Icon/email.svg";
 import { CTypography } from "../../utility";
@@ -29,6 +30,8 @@ const homeContactData = {
 }
 
 export default function Contacts() {
+    const { mode, textDark, textLight, textWhite, textGray } = useSelector(state => state.theme)
+    const isDark = Boolean(mode === 'dark');
     const { text, socailAccounts, socailAccountsTitle } = homeContactData;
     const Header = () => {
         return (
@@ -44,7 +47,7 @@ export default function Contacts() {
                     fontWeight={500}
                     fontSize={32}
                 >
-                    <span style={{ color: '#FFFFFF' }}>
+                    <span style={{ color: isDark ? textWhite : textDark }}>
                         Contacts
                     </span>
 
@@ -77,7 +80,7 @@ export default function Contacts() {
                         py={8}
                     >
                         <CTypography
-                            color="#ABB2BF"
+                            color={isDark ? textLight : textGray}
                             fontWeight={400}
                             fontSize={16}
                         >
@@ -121,7 +124,7 @@ export default function Contacts() {
                                             <CTypography
                                                 fontWeight={400}
                                                 fontSize={16}
-                                                color="#ABB2BF"
+                                                color={isDark ? textLight : textGray}
                                                 component="span"
                                             >
                                                 {item?.text}

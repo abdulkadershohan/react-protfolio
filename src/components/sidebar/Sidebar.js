@@ -1,24 +1,24 @@
 import { Box, Stack } from "@mui/material";
 import React from "react";
-import discord from '../../assets/Icon/discord.svg';
-import email from '../../assets/Icon/email.svg';
-import github from '../../assets/Icon/github.svg';
+import DiscordIcon from "../../assets/svg/DiscordIcon";
+import EmailIcon from "../../assets/svg/EmailIcon";
+import GithubIcon from "../../assets/svg/GithubIcon";
 const sidebarData = [
     {
         name: 'discord',
-        icon: discord,
+        icon: <DiscordIcon />,
         link: 'https://discord.com/users/522431317447802900',
         id: 1
     },
     {
         name: 'github',
-        icon: github,
+        icon: <GithubIcon />,
         link: "https://github.com/abdulkadershohan",
         id: 2
     },
     {
         name: 'email',
-        icon: email,
+        icon: <EmailIcon />,
         link: "mailto: abdulkadirshohan@gmail.com",
         id: 3
     }
@@ -59,27 +59,11 @@ export default function Sidebar() {
                                         // transition: "all 0.3s ease-in-out",
                                     },
                                 }}
-                            >  <img src={item.icon} alt={item.name} />
+                            >  {item.icon}
                             </Box>
                         ))
                     }
 
-                    {/* <a href="https://discord.com/users/522431317447802900"
-                        target={"_blank"} rel="noreferrer"
-                    >
-                        <img src={discord} alt="discord" />
-                    </a>
-                    <a href="https://github.com/abdulkadershohan"
-                        target={"_blank"} rel="noreferrer"
-                    >
-                        <img src={github} alt="github" />
-
-                    </a>
-                    <a href="mailto: abdulkadirshohan@gmail.com"
-                        target={"_blank"} rel="noreferrer"
-                    >
-                        <img src={email} alt="email" />
-                    </a> */}
                 </Stack>
 
             </Stack>

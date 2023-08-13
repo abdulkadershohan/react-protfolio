@@ -1,5 +1,6 @@
-import { Box, Stack } from "@mui/system";
+import { Box, Container, Stack } from "@mui/system";
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link, useNavigate } from 'react-router-dom';
 import { CTypography } from "../../utility";
 
@@ -26,6 +27,8 @@ const educationData = [
 
 export default function Education() {
     const navigate = useNavigate();
+    const { mode, textDark, textLight, textWhite, textGray } = useSelector(state => state.theme)
+    const isDark = Boolean(mode === 'dark')
     const Header = () => {
         return (
             <Stack spacing={2}>
@@ -49,7 +52,7 @@ export default function Education() {
                                 sm: 32,
                             }}
                         >
-                            <span style={{ color: '#FFFFFF' }}>
+                            <span style={{ color: isDark ? textWhite : textDark }}>
                                 education
                             </span>
 
@@ -95,7 +98,7 @@ export default function Education() {
                         sx={{
                             borderBottom: '1px solid #ABB2BF',
                             p: 1,
-                            color: '#FFFFFF',
+                            color: isDark ? textWhite : textDark,
                         }}
                         fontSize={16}
                         fontWeight={600}
@@ -105,7 +108,7 @@ export default function Education() {
                             sx={{
                                 fontSize: 12,
                                 fontWeight: 400,
-                                color: '#ABB2BF',
+                                color: isDark ? textLight : textGray,
                                 fontFamily: 'FiraCode',
                             }}
                         >
@@ -130,7 +133,7 @@ export default function Education() {
                         fontSize={14}
                         fontWeight={500}
                         text={school}
-                        color='#ABB2BF'
+                        color={isDark ? textLight : textGray}
                     />
 
                 </Box>
@@ -139,32 +142,34 @@ export default function Education() {
         )
     }
     return (
-        <Stack>
-            <Header />
-            <Stack
-                alignItems="center"
-                py={4}
-                pb={8}
-            >
+        <Container maxWidth="xl">
+            <Stack>
+                <Header />
                 <Stack
-                    direction="row"
-                    justifyContent="space-between"
-                    flexWrap="wrap"
-                    gap={1}
+                    alignItems="center"
+                    py={4}
+                    pb={8}
                 >
-                    {
-                        educationData.map((item, index) => {
-                            return (
-                                <SkillsCard
-                                    key={Math.random()}
-                                    data={item}
+                    <Stack
+                        direction="row"
+                        justifyContent="space-between"
+                        flexWrap="wrap"
+                        gap={1}
+                    >
+                        {
+                            educationData.map((item, index) => {
+                                return (
+                                    <SkillsCard
+                                        key={Math.random()}
+                                        data={item}
 
-                                />
-                            )
-                        })
-                    }
+                                    />
+                                )
+                            })
+                        }
+                    </Stack>
                 </Stack>
             </Stack>
-        </Stack>
+        </Container>
     )
 }

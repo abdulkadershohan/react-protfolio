@@ -1,8 +1,9 @@
-import { Chip } from "@mui/material";
+import { Chip, Container } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { useSelector } from "react-redux";
 import { Link, useNavigate } from 'react-router-dom';
 import LiveStatus from '../../assets/images/projects/LiveStatus.png';
 import SeRemo from '../../assets/images/projects/SeRemo2.png';
@@ -254,171 +255,10 @@ const protfolioData = [
     },
 ]
 
-const ProjectCard = ({ data }) => {
-    return (
-        <Stack direction="row"
-            justifyContent="center"
-            flexWrap="wrap"
-            // alignItems="center"
-            gap={2}
-        >
-            {
-                data.map((item) => {
-                    return (
-                        <Box key={item.id}
-                            sx={{
-                                border: '1px solid #ABB2BF',
-                            }}
-                        >
-                            <Box
-                                sx={{
-                                    aspectRatio: '16/9',
-                                    borderBottom: '1px solid #ABB2BF',
-                                    display: 'block',
-                                    width: '100%',
-                                    height: '200px',
-                                }}
-                            >
-                                <LazyLoadImage
-                                    alt={item.title}
-                                    effect="blur"
-                                    src={item.cardImage}
-                                    width={"100%"}
-                                    height={"100%"}
-                                />
-                            </Box>
-                            <Box
-                                component="ul"
-                                sx={{
-                                    display: 'flex',
-                                    flexWrap: 'wrap',
-                                    gap: '5px',
-                                    padding: '10px',
-                                    borderBottom: '1px solid #ABB2BF',
-                                    maxWidth: '360px',
 
-                                }}
-                            >
-                                {
-                                    item.skils.map((skill) => {
-                                        return (
-                                            <Box
-                                                key={skill}
-                                                component="li"
-                                                sx={{
-                                                    display: 'inline-block',
-                                                    padding: '0.5rem',
-                                                    //  color: '#fff',
-                                                    fontSize: '16px',
-                                                    fontWeight: '400',
-                                                    backgroundColor: '#ABB2BF',
-                                                    borderRadius: '10px',
-                                                    marginRight: '0.5rem',
-                                                    marginBottom: '0.5rem'
-                                                }}
-                                            >
-                                                {skill}
-                                            </Box>
-                                        )
-                                    })
-                                }
-                            </Box>
-                            <Stack
-                                p={2}
-                                spacing={2}
-                                maxWidth="360px"
-
-                            >
-                                <Box
-                                    fontSize={24}
-                                    fontWeight={500}
-                                    color="#FFF"
-                                >
-                                    {item.title}
-                                    {
-                                        item?.isPrivate && (
-
-                                            <Chip
-                                                sx={{
-                                                    m: 1,
-                                                    fontFamily: "FiraCode",
-                                                    fontSize: '14px',
-                                                    fontWeight: '400',
-                                                    // backgroundColor: '#C470DB',
-                                                    color: '#fff',
-                                                    borderColor: '#C470DB',
-                                                }}
-                                                label="Private"
-                                                //color='warning'
-                                                size="small"
-                                                variant="outlined"
-                                            />
-                                        )
-                                    }
-                                </Box>
-                                <CTypography
-                                    fontSize={14}
-                                    fontWeight={400}
-                                    color="#ABB2BF"
-                                >
-                                    {item.description}
-                                </CTypography>
-                                <Box
-                                    display="flex"
-                                    gap={2}
-                                    flexWrap="wrap"
-                                >
-                                    {
-                                        item.liveUrl && <CButton
-                                            btnTitle="Live => "
-                                            component={'a'}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            href={item.liveUrl}
-                                        />
-                                    }
-                                    {
-                                        item.figma && <CButton
-                                            btnTitle="Figma => "
-                                            component={'a'}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            href={item.figma}
-                                        />
-                                    }
-                                    {
-                                        item.githubUrl && <CButton
-                                            btnTitle="Github repo =>"
-                                            component={'a'}
-                                            href={item.githubUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-
-                                        />
-                                    }
-                                    {
-                                        item.youtubeUrl && <CButton
-                                            btnTitle="Youtube =>"
-                                            component={'a'}
-                                            href={item.youtubeUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-
-                                        />
-                                    }
-
-
-                                </Box>
-                            </Stack>
-
-                        </Box>
-                    )
-                })
-            }
-        </Stack>
-    )
-}
 export default function Protfolio() {
+    const { mode, textDark, textLight, textWhite, textGray } = useSelector(state => state.theme)
+    const isDark = Boolean(mode === 'dark')
     const navigate = useNavigate();
     const Header = ({ title }) => {
         return (
@@ -438,7 +278,7 @@ export default function Protfolio() {
                         sm: 32,
                     }}
                 >
-                    <span style={{ color: '#FFFFFF' }}>
+                    <span style={{ color: isDark ? textWhite : textDark }}>
                         {
                             title
                         }
@@ -458,38 +298,203 @@ export default function Protfolio() {
             </Stack>
         )
     }
-    return (
-        <Stack
-            spacing={2}
-            pb={6}
-        >
-            <Stack
-                direction="row"
-                justifyContent="space-between"
-                alignItems="center"
-                pt={4}
+    const ProjectCard = ({ data }) => {
+        return (
+            <Stack direction="row"
+                justifyContent="center"
+                flexWrap="wrap"
+                // alignItems="center"
+                gap={2}
+            >
+                {
+                    data.map((item) => {
+                        return (
+                            <Box key={item.id}
+                                sx={{
+                                    border: '1px solid #ABB2BF',
+                                }}
+                            >
+                                <Box
+                                    sx={{
+                                        aspectRatio: '16/9',
+                                        borderBottom: '1px solid #ABB2BF',
+                                        display: 'block',
+                                        width: '100%',
+                                        height: '200px',
+                                    }}
+                                >
+                                    <LazyLoadImage
+                                        alt={item.title}
+                                        effect="blur"
+                                        src={item.cardImage}
+                                        width={"100%"}
+                                        height={"100%"}
+                                    />
+                                </Box>
+                                <Box
+                                    component="ul"
+                                    sx={{
+                                        display: 'flex',
+                                        flexWrap: 'wrap',
+                                        gap: '5px',
+                                        padding: '10px',
+                                        borderBottom: '1px solid #ABB2BF',
+                                        maxWidth: '360px',
 
+                                    }}
+                                >
+                                    {
+                                        item.skils.map((skill) => {
+                                            return (
+                                                <Box
+                                                    key={skill}
+                                                    component="li"
+                                                    sx={{
+                                                        display: 'inline-block',
+                                                        padding: '0.5rem',
+                                                        color: isDark ? textDark : textWhite,
+                                                        fontSize: '16px',
+                                                        fontWeight: '400',
+                                                        backgroundColor: isDark ? textLight : textGray,
+                                                        borderRadius: '10px',
+                                                        marginRight: '0.5rem',
+                                                        marginBottom: '0.5rem'
+                                                    }}
+                                                >
+                                                    {skill}
+                                                </Box>
+                                            )
+                                        })
+                                    }
+                                </Box>
+                                <Stack
+                                    p={2}
+                                    spacing={2}
+                                    maxWidth="360px"
+
+                                >
+                                    <Box
+                                        fontSize={24}
+                                        fontWeight={500}
+                                        color={isDark ? textWhite : textDark}
+                                    >
+                                        {item.title}
+                                        {
+                                            item?.isPrivate && (
+
+                                                <Chip
+                                                    sx={{
+                                                        m: 1,
+                                                        fontFamily: "FiraCode",
+                                                        fontSize: '14px',
+                                                        fontWeight: '400',
+                                                        // backgroundColor: '#C470DB',
+                                                        color: isDark ? textWhite : textDark,
+                                                        borderColor: '#C470DB',
+                                                    }}
+                                                    label="Private"
+                                                    //color='warning'
+                                                    size="small"
+                                                    variant="outlined"
+                                                />
+                                            )
+                                        }
+                                    </Box>
+                                    <CTypography
+                                        fontSize={14}
+                                        fontWeight={400}
+                                        color={isDark ? textLight : textDark}
+                                    >
+                                        {item.description}
+                                    </CTypography>
+                                    <Box
+                                        display="flex"
+                                        gap={2}
+                                        flexWrap="wrap"
+                                    >
+                                        {
+                                            item.liveUrl && <CButton
+                                                btnTitle="Live => "
+                                                component={'a'}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                href={item.liveUrl}
+                                            />
+                                        }
+                                        {
+                                            item.figma && <CButton
+                                                btnTitle="Figma => "
+                                                component={'a'}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                href={item.figma}
+                                            />
+                                        }
+                                        {
+                                            item.githubUrl && <CButton
+                                                btnTitle="Github repo =>"
+                                                component={'a'}
+                                                href={item.githubUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+
+                                            />
+                                        }
+                                        {
+                                            item.youtubeUrl && <CButton
+                                                btnTitle="Youtube =>"
+                                                component={'a'}
+                                                href={item.youtubeUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+
+                                            />
+                                        }
+
+
+                                    </Box>
+                                </Stack>
+
+                            </Box>
+                        )
+                    })
+                }
+            </Stack>
+        )
+    }
+    return (
+        <Container maxWidth="xl">
+            <Stack
+                spacing={2}
+                pb={6}
             >
                 <Stack
                     direction="row"
-                    spacing={2}
+                    justifyContent="space-between"
                     alignItems="center"
-                >
-                    <CTypography
-                        text='/'
-                        color='#C778DD'
-                        fontWeight={500}
-                        fontSize={{
-                            xs: 24,
-                            sm: 32,
-                        }}
-                    >
-                        <span style={{ color: '#FFFFFF' }}>
-                            projects
-                        </span>
+                    pt={4}
 
-                    </CTypography>
-                    {/* <Box
+                >
+                    <Stack
+                        direction="row"
+                        spacing={2}
+                        alignItems="center"
+                    >
+                        <CTypography
+                            text='/'
+                            color='#C778DD'
+                            fontWeight={500}
+                            fontSize={{
+                                xs: 24,
+                                sm: 32,
+                            }}
+                        >
+                            <span style={{ color: isDark ? textWhite : textDark }}>
+                                projects
+                            </span>
+
+                        </CTypography>
+                        {/* <Box
                         sx={{
                             width: {
                                 xs: '10px', sm: '40px',
@@ -499,53 +504,54 @@ export default function Protfolio() {
                             backgroundColor: '#C778DD',
                         }}
                     /> */}
+                    </Stack>
+                    <CTypography
+                        fontWeight={400}
+                        fontSize={16}
+
+                        component={Link}
+                        // to='/'
+                        onClick={() => navigate(-1)}
+
+                        sx={{
+                            borderBottom: '2px solid #C778DD',
+                            "&:hover": {
+                                color: '#C778DD'
+                            }
+                        }}
+                    >
+                        {'<'}~~ Back
+                    </CTypography>
+
+
                 </Stack>
                 <CTypography
-                    fontWeight={400}
                     fontSize={16}
-
-                    component={Link}
-                    // to='/'
-                    onClick={() => navigate(-1)}
-
-                    sx={{
-                        borderBottom: '2px solid #C778DD',
-                        "&:hover": {
-                            color: '#C778DD'
-                        }
-                    }}
+                    fontWeight={400}
+                    color={isDark ? textLight : textGray}
                 >
-                    {'<'}~~ Back
+                    All of my projects
                 </CTypography>
+                {
+                    protfolioData.map((item, index) => {
+                        return (
+                            <Stack
+                                key={Math.random()}
+                            >
+                                <Header
+                                    title={item?.results?.title}
 
+                                />
+                                <ProjectCard
+                                    key={index}
+                                    data={item.results.data}
+                                />
+                            </Stack>
 
+                        )
+                    })
+                }
             </Stack>
-            <CTypography
-                fontSize={16}
-                fontWeight={400}
-                color="#ABB2BF"
-            >
-                All of my projects
-            </CTypography>
-            {
-                protfolioData.map((item, index) => {
-                    return (
-                        <Stack
-                            key={Math.random()}
-                        >
-                            <Header
-                                title={item?.results?.title}
-
-                            />
-                            <ProjectCard
-                                key={index}
-                                data={item.results.data}
-                            />
-                        </Stack>
-
-                    )
-                })
-            }
-        </Stack>
+        </Container>
     )
 }
