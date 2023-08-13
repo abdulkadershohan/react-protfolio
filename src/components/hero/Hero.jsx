@@ -24,7 +24,7 @@ const heroTopSectionData = {
     title5: "React Native",
     title6: "developer!",
   },
-  subtitle: `I'm a Frontend Engineer with more then 1 year of experience in React and React Native. I'm passionate about building scalable and maintainable web applications.`,
+  subtitle: `I'm a Frontend Engineer with more then 1 years and 8 months of experience in React and React Native. I'm passionate about building scalable and maintainable web applications.`,
   image: hero,
   doing: {
     text: "Currently working on",
