@@ -46,12 +46,12 @@ const navbarData = {
 
         },
         {
-            id: 5,
+            id: 6,
             name: "education",
             path: "/education",
         },
         {
-            id: 6,
+            id: 7,
             name: "contact",
             path: "/contact",
         }
