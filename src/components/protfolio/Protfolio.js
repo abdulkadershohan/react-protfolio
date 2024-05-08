@@ -8,6 +8,17 @@ import { Link } from 'react-router-dom';
 import { CButton, CTypography } from "../../utility";
 const homeProtfolioData = [
     {
+        id: 8,
+        title: 'Evibe E-commerce',
+        skils: ["MERN Stack", "RTK Query", "Facebook Pixel", "Nodemailer", "Cloudinary", "TypeScript", "JavaScript",],
+        description: 'Evibe an eCommerce platform tailored specifically for online shoe stores!',
+        cardImage: require('../../assets/images/projects/ecommarce-3.png'),
+        figma: "",
+        isPrivate: true,
+        liveUrl: 'https://friend-shoes-ecommerce.netlify.app/',
+        youtubeUrl: 'https://youtu.be/h2SX4VHQHlE',
+    },
+    {
         id: 1,
         title: 'Upcopo',
         skils: ["React Native", "Redux", "Redux Toolkit", "Native Base", "expo", "formik", "yup", "Google Map"],
@@ -45,19 +56,20 @@ const homeProtfolioData = [
         githubUrl: 'https://github.com/abdulkadershohan/Blockchain-NFT-Website-Landing-Page'
 
     },
-    {
-        id: 3,
-        title: 'Covid-19 Survey',
-        skils: ["Bootstrap", "ReactJS", "EmailJS", "Styled Component",
-            "HTML", "CSS", "JavaScript", "PHP", "MYSQL", "Axios"],
-        description: 'Helth Care App',
-        cardImage: require('../../assets/images/projects/covid-19.png'),
-        figma: "",
-        liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
-        // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
-        githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM",
-        isPrivate: false
-    },
+    // {
+    //     id: 3,
+    //     title: 'Covid-19 Survey',
+    //     skils: ["Bootstrap", "ReactJS", "EmailJS", "Styled Component",
+    //         "HTML", "CSS", "JavaScript", "PHP", "MYSQL", "Axios"],
+    //     description: 'Helth Care App',
+    //     cardImage: require('../../assets/images/projects/covid-19.png'),
+    //     figma: "",
+    //     liveUrl: 'https://covid-19-survey-form-2020.netlify.app/',
+    //     // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
+    //     githubUrl: "https://github.com/abdulkadershohan/COVID-19-SURVEY-FROM",
+    //     isPrivate: false
+    // },
+
 ]
 
 export default function Protfolio() {

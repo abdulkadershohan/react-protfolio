@@ -10,6 +10,7 @@ import SeRemo from '../../assets/images/projects/SeRemo2.png';
 import brdchart from '../../assets/images/projects/brdchart.png';
 import covid from '../../assets/images/projects/covid-19.png';
 import covidapp from '../../assets/images/projects/covidapp.jpg';
+import ecommarce from '../../assets/images/projects/ecommarce-3.png';
 import food from '../../assets/images/projects/food.png';
 import food2 from '../../assets/images/projects/food2.png';
 import gym from '../../assets/images/projects/gym2.png';
@@ -72,14 +73,25 @@ const protfolioData = [
             title: 'web 2.0 projects',
             data: [
                 {
+                    id: 8,
+                    title: 'Evibe E-commerce',
+                    skils: ["MERN Stack", "RTK Query", "Facebook Pixel", "Nodemailer", "Cloudinary", "TypeScript", "JavaScript",],
+                    description: 'Evibe an eCommerce platform tailored specifically for online shoe stores!',
+                    cardImage: ecommarce,
+                    figma: "",
+                    isPrivate: true,
+                    liveUrl: 'https://friend-shoes-ecommerce.netlify.app/',
+                    youtubeUrl: 'https://youtu.be/h2SX4VHQHlE',
+                },
+                {
                     id: 7,
-                    title: 'RBS Dashboard',
-                    skils: ["ReactJS", "RestAPi", "JavaScript", "Material UI", "React Reducer", "Micro Service", "WebSocket",],
-                    description: 'Company Dashboard & Admin Panel',
+                    title: 'Vitlous',
+                    skils: ["ReactJS", "RestAPi", "JavaScript", "Material UI", "RTK Query ", "Micro Service", "WebSocket",],
+                    description: 'Vitlous is an all-in-one online project management software that can streamline your construction projects, enhance efficiency, and keep everyone on track. It is highly rated in its field.',
                     cardImage: rbs,
                     figma: "",
                     isPrivate: true,
-                    liveUrl: 'http://161.97.157.117:5001/',
+                    liveUrl: 'https://vitlous.com/',
                     // youtubeUrl: 'https://www.youtube.com/watch?v=0KnPfVyOxeg&t=5s',
                 },
                 {
