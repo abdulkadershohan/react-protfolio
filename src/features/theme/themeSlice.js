@@ -5,7 +5,7 @@ const getInitialTheme = () => {
 }
 
 const initialState = {
-    mode: getInitialTheme() ? "dark" : "light",
+    mode: "dark", //getInitialTheme() ? "dark" : "light",
     mainBgColorDark: '#282C33',
     mainBgColorLight: '#ffffff',
     textDark: '#000000',

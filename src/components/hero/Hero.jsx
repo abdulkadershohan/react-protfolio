@@ -24,11 +24,11 @@ const heroTopSectionData = {
     title5: "React Native",
     title6: "developer!",
   },
-  subtitle: `I'm a Frontend Engineer with more then 1 years and 8 months of experience in React and React Native. I'm passionate about building scalable and maintainable web applications.`,
+  subtitle: `I'm a Frontend Engineer with 2 years of solid experience in React and React Native. I'm passionate about building scalable and maintainable web applications.`,
   image: hero,
   doing: {
     text: "Currently working on",
-    url: 'http://161.97.157.117:5001/',
+    url: 'https://vitlous.com/',
     urlText: 'RBS ERP'
   },
   blockquote: {

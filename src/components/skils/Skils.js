@@ -25,17 +25,17 @@ const mySkills = [
     {
         id: 1,
         title: "Programming Languages",
-        items: ["JavaScript,", "C++,", "C,", "C#,", "Python,", "Java,", "PHP"]
+        items: ["JavaScript,TypeScript,", "C++,", "C,", "C#,", "Python,", "Java,", "PHP"]
     },
     {
         id: 2,
         title: 'Libraries & Frameworks',
-        items: ["React JS,", "Next JS,", "React Native,", "Material UI,", "Native Base,", "Bootstrap,", "React Bootstrap"]
+        items: ["React JS,", "Next JS,", "React Native,", "Node JS,", "Express,", "Mongoose.", "Tailwind CSS,", "Material UI,", "Native Base,", "Bootstrap"]
     },
     {
         id: 3,
         title: 'Other Skills & Tools',
-        items: ["Redux,", "Redux Toolkit,", "RTK Query,", "Context API,", "React Reducer,", "WebSocket,", "Git,", "GitHub"]
+        items: ["Redux,", "Redux Toolkit,", "RTK Query,", "Context API,", "WebSocket,", "Git,", "GitHub"]
     },
     {
         id: 4,
