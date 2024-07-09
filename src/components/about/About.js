@@ -17,7 +17,7 @@ const homeAboutData = {
             text: ` Mobile app development is my other passion. React and React Native is my favorite JavaScript libraries. I'm also a big fan of Python Django. In the future, I want to be a Full Stack Developer`,
         }
     ],
-    overleafResume: 'https://www.overleaf.com/read/xhbzrbckykqj',
+    overleafResume: 'https://www.overleaf.com/read/vgxvgygfvxjw#28ee64',
     image: photo,
 }
 
