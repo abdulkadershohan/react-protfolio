@@ -161,7 +161,7 @@ export default function About() {
                                     xs: 'auto', sm: 'auto',
                                     md: 400, lg: 500,
                                 },
-                                // filter: isDark && 'grayscale(100%)',
+                                //filter: isDark && 'grayscale(100%)',
                                 aspectRatio: '1/1',
                                 borderRadius: 2,
                                 overflow: 'hidden',

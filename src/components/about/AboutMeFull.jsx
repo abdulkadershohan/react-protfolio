@@ -297,11 +297,11 @@ export default function AboutMeFull() {
                                     sx={{
                                         width: {
                                             xs: '100%', sm: '100%',
-                                            md: '100%', lg: '80%',
+                                            md: 'auto', lg: 'auto',
                                         },
                                         height: {
                                             xs: 'auto', sm: 'auto',
-                                            md: 'auto', lg: 'auto',
+                                            md: 350, lg: 600,
                                         },
                                         filter: isDark && 'grayscale(100%)',
                                         aspectRatio: '1/1',
