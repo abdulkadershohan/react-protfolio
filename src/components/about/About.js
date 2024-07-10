@@ -4,7 +4,8 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import photo from "../../assets/images/sohan-3.jpg";
+import photo from "../../assets/images/heroAboutMEImg.jpeg";
+// import photo from "../../assets/images/sohan-3.jpg";
 import { CButton, CTypography } from "../../utility";
 const homeAboutData = {
     aboutData: [
@@ -110,7 +111,7 @@ export default function About() {
                     </Stack>
                 </Grid>
                 <Grid item xs={12} md={6}  >
-                    <Stack
+                    {/* <Stack
                         alignItems="center"
                     // sx={{
                     //     p: 20,
@@ -128,6 +129,39 @@ export default function About() {
                                     md: 'auto', lg: 'auto',
                                 },
                                 filter: isDark && 'grayscale(100%)',
+                                aspectRatio: '1/1',
+                                borderRadius: 2,
+                                overflow: 'hidden',
+
+                            }}
+                        >
+                            <LazyLoadImage
+                                alt='about-image'
+                                effect="blur"
+                                src={image}
+                                width={"100%"}
+                                height={"100%"}
+                            />
+                        </Box>
+                    </Stack> */}
+                    <Stack
+                        alignItems="flex-end"
+                    // sx={{
+                    //     p: 20,
+
+                    // }}
+                    >
+                        <Box
+                            sx={{
+                                width: {
+                                    xs: '100%', sm: 'auto',
+                                    md: 300, lg: 400,
+                                },
+                                height: {
+                                    xs: 'auto', sm: 'auto',
+                                    md: 400, lg: 500,
+                                },
+                                // filter: isDark && 'grayscale(100%)',
                                 aspectRatio: '1/1',
                                 borderRadius: 2,
                                 overflow: 'hidden',
