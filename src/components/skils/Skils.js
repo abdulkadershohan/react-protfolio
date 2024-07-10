@@ -30,24 +30,43 @@ const mySkills = [
     {
         id: 2,
         title: 'Libraries & Frameworks',
-        items: ["React JS,", "Next JS,", "React Native,", "Node JS,", "Express,", "Mongoose.", "Tailwind CSS,", "Material UI,", "Native Base,", "Bootstrap"]
+        items: ["React ,", " React Native (Expo and Bare), ", "NextJs, ", "Express JS, ", "Redux/RTK Query"]
     },
     {
         id: 3,
-        title: 'Other Skills & Tools',
-        items: ["Redux,", "Redux Toolkit,", "RTK Query,", "Context API,", "WebSocket,", "Git,", "GitHub"]
+        title: 'Frontend CSS Library',
+        items: ["HTML/CSS,", "SASS, ", " Material-UI, ", "Tailwind CSS,", "Bootstrap, ", "Native Base, ", "Mantine"]
     },
     {
         id: 4,
-        title: 'Databases',
-        items: ["MySQL"]
+        title: 'Other Skills & Tools',
+        items: ["Git/Github, ", " VS Code, ", "XCode, ", "Android Studio, ", " MongoDB Compass"]
     },
     {
         id: 5,
+        title: 'Cloud/Databases',
+        items: ["MongoDB, ", "Firebase, ", "Relational Database(MySQL)"]
+    },
+    {
+        id: 7,
+        title: 'Areas of Interest',
+        items: ["Web Design and Development, ", " Mobile App Development"]
+    },
+    {
+        id: 8,
+        title: 'Soft Skills',
+        items: ["Problem Solving, Self-learning, ", "Presentation, ", "Adaptability"]
+    },
+    {
+        id: 9,
+        title: 'Other Skills',
+        items: ["Figma, ", "WebSocket"]
+    },
+    {
+        id: 6,
         title: 'Communication Languages',
         items: ["Bengali (Native),", " English(fluent speaker),", " Hindi/Urdu (fluent speaker)"]
-    },
-
+    }
 ]
 
 export default function Skils() {
