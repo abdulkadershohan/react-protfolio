@@ -1,4 +1,5 @@
 import MenuIcon from '@mui/icons-material/Menu';
+import { Menu, MenuItem } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
@@ -12,7 +13,7 @@ import { Link, NavLink, Outlet } from 'react-router-dom';
 import logo from "../../assets/images/logo.png";
 import LogoImg from '../../assets/svg/LogoImg';
 import SunIcon from '../../assets/svg/SunIcon';
-import { changeTheme } from '../../features/theme/themeSlice';
+import { changeThemeWithColor } from '../../features/theme/themeSlice';
 import { CTypography } from '../../utility';
 import Footer from '../footer/Footer';
 import Sidebar from '../sidebar/Sidebar';
@@ -61,12 +62,22 @@ const navbarData = {
 }
 
 function DrawerAppBar(props, { children }) {
-    const { mode, mainBgColorDark, mainBgColorLight, textDark, textLight, textWhite, textGray } = useSelector(state => state.theme)
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    const { mode, color, mainBgColorDark, mainBgColorLight, textDark, textLight, textWhite, textGray } = useSelector(state => state.theme)
     const isDark = Boolean(mode === 'dark')
     const dispatch = useDispatch()
     const { routes, logo, logoTitle } = navbarData
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [selectedIndex, setSelectedIndex] = React.useState(0);
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -74,10 +85,10 @@ function DrawerAppBar(props, { children }) {
 
     const drawer = (
         <Box
-            onClick={handleDrawerToggle}
+            //  onClick={handleDrawerToggle}
             sx={{
                 textAlign: 'center',
-                backgroundColor: isDark ? process.env.REACT_APP_BACKGROUND_COLOR_DARK_MODE : process.env.REACT_APP_BACKGROUND_COLOR_LIGHT_MODE,
+                backgroundColor: isDark ? mainBgColorDark : mainBgColorLight,
             }}>
             <Stack
                 direction="row"
@@ -99,14 +110,11 @@ function DrawerAppBar(props, { children }) {
                 </CTypography>
                 <IconButton
                     color='primary'
-                    onClick={() => {
-                        if (isDark) {
-                            dispatch(changeTheme('light'))
-                        }
-                        else {
-                            dispatch(changeTheme('dark'))
-                        }
-                    }}
+                    id="basic-button"
+                    aria-controls={open ? 'basic-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : undefined}
+                    onClick={handleClick}
 
                 >
                     <SunIcon
@@ -115,7 +123,6 @@ function DrawerAppBar(props, { children }) {
                 </IconButton>
             </Stack>
 
-
             <Divider />
             <Stack
                 gap={2}
@@ -123,6 +130,7 @@ function DrawerAppBar(props, { children }) {
                 textAlign={"left"}
                 py={1}
                 mt={2}
+                onClick={handleDrawerToggle}
             >
                 {routes.map((item) => (
 
@@ -139,13 +147,15 @@ function DrawerAppBar(props, { children }) {
                                 padding: "0.5rem 1rem",
                             }
                             : {
-                                color: "#ABB2BF",
+                                color: isDark ? textLight : textDark,
                                 fontFamily: "FiraCode",
                                 fontWeight: 400,
                                 padding: "0.5rem 1rem",
 
+
                             })}
                         className='drawer-link'
+
                     >
                         <span
                             style={{
@@ -159,7 +169,8 @@ function DrawerAppBar(props, { children }) {
                             sx={{
                                 "&:hover": {
                                     color: '#fff'
-                                }
+                                },
+
                             }}
 
                         >{item.name}
@@ -171,6 +182,36 @@ function DrawerAppBar(props, { children }) {
     );
 
     const container = window !== undefined ? () => window().document.body : undefined;
+    // menu items 
+    const ModeList = () => {
+        return (
+            <Stack p={2} gap={2}>
+                {
+                    color.map((item) => {
+                        return (
+
+                            <MenuItem
+                                key={item.id}
+                                onClick={() => {
+                                    dispatch(changeThemeWithColor(item))
+                                    setSelectedIndex(item.id)
+                                    handleClose()
+                                }}
+                                sx={{
+                                    backgroundColor: item.bgColor,
+                                    color: item.textLight,
+                                    borderLeft: selectedIndex === item.id ? `4px solid #f44336` : "none",
+                                }}
+                            >
+                                {item.name}
+                            </MenuItem>
+
+                        )
+                    })
+                }
+            </Stack>
+        )
+    }
 
     return (
         <Box sx={{
@@ -200,6 +241,7 @@ function DrawerAppBar(props, { children }) {
                         >
                             <MenuIcon />
                         </IconButton>
+
                         <Box
                             sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' } }}
                             component="div"
@@ -233,20 +275,38 @@ function DrawerAppBar(props, { children }) {
                         >
                             <IconButton
                                 color='primary'
-                                onClick={() => {
-                                    if (isDark) {
-                                        dispatch(changeTheme('light'))
-                                    }
-                                    else {
-                                        dispatch(changeTheme('dark'))
-                                    }
-                                }}
+                                // onClick={() => {
+                                //     if (isDark) {
+                                //         dispatch(changeTheme('light'))
+                                //     }
+                                //     else {
+                                //         dispatch(changeTheme('dark'))
+                                //     }
+                                // }}
+                                id="basic-button"
+                                aria-controls={open ? 'basic-menu' : undefined}
+                                aria-haspopup="true"
+                                aria-expanded={open ? 'true' : undefined}
+                                onClick={handleClick}
 
                             >
                                 <SunIcon
                                     iconColor={isDark ? textLight : textDark}
                                 />
+
                             </IconButton>
+
+                            <Menu
+                                id="basic-menu"
+                                anchorEl={anchorEl}
+                                open={open}
+                                onClose={handleClose}
+                                MenuListProps={{
+                                    'aria-labelledby': 'basic-button',
+                                }}
+                            >
+                                <ModeList />
+                            </Menu>
                             {
                                 routes.map((route, index) => {
                                     return (
