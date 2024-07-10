@@ -5,6 +5,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from 'react-router-dom';
+import { figmaIcon, githubIcon, playIcon, worldIcon } from "../../assets/Icon";
 import LiveStatus from '../../assets/images/projects/LiveStatus.png';
 import SeRemo from '../../assets/images/projects/SeRemo2.png';
 import brdchart from '../../assets/images/projects/brdchart.png';
@@ -426,41 +427,45 @@ export default function Protfolio() {
                                     >
                                         {
                                             item.liveUrl && <CButton
-                                                btnTitle="Live => "
+                                                btnTitle="Live "
                                                 component={'a'}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 href={item.liveUrl}
+                                                startIcon={<Box component={'img'} src={worldIcon} alt="play" height={16} width={16} />}
+
                                             />
                                         }
                                         {
                                             item.figma && <CButton
-                                                btnTitle="Figma => "
+                                                btnTitle="Figma "
                                                 component={'a'}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 href={item.figma}
+                                                endIcon={<Box component={'img'} src={figmaIcon} alt="play" height={24} width={24} />}
                                             />
                                         }
                                         {
                                             item.githubUrl && <CButton
-                                                btnTitle="Github repo =>"
+                                                btnTitle="Github repo"
                                                 component={'a'}
                                                 href={item.githubUrl}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-
+                                                startIcon={<Box component={'img'} src={githubIcon} alt="play" height={24} width={24} />}
                                             />
                                         }
                                         {
                                             item.youtubeUrl && <CButton
-                                                btnTitle="Youtube =>"
+                                                btnTitle="Demo"
                                                 component={'a'}
                                                 href={item.youtubeUrl}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-
+                                                endIcon={<Box component={'img'} src={playIcon} alt="play" height={24} width={24} />}
                                             />
+
                                         }
 
 
