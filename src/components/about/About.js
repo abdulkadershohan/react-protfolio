@@ -1,3 +1,5 @@
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import ReadMoreIcon from '@mui/icons-material/ReadMore';
 import { Box, Grid, Stack } from "@mui/material";
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -89,9 +91,10 @@ export default function About() {
                             gap={2}
                         >
                             <CButton
-                                btnTitle="Viwe all =>"
+                                btnTitle="Read More"
                                 component={Link}
                                 to="/about"
+                                startIcon={<ReadMoreIcon />}
 
                             />
                             {/* <Box
@@ -106,6 +109,7 @@ export default function About() {
                                 component={"a"}
                                 target="_blank"
                                 href={overleafResume}
+                                startIcon={<PictureAsPdfIcon />}
                             />
                         </Box>
                     </Stack>

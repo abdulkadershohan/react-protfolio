@@ -4,6 +4,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import photo from "../../assets/images/sohanFormal-2.jpg";
 // import photo from "../../assets/images/hero5.jpg";
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useSelector } from "react-redux";
@@ -380,6 +381,8 @@ export default function AboutMeFull() {
                                         component={"a"}
                                         target="_blank"
                                         href={overleafResume}
+                                        startIcon={<PictureAsPdfIcon />}
+
                                     />
                                 </Box>
                             </Stack>

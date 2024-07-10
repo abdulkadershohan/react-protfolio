@@ -32,14 +32,15 @@ export default function ContainedButtons({
 		<Button
 			sx={{
 				fontWeight: "600",
-				border: isDark ? "1px solid #ABB2BF" : "1px solid #C778DD",
+				border: "1px solid #ABB2BF",
 				color: isDark ? textWhite : textDark,
 				bgcolor: isDark ? "#C770DB1A" : "#ABB2BF1A",
 				'&:hover': {
 					backgroundColor: isDark ? "#C770DB1A" : "#ABB2BF1A",
-					borderColor: isDark ? "#C778DD" : "#ABB2BF",
+					borderColor: "#C778DD"
 				},
 				borderRadius: 0,
+				//fontFamily: 'FiraCode'
 
 			}}
 			variant="outlined"

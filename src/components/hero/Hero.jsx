@@ -1,3 +1,4 @@
+import CallIcon from '@mui/icons-material/Call';
 import { Container, Grid, Stack } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
@@ -100,9 +101,11 @@ export default function Hero() {
                 <CButton
                   component={Link}
                   to="/contact"
-                >
-                  Contact Me ={'>'}
-                </CButton>
+                  btnTitle={"Contact Me"}
+                  startIcon={<CallIcon />}
+
+                />
+
               </Box>
             </Stack>
           </Grid>
