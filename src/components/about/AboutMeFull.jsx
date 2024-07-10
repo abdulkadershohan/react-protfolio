@@ -17,12 +17,30 @@ const aboutMeData = {
         },
         {
             id: 2,
-            text: `HI! I'm MD. Abdul Kader. I'm a Frontend Engineer. I'm passionate about building scalable and maintainable web applications. Currently, I'm working as a Frontend Engineer at RBS Tech LTD. I'm also a part-time freelancer. I love to learn new things and share my knowledge with others.`
+            text: `In my previous role as a React Frontend Developer at RBS Tech LTD Company, RBS Tech LTD is a
+construction-based company located in Mirpur 12, Dhaka. We have a small team to develop program
+management tools for managing whole construction projects. We implemented more than 50 features
+for this project, like chat modules, kanban boards with real-time drag-and-drop features, projects,
+tasks, requisitions, VAT, TAX, invoice management, data grid view, calendar view, user permissions,
+multilevel user permissions segment, etc. I was responsible for developing and maintaining multiple
+web applications that received high praise for their performance and user experience. I have a deep
+understanding of React’s core principles and best practices, and I am proficient in using Redux for
+state management. Additionally, I have experience working with RESTful APIs and integrating
+third-party libraries to enhance functionality`
         },
         {
-            id: 3,
-            text: ` Mobile app development is my other passion. React and React Native is my favorite JavaScript libraries. I'm also a big fan of Python Django. In the future, I want to be a Full Stack Developer`,
-        }
+            id: 4,
+            text: `I am highly skilled in HTML, CSS, JavaScript, and Typescript, and I have a strong understanding of
+responsive design principles. I am also experienced in using version control systems such as Git and
+have a solid understanding of Agile development methodologies. My ability to collaborate effectively
+with cross-functional teams and my strong problem-solving skills have been instrumental in delivering
+successful projects on time and within budget.`
+
+        },
+        // {
+        //     id: 3,
+        //     text: ` Mobile app development is my other passion. React and React Native is my favorite JavaScript libraries. I'm also a big fan of Python Django. In the future, I want to be a Full Stack Developer`,
+        // }
     ],
     mySkills: [
         {

@@ -24,7 +24,10 @@ const heroTopSectionData = {
     title5: "React Native",
     title6: "developer!",
   },
-  subtitle: `I'm a Frontend Engineer with 2 years of solid experience in React and React Native. I'm passionate about building scalable and maintainable web applications.`,
+  subtitle: `Experienced React JS Developer and adept MERN stack developer skilled in building robust web and mobile
+applications using MongoDB, Express, React.js, Next.js, and Node.js. Proficient in creating professional mobile
+solutions with a strong focus on user experience. Passionate about delivering user-centric experiences through
+technology and dedicated to crafting high-quality applications.`,
   image: hero,
   doing: {
     text: "Currently working on",
@@ -93,7 +96,7 @@ export default function Hero() {
                 fontWeight={400}
               >{subtitle}
               </CTypography>
-              <Box>
+              <Box pt={2}>
                 <CButton
                   component={Link}
                   to="/contact"
