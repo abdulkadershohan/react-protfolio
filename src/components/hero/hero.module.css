@@ -32,11 +32,10 @@
  }
  
  /* Blockquote right double quotes */
- .blockquote h1:after {
+ /* .blockquote h1:after {
      content:"";
      position: absolute;
      border: 2px solid #C778DD;
-     /* border: 2px solid #e74848; */
      border-radius: 0 50px 0 0;
      width: 60px;
      height: 60px;
@@ -45,9 +44,9 @@
      border-bottom: none;
      border-left: none;
      z-index: 3; 
- }
+ } */
  
- .blockquote h1:before {
+  /* .blockquote h1:before {
      content:"";
      position: absolute;
      width: 80px;
@@ -55,8 +54,8 @@
      bottom: -3px;
      left: 50px;
      z-index: 2;
- }
- 
+ } */
+  
  /* increase header size after 600px */
  @media all and (min-width: 600px) {
      .blockquote h1 {

@@ -208,14 +208,42 @@ export default function Hero() {
         </Grid >
         <div className={styles.blockquoteWrapper}>
           <div className={styles.blockquote}>
-            <h1>
+            <Box
+              component={'h1'}
+              sx={{
+                ':before': {
+                  content: '""',
+                  position: "absolute",
+                  width: 80,
+                  border: `6px solid ${isDark ? mainBgColorDark : mainBgColorLight}`,
+                  bottom: -3,
+                  left: 50,
+                  zIndex: 2,
+                },
+
+                ':after': {
+                  content: '""',
+                  position: "absolute",
+                  border: "2px solid #C778DD",
+                  borderRadius: "0 50px 0 0",
+                  width: "60px",
+                  height: " 60px",
+                  bottom: "-62px",
+                  left: "50px",
+                  borderBottom: "none",
+                  borderLeft: "none",
+                  zIndex: 3,
+                },
+
+              }}
+            >
               {quoteText1}  <span
                 style={{ color: isDark ? textWhite : textDark }}
               >{quoteText2}</span> {quoteText3} <span
                 style={{ color: isDark ? textWhite : textDark }}
 
               >  {quoteText4}</span>
-            </h1>
+            </Box>
             <h4
               style={{
                 color: isDark ? textWhite : textDark
