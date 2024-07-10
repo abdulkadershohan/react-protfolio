@@ -3,14 +3,9 @@ import { Box, Stack } from "@mui/system";
 import React from "react";
 import { useSelector } from "react-redux";
 import logo from "../../assets/images/logo.png";
-import DiscordIcon from "../../assets/svg/DiscordIcon";
-import FigmaIcon from "../../assets/svg/FigmaIcon";
-import GithubIcon from "../../assets/svg/GithubIcon";
-import LinkDinIcon from "../../assets/svg/LinkDinIcon";
-import LogoImg from "../../assets/svg/LogoImg";
-import TelegramIcon from "../../assets/svg/TelegramIcon";
-import TwitterIcon from "../../assets/svg/TwitterIcon";
+
 import { CTypography } from "../../utility";
+import { DiscordIcon, FigmaIcon, GithubIcon, LinkDinIcon, LogoImg, TelegramIcon, TwitterIcon } from "../../assets/svg";
 const footerData = {
     socials: [
         {
