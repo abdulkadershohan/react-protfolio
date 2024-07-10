@@ -1,8 +1,7 @@
 import { Box, Stack } from "@mui/material";
 import React from "react";
-import DiscordIcon from "../../assets/svg/DiscordIcon";
-import EmailIcon from "../../assets/svg/EmailIcon";
-import GithubIcon from "../../assets/svg/GithubIcon";
+import { DiscordIcon, EmailIcon, GithubIcon } from "../../assets/svg";
+
 const sidebarData = [
     {
         name: 'discord',

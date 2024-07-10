@@ -1,3 +1,4 @@
+import CallIcon from '@mui/icons-material/Call';
 import { Container, Grid, Stack } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
@@ -24,7 +25,10 @@ const heroTopSectionData = {
     title5: "React Native",
     title6: "developer!",
   },
-  subtitle: `I'm a Frontend Engineer with 2 years of solid experience in React and React Native. I'm passionate about building scalable and maintainable web applications.`,
+  subtitle: `Experienced React JS Developer and adept MERN stack developer skilled in building robust web and mobile
+applications using MongoDB, Express, React.js, Next.js, and Node.js. Proficient in creating professional mobile
+solutions with a strong focus on user experience. Passionate about delivering user-centric experiences through
+technology and dedicated to crafting high-quality applications.`,
   image: hero,
   doing: {
     text: "Currently working on",
@@ -93,13 +97,15 @@ export default function Hero() {
                 fontWeight={400}
               >{subtitle}
               </CTypography>
-              <Box>
+              <Box pt={2}>
                 <CButton
                   component={Link}
                   to="/contact"
-                >
-                  Contact Me ={'>'}
-                </CButton>
+                  btnTitle={"Contact Me"}
+                  startIcon={<CallIcon />}
+
+                />
+
               </Box>
             </Stack>
           </Grid>
@@ -205,14 +211,42 @@ export default function Hero() {
         </Grid >
         <div className={styles.blockquoteWrapper}>
           <div className={styles.blockquote}>
-            <h1>
+            <Box
+              component={'h1'}
+              sx={{
+                ':before': {
+                  content: '""',
+                  position: "absolute",
+                  width: 80,
+                  border: `6px solid ${isDark ? mainBgColorDark : mainBgColorLight}`,
+                  bottom: -3,
+                  left: 50,
+                  zIndex: 2,
+                },
+
+                ':after': {
+                  content: '""',
+                  position: "absolute",
+                  border: "2px solid #C778DD",
+                  borderRadius: "0 50px 0 0",
+                  width: "60px",
+                  height: " 60px",
+                  bottom: "-62px",
+                  left: "50px",
+                  borderBottom: "none",
+                  borderLeft: "none",
+                  zIndex: 3,
+                },
+
+              }}
+            >
               {quoteText1}  <span
                 style={{ color: isDark ? textWhite : textDark }}
               >{quoteText2}</span> {quoteText3} <span
                 style={{ color: isDark ? textWhite : textDark }}
 
               >  {quoteText4}</span>
-            </h1>
+            </Box>
             <h4
               style={{
                 color: isDark ? textWhite : textDark
